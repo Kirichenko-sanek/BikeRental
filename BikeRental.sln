@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.Interfases", "Bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.BL", "BikeRental.BL\BikeRental.BL.csproj", "{850E3420-7002-453B-B165-3DA90599BE1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.CW", "BikeRental.CW\BikeRental.CW.csproj", "{647C4C4E-7A69-4D1F-BD55-1B8B154E46A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{850E3420-7002-453B-B165-3DA90599BE1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850E3420-7002-453B-B165-3DA90599BE1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{850E3420-7002-453B-B165-3DA90599BE1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647C4C4E-7A69-4D1F-BD55-1B8B154E46A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647C4C4E-7A69-4D1F-BD55-1B8B154E46A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647C4C4E-7A69-4D1F-BD55-1B8B154E46A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647C4C4E-7A69-4D1F-BD55-1B8B154E46A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
