@@ -13,11 +13,11 @@ namespace BikeRental.Core
 
         public virtual Type Type { get; set; }
         public virtual Photo Photo { get; set; }
-        public virtual Order Order { get; set; }
+        public virtual List<Order> Order { get; set; }
 
-        /*public Bike()
+        public Bike()
         {
-            Order = new Order();
-        }*/
+            Order = new List<Order>();
+        }
     }
 }

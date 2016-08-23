@@ -18,8 +18,8 @@ namespace BikeRental.Data.Mapping
             Property(m => m.IsActivated).IsRequired();
             ToTable("User");
 
-            HasRequired(m => m.Roles).WithMany().HasForeignKey(m=>m.IdRole).WillCascadeOnDelete(false);
-            HasRequired(m=>m.Photo).WithMany().HasForeignKey(m=>m.IdPhoto).WillCascadeOnDelete(false);
+            HasRequired(m => m.Roles).WithMany(m=>m.Users).HasForeignKey(m=>m.IdRole).WillCascadeOnDelete(false);
+            HasRequired(m=>m.Photo).WithMany(m=>m.User).HasForeignKey(m=>m.IdPhoto).WillCascadeOnDelete(false);
             
         }
     }

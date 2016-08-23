@@ -1,14 +1,16 @@
-﻿namespace BikeRental.Core
+﻿using System.Collections.Generic;
+
+namespace BikeRental.Core
 {
     public class Roles : BaseEntity
     {
         public string Role { get; set; } 
-        
-        public virtual User User { get; set; }
 
-        /*public Roles()
+        public virtual List<User> Users { get; set; }
+
+        public Roles()
         {
-            User = new User();
-        }*/
+            Users = new List<User>();
+        }
     }
 }

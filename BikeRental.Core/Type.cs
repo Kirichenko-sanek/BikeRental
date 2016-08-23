@@ -1,14 +1,16 @@
-﻿namespace BikeRental.Core
+﻿using System.Collections.Generic;
+
+namespace BikeRental.Core
 {
     public class Type : BaseEntity
     {
         public string NameType { get; set; }
 
-        public virtual Bike Bike { get; set; }
+        public virtual List<Bike> Bike { get; set; }
 
-       /* public Type()
+        public Type()
         {
-            Bike = new Bike();
-        }*/
+            Bike = new List<Bike>();
+        }
     }
 }
