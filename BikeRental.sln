@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental", "BikeRental\BikeRental.csproj", "{EBCDD61A-9B9D-4D1E-AE90-A88EF5895DE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.Core", "BikeRental.Core\BikeRental.Core.csproj", "{29E96058-C863-4817-A792-038CFC926F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.Data", "BikeRental.Data\BikeRental.Data.csproj", "{13114CD0-A94D-4433-B177-5A05B6FFA084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.Interfases", "BikeRental.Interfases\BikeRental.Interfases.csproj", "{1581FF63-072C-49CE-BC63-47CBF808B111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.BL", "BikeRental.BL\BikeRental.BL.csproj", "{850E3420-7002-453B-B165-3DA90599BE1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBCDD61A-9B9D-4D1E-AE90-A88EF5895DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBCDD61A-9B9D-4D1E-AE90-A88EF5895DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBCDD61A-9B9D-4D1E-AE90-A88EF5895DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBCDD61A-9B9D-4D1E-AE90-A88EF5895DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E96058-C863-4817-A792-038CFC926F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E96058-C863-4817-A792-038CFC926F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E96058-C863-4817-A792-038CFC926F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E96058-C863-4817-A792-038CFC926F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13114CD0-A94D-4433-B177-5A05B6FFA084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13114CD0-A94D-4433-B177-5A05B6FFA084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13114CD0-A94D-4433-B177-5A05B6FFA084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13114CD0-A94D-4433-B177-5A05B6FFA084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1581FF63-072C-49CE-BC63-47CBF808B111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1581FF63-072C-49CE-BC63-47CBF808B111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1581FF63-072C-49CE-BC63-47CBF808B111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1581FF63-072C-49CE-BC63-47CBF808B111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{850E3420-7002-453B-B165-3DA90599BE1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{850E3420-7002-453B-B165-3DA90599BE1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{850E3420-7002-453B-B165-3DA90599BE1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{850E3420-7002-453B-B165-3DA90599BE1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

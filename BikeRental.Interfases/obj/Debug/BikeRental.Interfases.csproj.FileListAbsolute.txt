@@ -1,0 +1,7 @@
+D:\!!Sasha\BikeRental\BikeRental.Interfases\bin\Debug\BikeRental.Interfases.dll
+D:\!!Sasha\BikeRental\BikeRental.Interfases\bin\Debug\BikeRental.Interfases.pdb
+D:\!!Sasha\BikeRental\BikeRental.Interfases\bin\Debug\BikeRental.Core.dll
+D:\!!Sasha\BikeRental\BikeRental.Interfases\bin\Debug\BikeRental.Core.pdb
+D:\!!Sasha\BikeRental\BikeRental.Interfases\obj\Debug\BikeRental.Interfases.csprojResolveAssemblyReference.cache
+D:\!!Sasha\BikeRental\BikeRental.Interfases\obj\Debug\BikeRental.Interfases.dll
+D:\!!Sasha\BikeRental\BikeRental.Interfases\obj\Debug\BikeRental.Interfases.pdb

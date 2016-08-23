@@ -1,0 +1,14 @@
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.Data.dll.config
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.Data.dll
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.Data.pdb
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.Core.dll
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.Interfases.dll
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\EntityFramework.dll
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.Core.pdb
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.Interfases.pdb
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\EntityFramework.xml
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\!!Sasha\BikeRental\BikeRental.Data\obj\Debug\BikeRental.Data.csprojResolveAssemblyReference.cache
+D:\!!Sasha\BikeRental\BikeRental.Data\obj\Debug\BikeRental.Data.dll
+D:\!!Sasha\BikeRental\BikeRental.Data\obj\Debug\BikeRental.Data.pdb
