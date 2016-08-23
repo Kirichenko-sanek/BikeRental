@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPasswordHashing.cs" />
     <Compile Include="Manager\IManager.cs" />
     <Compile Include="Manager\IUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

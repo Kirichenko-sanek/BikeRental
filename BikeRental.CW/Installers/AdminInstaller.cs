@@ -50,8 +50,6 @@ namespace BikeRental.CW.Installers
                 Component.For(typeof(IUserManager<>)).ImplementedBy(typeof(UserManager<>)).LifestyleTransient());
 
 
-            container.Register(
-                Component.For(typeof(IPasswordHashing)).ImplementedBy(typeof(IPasswordHashing)).LifestyleTransient());
 
             var controllerFactory = new WindsorControllerFactory(container.Kernel);
             ControllerBuilder.Current.SetControllerFactory(controllerFactory);

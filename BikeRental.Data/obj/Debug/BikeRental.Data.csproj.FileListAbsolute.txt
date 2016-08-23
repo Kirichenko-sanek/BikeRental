@@ -12,3 +12,5 @@ D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\!!Sasha\BikeRental\BikeRental.Data\obj\Debug\BikeRental.Data.csprojResolveAssemblyReference.cache
 D:\!!Sasha\BikeRental\BikeRental.Data\obj\Debug\BikeRental.Data.dll
 D:\!!Sasha\BikeRental\BikeRental.Data\obj\Debug\BikeRental.Data.pdb
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.BL.dll
+D:\!!Sasha\BikeRental\BikeRental.Data\bin\Debug\BikeRental.BL.pdb

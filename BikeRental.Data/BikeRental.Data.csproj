@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Mapping\BikeMap.cs" />
-    <Compile Include="Mapping\BikesTypesMap.cs" />
     <Compile Include="Mapping\OrderMap.cs" />
     <Compile Include="Mapping\PhotoMap.cs" />
     <Compile Include="Mapping\RolesMap.cs" />
@@ -66,6 +65,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BikeRental.BL\BikeRental.BL.csproj">
+      <Project>{850e3420-7002-453b-b165-3da90599be1d}</Project>
+      <Name>BikeRental.BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BikeRental.Core\BikeRental.Core.csproj">
       <Project>{29e96058-c863-4817-a792-038cfc926f14}</Project>
       <Name>BikeRental.Core</Name>

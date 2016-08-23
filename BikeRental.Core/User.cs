@@ -20,8 +20,6 @@ namespace BikeRental.Core
         public User()
         {
             Orders = new List<Order>();
-            Roles = new Roles();
-            Photo = new Photo();
         }
         
     }

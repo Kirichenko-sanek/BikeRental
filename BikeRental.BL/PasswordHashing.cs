@@ -2,15 +2,14 @@
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
-using BikeRental.Interfases;
 
 namespace BikeRental.BL
 {
-    public class PasswordHashing : IPasswordHashing
+    public static class PasswordHashing
     {
         private static byte saltValueSize = 32;
 
-        public string GenerateSaltValue()
+        public static string GenerateSaltValue()
         {
             var generator = RandomNumberGenerator.Create();
             byte[] saltValue = new byte[saltValueSize];
@@ -18,7 +17,7 @@ namespace BikeRental.BL
             return Convert.ToBase64String(saltValue);
         }
 
-        public string HashPassword(string password, string saltValue)
+        public static string HashPassword(string password, string saltValue)
         {
             if (String.IsNullOrEmpty(password)) throw new ArgumentException("Password is null");
 

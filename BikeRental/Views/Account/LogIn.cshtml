@@ -1,0 +1,19 @@
+﻿
+@model BikeRental.ViewModel.LoginViewModel
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<h2>LogIn</h2>
+<div>
+    @using (Html.BeginForm("LogIn", "Account", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email" } })
+        <p>@Html.ValidationMessageFor(model => model.Email, "", new { @class = "" })</p>
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @placeholder = "Password" } })
+        <p>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "" })</p>
+
+        <input type="submit" id="login" value="Login">
+    }
+</div>

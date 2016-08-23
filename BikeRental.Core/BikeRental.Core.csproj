@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Bike.cs" />
-    <Compile Include="BikesTypes.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

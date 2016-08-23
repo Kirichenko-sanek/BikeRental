@@ -19,7 +19,7 @@ namespace BikeRental.Data.Mapping
             ToTable("Order");
 
             HasRequired(m=>m.User).WithMany(m=>m.Orders).HasForeignKey(m=>m.IdUser).WillCascadeOnDelete(false);
-            //HasRequired(m=>m.Bike).WithMany(m=>m.)
+            HasRequired(m=>m.Bike).WithMany().HasForeignKey(m=>m.IdBike).WillCascadeOnDelete(false);
         }
     }
 }

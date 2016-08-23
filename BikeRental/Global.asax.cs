@@ -8,6 +8,8 @@ using BikeRental.Core;
 using BikeRental.CW.Installers;
 using BikeRental.Data;
 using Castle.Windsor;
+using FluentValidation.Mvc;
+
 
 namespace BikeRental
 {
@@ -15,6 +17,7 @@ namespace BikeRental
     {
         protected void Application_Start()
         {
+            FluentValidationModelValidatorProvider.Configure();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -38,7 +41,7 @@ namespace BikeRental
                 {
                     User user = entities.Users.SingleOrDefault(u => u.Email == email);
 
-                    roles = user.Roles.Role;//user.Roles;
+                    if (user != null) roles = user.Roles.Role;//user.Roles;
                 }
                 //Let us set the Pricipal with our user specific details
                 e.User = new System.Security.Principal.GenericPrincipal(

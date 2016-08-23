@@ -16,7 +16,8 @@ namespace BikeRental.Data.Mapping
             Property(m => m.Status).IsRequired();
             ToTable("Bike");
 
-            HasRequired(m => m.Photo).WithRequiredPrincipal();
+            HasRequired(m => m.Photo).WithMany().HasForeignKey(m=>m.IdPhoto).WillCascadeOnDelete(false);
+            HasRequired(m=>m.Type).WithMany().HasForeignKey(m=>m.IdType).WillCascadeOnDelete(false);
         }
     }
 }

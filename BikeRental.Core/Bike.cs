@@ -8,15 +8,16 @@ namespace BikeRental.Core
         public string Sex { get; set; }
         public bool Status { get; set; }
         public decimal Price { get; set; }
+        public long IdPhoto { get; set; }
+        public long IdType { get; set; }
 
-        public virtual List<BikesTypes> Type { get; set; }
-        public virtual Order Order { get; set; }
+        public virtual Type Type { get; set; }
         public virtual Photo Photo { get; set; }
+        public virtual Order Order { get; set; }
 
-        public Bike()
+        /*public Bike()
         {
-            Type = new List<BikesTypes>();
-            Photo = new Photo();
-        }
+            Order = new Order();
+        }*/
     }
 }

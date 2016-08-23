@@ -12,8 +12,6 @@ namespace BikeRental.Data.Mapping
             Property(m => m.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(m => m.Role).IsRequired();
             ToTable("Roles");
-
-            
         }
     }
 }
