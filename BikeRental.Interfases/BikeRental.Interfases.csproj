@@ -40,10 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\IBikeManager.cs" />
     <Compile Include="Manager\IManager.cs" />
+    <Compile Include="Manager\IOrderManager.cs" />
+    <Compile Include="Manager\ITypeManager.cs" />
     <Compile Include="Manager\IUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IBikeRepository.cs" />
+    <Compile Include="Repository\IOrderRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\ITypeRepository.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
     <Compile Include="Validator\IValidator.cs" />
   </ItemGroup>

@@ -49,10 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\BikeManager.cs" />
     <Compile Include="Manager\Manager.cs" />
+    <Compile Include="Manager\OrderManager.cs" />
+    <Compile Include="Manager\TypeManager.cs" />
     <Compile Include="Manager\UserManager.cs" />
     <Compile Include="PasswordHashing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator\BikeValidator.cs" />
+    <Compile Include="Validator\TypeValidator.cs" />
     <Compile Include="Validator\UserValidator.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
+using AutoMapper;
+using BikeRental.App_Start;
 using BikeRental.Core;
 using BikeRental.CW.Installers;
 using BikeRental.Data;
@@ -22,6 +24,8 @@ namespace BikeRental
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            MapperConfig.RegisterMapping();
+             
             var container = new WindsorContainer().Install(new AdminInstaller());
         }
 

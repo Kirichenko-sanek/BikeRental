@@ -32,13 +32,22 @@ namespace BikeRental.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogIn(LoginViewModel model)
         {
-            var user = _userManager.GetUserByEmail(model.Email);
-            if(user == null) throw new Exception(Resource.EmailNotRegistered);
-            var pass = PasswordHashing.HashPassword(model.Password, user.PasswordSalt);
-            if(user.Password != pass) throw new Exception(Resource.WrongPassword);
-            if(!user.IsActivated) throw  new Exception();
-            FormsAuthentication.SetAuthCookie(user.Email,false);
-            return RedirectToAction("UserPage", "Profile", user.Id);
+            try
+            {
+                var user = _userManager.GetUserByEmail(model.Email);
+                if (user == null) throw new Exception(Resource.EmailNotRegistered);
+                var pass = PasswordHashing.HashPassword(model.Password, user.PasswordSalt);
+                if (user.Password != pass) throw new Exception(Resource.WrongPassword);
+                if (!user.IsActivated) throw new Exception();
+                FormsAuthentication.SetAuthCookie(user.Email, false);
+                return RedirectToAction("UserPage", "Profile", user.Id);
+            }
+            catch (Exception e)
+            {
+                model.Error = e.Message;
+                return View(model);
+            }
+            
         }
     }
 }

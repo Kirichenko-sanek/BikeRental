@@ -1,0 +1,22 @@
+﻿@model BikeRental.ViewModel.TakeBikeViewModel
+@{
+    ViewBag.Title = "TakeBike";
+}
+
+<h2>TakeBike</h2>
+<div>
+    @foreach (var type in Model.Types)
+    {
+        <h1>@Html.RadioButtonFor(model => model.SelectType, @type.NameType, null) @type.NameType</h1>
+    }
+</div>
+
+<div>
+    <h1>@Html.RadioButtonFor(model => model.SelectSex, "M", null) M</h1>
+    <h1>@Html.RadioButtonFor(model => model.SelectSex, "W", null) W</h1>
+</div>
+<br/><br /><br /><br />
+<div>
+    @Html.TextBoxFor(model => model.TimeStart, new { type = "date" })
+    @Html.TextBoxFor(model => model.TimeEnd, new { type = "date" })
+</div>

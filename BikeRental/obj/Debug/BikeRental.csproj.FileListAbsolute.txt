@@ -90,3 +90,5 @@ D:\!!Sasha\BikeRental\BikeRental\obj\Debug\en\BikeRental.resources.dll
 D:\!!Sasha\BikeRental\BikeRental\obj\Debug\ru\BikeRental.resources.dll
 D:\!!Sasha\BikeRental\BikeRental\obj\Debug\BikeRental.dll
 D:\!!Sasha\BikeRental\BikeRental\obj\Debug\BikeRental.pdb
+D:\!!Sasha\BikeRental\BikeRental\bin\AutoMapper.dll
+D:\!!Sasha\BikeRental\BikeRental\bin\AutoMapper.xml

@@ -4,7 +4,6 @@ using BikeRental.BL.Validator;
 using BikeRental.Core;
 using BikeRental.Data;
 using BikeRental.Data.Repository;
-using BikeRental.Interfases;
 using BikeRental.Interfases.Manager;
 using BikeRental.Interfases.Repository;
 using BikeRental.Interfases.Validator;
@@ -36,11 +35,23 @@ namespace BikeRental.CW.Installers
                 Component.For(typeof(IRepository<>)).ImplementedBy(typeof(Repository<>)).LifestyleTransient());
             container.Register(
                 Component.For(typeof(IUserRepository<>)).ImplementedBy(typeof(UserRepository<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(ITypeRepository<>)).ImplementedBy(typeof(TypeRepository<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IBikeRepository<>)).ImplementedBy(typeof(BikeRepository<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IOrderRepository<>)).ImplementedBy(typeof(OrderRepository<>)).LifestyleTransient());
 
 
             //Validator
             container.Register(
                 Component.For(typeof(IValidator<User>)).ImplementedBy(typeof(UserValidator)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IValidator<Type>)).ImplementedBy(typeof(TypeValidator)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IValidator<Bike>)).ImplementedBy(typeof(BikeValidator)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IValidator<Order>)).ImplementedBy(typeof(OrderValidator)).LifestyleTransient());
 
 
 
@@ -48,6 +59,12 @@ namespace BikeRental.CW.Installers
             container.Register(Component.For(typeof(IManager<>)).ImplementedBy(typeof(Manager<>)).LifestyleTransient());
             container.Register(
                 Component.For(typeof(IUserManager<>)).ImplementedBy(typeof(UserManager<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(ITypeManager<>)).ImplementedBy(typeof(TypeManager<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IBikeManager<>)).ImplementedBy(typeof(BikeManager<>)).LifestyleTransient());
+            container.Register(
+                Component.For(typeof(IOrderManager<>)).ImplementedBy(typeof(OrderManager<>)).LifestyleTransient());
 
 
 
