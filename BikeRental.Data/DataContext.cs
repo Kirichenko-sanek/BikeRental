@@ -113,6 +113,17 @@ namespace BikeRental.Data
                 foreach (var bike in bikes) context.Bikes.Add(bike);
                 context.SaveChanges();
 
+                /*var orders = new List<Order>
+                {
+                    new Order()
+                    {
+                        
+                    }
+                };
+                foreach (var order in orders) context.Orders.Add(order);
+                context.SaveChanges();*/
+                
+
                 base.Seed(context);
             }
         }

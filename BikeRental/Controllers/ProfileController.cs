@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
+using BikeRental.BL;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.ViewModel;
@@ -59,40 +60,15 @@ namespace BikeRental.Controllers
             {
                 EditOrder();
 
+                var b = new GetBike(_bikeManager, _orderManager);
+                var bike = b.GetBikeOnDb(model.TimeStart, model.TimeEnd, model.SelectType, model.SelectSex);
+                if (bike == null) throw new Exception("К сожалению на выбранное вами время нет свободных велосипедов");
+                var entity = Mapper.Map<TakeBikeViewModel, Order>(model);
+                entity.IdBike = bike.Id;
+                entity.IdUser = userId;
 
-                IQueryable<Bike> bikeList;
-                IQueryable<Order> orderList;
-                Order entity = null;
-                if (model.SelectType == null && model.SelectSex == null)
-                {
-                    bikeList = _bikeManager.GetAll();
-                }
-                else
-                {
-                    bikeList = _bikeManager.SerchBikes(model.SelectType, model.SelectSex);
-                }
-                foreach (var bike in bikeList)
-                {                    
-                    orderList = _orderManager.GetOrdersOfBike(bike.Id);
-                    foreach (var order in orderList)
-                    {
-                        if ((model.TimeStart < order.TimeStart && model.TimeEnd < order.TimeStart) ||
-                            (model.TimeStart > order.TimeEnd && model.TimeEnd > order.TimeEnd))
-                        {
-                            entity.IdBike = bike.Id;
-                        }
-                    }
-                    if (entity.Bike != null)
-                    {
-                        entity = Mapper.Map<TakeBikeViewModel, Order>(model);
-                        entity.IdBike = bike.Id;
-                        entity.IdUser = userId;
-                        entity.TotalPrice = (model.TimeEnd - model.TimeStart).Hours * bike.Price;
-                        break;
-                    }
-                    
-                }
-                if(entity == null) throw new Exception("К сожалению на выбранное вами время нет свободных велосипедов");
+                entity.TotalPrice = Convert.ToDecimal(model.TimeEnd.Subtract(model.TimeStart).TotalHours)*bike.Price;
+               
                 _orderManager.Add(entity);
                 return RedirectToAction("Index", "Home");
             }

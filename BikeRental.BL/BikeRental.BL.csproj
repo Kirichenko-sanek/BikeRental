@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetBike.cs" />
     <Compile Include="Manager\BikeManager.cs" />
     <Compile Include="Manager\Manager.cs" />
     <Compile Include="Manager\OrderManager.cs" />
