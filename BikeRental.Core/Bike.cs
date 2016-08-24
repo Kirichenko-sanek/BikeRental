@@ -4,7 +4,6 @@ namespace BikeRental.Core
 {
     public class Bike : BaseEntity
     {
-        public string Model { get; set; }
         public string Sex { get; set; }
         public bool Status { get; set; }
         public decimal Price { get; set; }

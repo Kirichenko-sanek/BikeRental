@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace BikeRental.Core
+namespace BikeRental.ViewModel
 {
-    public class Order : BaseEntity
+    public class OrderViewModel
     {
         public long IdUser { get; set; }
         public long IdBike { get; set; }
@@ -10,9 +10,5 @@ namespace BikeRental.Core
         public DateTime TimeEnd { get; set; }
         public DateTime DateOrder { get; set; }
         public bool Status { get; set; }
-        public decimal TotalPrice { get; set; }
-
-        public virtual User User { get; set; }
-        public virtual Bike Bike { get; set; }
     }
 }

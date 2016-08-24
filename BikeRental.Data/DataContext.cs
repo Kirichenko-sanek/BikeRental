@@ -92,6 +92,29 @@ namespace BikeRental.Data
                 foreach (var user in users) context.Users.Add(user);
                 context.SaveChanges();
 
+
+                var bikes = new List<Bike>
+                {
+                    new Bike()
+                    {
+                        Sex = "M",
+                        Status = true,
+                        Price = 50,
+                        IdType = 1,
+                        IdPhoto = 1
+                    },
+                    new Bike()
+                    {
+                        Sex = "W",
+                        Status = false,
+                        Price = 50,
+                        IdType = 1,
+                        IdPhoto = 1
+                    }
+                };
+                foreach (var bike in bikes) context.Bikes.Add(bike);
+                context.SaveChanges();
+
                 base.Seed(context);
             }
         }

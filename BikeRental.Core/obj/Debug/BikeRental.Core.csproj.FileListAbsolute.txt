@@ -2,3 +2,4 @@ D:\!!Sasha\BikeRental\BikeRental.Core\bin\Debug\BikeRental.Core.dll
 D:\!!Sasha\BikeRental\BikeRental.Core\bin\Debug\BikeRental.Core.pdb
 D:\!!Sasha\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.dll
 D:\!!Sasha\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.pdb
+D:\!!Sasha\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.csprojResolveAssemblyReference.cache

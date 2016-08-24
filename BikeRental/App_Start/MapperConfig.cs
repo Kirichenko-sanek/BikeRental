@@ -21,6 +21,16 @@ namespace BikeRental.App_Start
                     m.DateOrder = DateTime.Now;
                     m.TimeStart = p.TimeStart;
                     m.TimeEnd = p.TimeEnd;
+                    m.Status = true;
+                });
+                cfg.CreateMap<Order, OrderViewModel>().AfterMap((p, m) =>
+                {
+                    m.IdUser = p.IdUser;
+                    m.IdBike = p.IdBike;
+                    m.TimeStart = p.TimeStart;
+                    m.TimeEnd = p.TimeEnd;
+                    m.DateOrder = p.DateOrder;
+                    m.Status = p.Status;
                 });
             });
         }

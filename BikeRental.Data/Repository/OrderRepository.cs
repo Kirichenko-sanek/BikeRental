@@ -1,4 +1,5 @@
-﻿using BikeRental.Core;
+﻿using System.Linq;
+using BikeRental.Core;
 using BikeRental.Interfases.Repository;
 
 namespace BikeRental.Data.Repository
@@ -8,6 +9,11 @@ namespace BikeRental.Data.Repository
         public OrderRepository(DataContext context) : base(context)
         {
             
+        }
+
+        public IQueryable<Order> GetActivOrders()
+        {
+            return _context.Orders.Where(x => x.Status);
         }
     }
 }

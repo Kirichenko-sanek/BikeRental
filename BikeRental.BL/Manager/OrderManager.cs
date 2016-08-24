@@ -1,4 +1,5 @@
-﻿using BikeRental.Core;
+﻿using System.Linq;
+using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.Interfases.Repository;
 using BikeRental.Interfases.Validator;
@@ -13,6 +14,11 @@ namespace BikeRental.BL.Manager
             : base(repository, validator)
         {
             _orderRepository = orderRepository;
+        }
+
+        public IQueryable<Order> GetActivOrders()
+        {
+            return _orderRepository.GetActivOrders();
         }
     }
 }
