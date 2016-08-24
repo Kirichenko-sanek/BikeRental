@@ -1,4 +1,5 @@
-﻿using BikeRental.Core;
+﻿using System.Linq;
+using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.Interfases.Repository;
 using BikeRental.Interfases.Validator;
@@ -15,7 +16,7 @@ namespace BikeRental.BL.Manager
             _bikeRepository = bikeRepository;
         }
 
-        public Bike SerchBikes(string type, string sex)
+        public IQueryable<Bike> SerchBikes(string type, string sex)
         {
             return _bikeRepository.SerchBikes(type, sex);
         }

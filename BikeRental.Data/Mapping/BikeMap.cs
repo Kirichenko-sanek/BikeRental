@@ -12,7 +12,6 @@ namespace BikeRental.Data.Mapping
             Property(m => m.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(m => m.Sex).IsRequired();
             Property(m => m.Price).IsRequired();
-            Property(m => m.Status).IsRequired();
             ToTable("Bike");
 
             HasRequired(m => m.Photo).WithMany(m=>m.Bike).HasForeignKey(m=>m.IdPhoto).WillCascadeOnDelete(false);

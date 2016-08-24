@@ -20,5 +20,10 @@ namespace BikeRental.BL.Manager
         {
             return _orderRepository.GetActivOrders();
         }
+
+        public IQueryable<Order> GetOrdersOfBike(long id)
+        {
+            return _orderRepository.GetOrdersOfBike(id);
+        }
     }
 }

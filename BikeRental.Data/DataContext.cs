@@ -98,7 +98,6 @@ namespace BikeRental.Data
                     new Bike()
                     {
                         Sex = "M",
-                        Status = true,
                         Price = 50,
                         IdType = 1,
                         IdPhoto = 1
@@ -106,7 +105,6 @@ namespace BikeRental.Data
                     new Bike()
                     {
                         Sex = "W",
-                        Status = false,
                         Price = 50,
                         IdType = 1,
                         IdPhoto = 1

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using BikeRental.Core;
@@ -45,7 +46,7 @@ namespace BikeRental.Controllers
             var typesList = _typeManager.GetAll();
             foreach (var type in typesList)
             {
-                types.Add(Mapper.Map<Core.Type, TypeViewModel>(type));               
+                types.Add(Mapper.Map<Core.Type, TypeViewModel>(type));
             }
             model.Types = types;
             return View(model);
@@ -54,14 +55,53 @@ namespace BikeRental.Controllers
         [HttpPost]
         public ActionResult TakeBike(TakeBikeViewModel model, long userId)
         {
-            EditOrder();
-            var bike = _bikeManager.SerchBikes(model.SelectType, model.SelectSex);
-            var entity = Mapper.Map<TakeBikeViewModel, Order>(model);
-            entity.IdBike = bike.Id;
-            entity.IdUser = userId;
-            entity.TotalPrice = (model.TimeEnd - model.TimeStart).Hours*bike.Price;
-            _orderManager.Add(entity);
-            return RedirectToAction("Index","Home");
+            try
+            {
+                EditOrder();
+
+
+                IQueryable<Bike> bikeList;
+                IQueryable<Order> orderList;
+                Order entity = null;
+                if (model.SelectType == null && model.SelectSex == null)
+                {
+                    bikeList = _bikeManager.GetAll();
+                }
+                else
+                {
+                    bikeList = _bikeManager.SerchBikes(model.SelectType, model.SelectSex);
+                }
+                foreach (var bike in bikeList)
+                {                    
+                    orderList = _orderManager.GetOrdersOfBike(bike.Id);
+                    foreach (var order in orderList)
+                    {
+                        if ((model.TimeStart < order.TimeStart && model.TimeEnd < order.TimeStart) ||
+                            (model.TimeStart > order.TimeEnd && model.TimeEnd > order.TimeEnd))
+                        {
+                            entity.IdBike = bike.Id;
+                        }
+                    }
+                    if (entity.Bike != null)
+                    {
+                        entity = Mapper.Map<TakeBikeViewModel, Order>(model);
+                        entity.IdBike = bike.Id;
+                        entity.IdUser = userId;
+                        entity.TotalPrice = (model.TimeEnd - model.TimeStart).Hours * bike.Price;
+                        break;
+                    }
+                    
+                }
+                if(entity == null) throw new Exception("К сожалению на выбранное вами время нет свободных велосипедов");
+                _orderManager.Add(entity);
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception e)
+            {
+                model.Error = e.Message;
+                return View(model);
+            }
+            
         }
 
         public void EditOrder()
@@ -72,11 +112,6 @@ namespace BikeRental.Controllers
                 if (order.TimeEnd <= DateTime.Now)
                 {
                     order.Status = false;
-                    _orderManager.Update(order);
-                }
-                if (order.TimeStart <= DateTime.Now && DateTime.Now <= order.TimeEnd)
-                {
-                    order.Bike.Status = false;
                     _orderManager.Update(order);
                 }
             }

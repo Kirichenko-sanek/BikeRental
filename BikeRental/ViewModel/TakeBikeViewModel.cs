@@ -13,6 +13,7 @@ namespace BikeRental.ViewModel
         public DateTime DateOrder { get; set; }
         public string SelectType { get; set; }
         public string SelectSex { get; set; }
+        public string Error { get; set; }
         
     }
 }
