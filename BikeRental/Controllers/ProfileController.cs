@@ -26,7 +26,7 @@ namespace BikeRental.Controllers
             _orderManager = orderManager;
         }
 
-        public ActionResult UserPage(long? id)
+        /*public ActionResult UserPage(long? id)
         {
             if (id != null) return UserPage(new UserPageViewModel(), id);
             var user = _userManager.GetUserByEmail(User.Identity.Name);
@@ -38,7 +38,7 @@ namespace BikeRental.Controllers
         public ActionResult UserPage(UserPageViewModel model, long? id)
         {
             return View();
-        }
+        }*/
 
         [HttpGet]
         public ActionResult TakeBike(TakeBikeViewModel model)
@@ -58,9 +58,10 @@ namespace BikeRental.Controllers
         {
             try
             {
-                EditOrder();
 
                 var b = new GetBike(_bikeManager, _orderManager);
+                var o = new EditOrder(_orderManager);
+                o.EditAllOrder();
                 var bike = b.GetBikeOnDb(model.TimeStart, model.TimeEnd, model.SelectType, model.SelectSex);
                 if (bike == null) throw new Exception("К сожалению на выбранное вами время нет свободных велосипедов");
                 var entity = Mapper.Map<TakeBikeViewModel, Order>(model);
@@ -68,7 +69,7 @@ namespace BikeRental.Controllers
                 entity.IdUser = userId;
 
                 entity.TotalPrice = Convert.ToDecimal(model.TimeEnd.Subtract(model.TimeStart).TotalHours)*bike.Price;
-               
+
                 _orderManager.Add(entity);
                 return RedirectToAction("Index", "Home");
             }
@@ -77,21 +78,29 @@ namespace BikeRental.Controllers
                 model.Error = e.Message;
                 return View(model);
             }
-            
+
         }
 
-        public void EditOrder()
+        public ActionResult UserOrders(UserOrdersPageViewModel model, long id)
         {
-            var ordersList = _orderManager.GetActivOrders();
-            foreach (var order in ordersList)
+            try
             {
-                if (order.TimeEnd <= DateTime.Now)
+                List<OrderViewModel> orders = new List<OrderViewModel>();
+                var orderList = _orderManager.GetOrdersByUser(id).OrderByDescending(x => x.DateOrder);
+                foreach (var order in orderList)
                 {
-                    order.Status = false;
-                    _orderManager.Update(order);
+                    orders.Add(Mapper.Map<Order,OrderViewModel>(order));
                 }
+                model.UserOrders = orders;
+                return View(model);
+            }
+            catch (Exception)
+            {
+                return View();
             }
         }
+
+
 
 
 

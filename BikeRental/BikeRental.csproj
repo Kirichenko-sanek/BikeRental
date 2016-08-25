@@ -190,13 +190,26 @@
     <Compile Include="ViewModel\OrderViewModel.cs" />
     <Compile Include="ViewModel\TakeBikeViewModel.cs" />
     <Compile Include="ViewModel\TypeViewModel.cs" />
+    <Compile Include="ViewModel\UserOrdersPageViewModel.cs" />
     <Compile Include="ViewModel\UserPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\images\bg_header.jpg" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\js\google-map.js" />
+    <Content Include="assets\js\headroom.min.js" />
+    <Content Include="assets\js\html5shiv.js" />
+    <Content Include="assets\js\jQuery.headroom.min.js" />
+    <Content Include="assets\js\respond.min.js" />
+    <Content Include="assets\js\template.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -215,6 +228,10 @@
       <LastGenOutput>Resource.ru.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -244,14 +261,12 @@
     <Content Include="Views\Account\LogIn.cshtml" />
     <Content Include="Views\Profile\UserPage.cshtml" />
     <Content Include="Views\Profile\TakeBike.cshtml" />
+    <Content Include="Views\Profile\UserOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />

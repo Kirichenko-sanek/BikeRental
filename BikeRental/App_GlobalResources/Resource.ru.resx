@@ -120,6 +120,21 @@
   <data name="EmailNotRegistered" xml:space="preserve">
     <value>Этот электронный адрес не зарегистрирован</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>LogIn</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>LogOff</value>
+  </data>
+  <data name="MyOrders" xml:space="preserve">
+    <value>My Orders</value>
+  </data>
+  <data name="TakeBike" xml:space="preserve">
+    <value>Take Bike</value>
+  </data>
   <data name="WrongPassword" xml:space="preserve">
     <value>Неверный пароль</value>
   </data>

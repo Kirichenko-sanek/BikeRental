@@ -1,1 +1,18 @@
-﻿
+﻿@using BikeRental.App_GlobalResources
+<div id="head">
+    <div class="container">
+        <div class="row">
+            <h1 class="lead" style="color: #1f1c1c">Hello</h1>
+            @if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                <p><h2 style="color: #1f1c1c"> Чтобы арендовать велосипед необходимо авторизироваться</h2></p>
+            }
+            else
+            {
+                <p>
+                    @Html.ActionLink(Resource.TakeBike, "TakeBike", "Profile", null, new { @class = "btn btn-action btn-lg", @role = "button"})
+                </p>
+            }         
+        </div>
+    </div>
+</div>

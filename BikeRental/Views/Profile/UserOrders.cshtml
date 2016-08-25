@@ -1,0 +1,11 @@
+﻿@model BikeRental.ViewModel.UserOrdersPageViewModel
+@{
+    ViewBag.Title = "UserOrders";
+}
+
+<h2>UserOrders</h2>
+
+@foreach (var order in Model.UserOrders)
+{
+    <h2>@order.TimeStart</h2>
+}

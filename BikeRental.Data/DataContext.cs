@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using BikeRental.BL;
 using BikeRental.Core;
 using BikeRental.Data.Mapping;
+using Type = BikeRental.Core.Type;
 
 namespace BikeRental.Data
 {
@@ -65,7 +67,15 @@ namespace BikeRental.Data
                 {
                     new Type()
                     {
-                        NameType = "Bikee"
+                        NameType = "Mountain bike"
+                    },
+                    new Type()
+                    {
+                        NameType = "Road bike"
+                    },
+                    new Type()
+                    {
+                        NameType = "City bike"
                     }
                 };
                 foreach (var type in types) context.Types.Add(type);
@@ -97,14 +107,14 @@ namespace BikeRental.Data
                 {
                     new Bike()
                     {
-                        Sex = "M",
+                        Sex = "Men",
                         Price = 50,
                         IdType = 1,
                         IdPhoto = 1
                     },
                     new Bike()
                     {
-                        Sex = "W",
+                        Sex = "Women",
                         Price = 50,
                         IdType = 1,
                         IdPhoto = 1
@@ -113,15 +123,31 @@ namespace BikeRental.Data
                 foreach (var bike in bikes) context.Bikes.Add(bike);
                 context.SaveChanges();
 
-                /*var orders = new List<Order>
+                var orders = new List<Order>
                 {
                     new Order()
                     {
-                        
+                        IdUser = 1,
+                        IdBike = 1,
+                        DateOrder = DateTime.Now,
+                        TimeStart = DateTime.Now.AddHours(2),
+                        TimeEnd = DateTime.Now.AddHours(5),
+                        Status = true,
+                        TotalPrice = 150
+                    },
+                    new Order()
+                    {
+                        IdUser = 1,
+                        IdBike = 2,
+                        DateOrder = DateTime.Now,
+                        TimeStart = DateTime.Now.AddHours(2),
+                        TimeEnd = DateTime.Now.AddHours(5),
+                        Status = true,
+                        TotalPrice = 150
                     }
                 };
                 foreach (var order in orders) context.Orders.Add(order);
-                context.SaveChanges();*/
+                context.SaveChanges();
                 
 
                 base.Seed(context);

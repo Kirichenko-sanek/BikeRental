@@ -6,6 +6,7 @@ namespace BikeRental.Interfases.Repository
     public interface IOrderRepository<T> : IRepository<T> where T : Order
     {
         IQueryable<Order> GetActivOrders();
-        IQueryable<Order> GetOrdersOfBike(long id);
+        IQueryable<Order> GetOrdersByBike(long id);
+        IQueryable<Order> GetOrdersByUser(long id);
     }
 }

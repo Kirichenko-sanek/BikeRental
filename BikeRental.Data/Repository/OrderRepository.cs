@@ -16,9 +16,14 @@ namespace BikeRental.Data.Repository
             return _context.Orders.Where(x => x.Status);
         }
 
-        public IQueryable<Order> GetOrdersOfBike(long id)
+        public IQueryable<Order> GetOrdersByBike(long id)
         {
             return _context.Orders.Where(x => (x.IdBike == id && x.Status));
+        }
+
+        public IQueryable<Order> GetOrdersByUser(long id)
+        {
+            return _context.Orders.Where(x => (x.IdUser == id && x.Status));
         }
     }
 }

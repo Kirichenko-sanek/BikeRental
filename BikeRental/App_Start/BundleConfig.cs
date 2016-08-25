@@ -19,12 +19,15 @@ namespace BikeRental
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/assets/js/headroom.min.js",
+                      "~/assets/js/jQuery.headroom.min.js",
+                      "~/assets/js/template.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/assets/css/bootstrap.min.css",
+                      "~/assets/css/font-awesome.min.css",
+                      "~/assets/css/bootstrap-theme.css",
+                      "~/assets/css/main.css"));
         }
     }
 }

@@ -1,19 +1,38 @@
-﻿
+﻿@using BikeRental.App_GlobalResources
 @model BikeRental.ViewModel.LoginViewModel
 @{
-    ViewBag.Title = "LogIn";
+    ViewBag.Title = Resource.LogIn;
 }
 
-<h2>LogIn</h2>
-<div>
-    @using (Html.BeginForm("LogIn", "Account", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
-        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email" } })
-        <p>@Html.ValidationMessageFor(model => model.Email, "", new { @class = "" })</p>
-        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @placeholder = "Password" } })
-        <p>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "" })</p>
-
-        <input type="submit" id="login" value="Login">
-    }
+<header id="head" class="secondary"></header>
+<div class="container">
+    <div class="row">
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">@Resource.LogIn</h1>
+            </header>
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        @using (Html.BeginForm("LogIn", "Account", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="top-margin">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class="form-control", @placeholder = "Email" } })
+                                <p>@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="top-margin">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password", @placeholder = "Password" } })
+                                <p>@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="@Resource.LogIn"class="btn btn-action btn-lg" style="width: 100%">
+                            </div>
+                          
+                        }
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
 </div>

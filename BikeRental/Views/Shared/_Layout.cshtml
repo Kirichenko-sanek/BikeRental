@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using BikeRental.App_GlobalResources
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,16 +8,59 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body class="home">
+<div class="navbar navbar-inverse navbar-fixed-top headroom">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="/Views/Home/Index.cshtml"><img src="/assets/images/logo.png" alt="Progressus HTML5 template"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    @Html.ActionLink(@Resource.Home, "Index", "Home")
+                </li>
+                <li>
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink(Resource.TakeBike, "TakeBike", "Profile")
+                    }
+                </li>
+                <li>
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink(Resource.MyOrders, "UserOrders", "Profile", new { id = Session["UserId"] }, null)
+                    }
+                </li>
+                <li>
+                    @if (!HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink(Resource.LogIn, "LogIn", "Account", null, new { @class = "btn" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink(Resource.LogOff, "LogOff", "Account", null, new { @class = "btn" })
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
     
-    @Html.ActionLink("LogIn","LogIn","Account")
-    @Html.ActionLink("TakeBike","TakeBike","Profile")
+
+    
+    
+    
+
+
+
+
 
 @RenderBody()
-       
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
 </body>
 </html>

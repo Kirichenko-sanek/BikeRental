@@ -40,7 +40,8 @@ namespace BikeRental.Controllers
                 if (user.Password != pass) throw new Exception(Resource.WrongPassword);
                 if (!user.IsActivated) throw new Exception();
                 FormsAuthentication.SetAuthCookie(user.Email, false);
-                return RedirectToAction("UserPage", "Profile", user.Id);
+                Session["UserId"] = user.Id;
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception e)
             {
@@ -48,6 +49,12 @@ namespace BikeRental.Controllers
                 return View(model);
             }
             
+        }
+
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

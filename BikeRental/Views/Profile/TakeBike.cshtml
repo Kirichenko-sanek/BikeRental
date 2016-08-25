@@ -4,26 +4,59 @@
     ViewBag.Title = "TakeBike";
 }
 
-<h2>TakeBike</h2>
+<header id="head" class="secondary"></header>
 
 
 @using (Html.BeginForm("TakeBike", "Profile", new {userId = userInSystem}, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div>
-        @foreach (var type in Model.Types)
-        {
-            <h1>@Html.RadioButtonFor(model => model.SelectType, @type.NameType, null) @type.NameType</h1>
-        }
+    <div class="jumbotron top-space">
+        <div class="container">
+            <h3 class="text-center thin">Время Аренды</h3>
+            <div class="row">
+                <div class="col-md-3 "></div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        @Html.TextBoxFor(model => model.TimeStart, new {type = "datetime-local"})<h4>Время начала</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        @Html.TextBoxFor(model => model.TimeEnd, new {type = "datetime-local"})<h4>Время окончания</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 "></div>
+            </div>
+
+            <h3 class="text-center thin">Тип Велосипеда</h3>
+            <div class="row">
+                @foreach (var type in Model.Types)
+                {
+
+                    <div class="col-md-3 col-sm-6 highlight">
+                        <div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>@Html.RadioButtonFor(model => model.SelectType, @type.NameType, null) @type.NameType</h4>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+            <h3 class="text-center thin">Sex</h3>
+            <div class="row">
+                <div class="col-md-3 "></div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <h4>@Html.RadioButtonFor(model => model.SelectSex, "Men", null) Men</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <h4>@Html.RadioButtonFor(model => model.SelectSex, "Women", null) Women</h4>
+                    </div>
+                </div>
+                <div class="col-md-3 "></div>
+            </div>
+            <input type="submit" value="TakeBike" class="btn btn-action btn-lg" style="width: 100%">
+        </div>
     </div>
 
-    <div>
-        <h1>@Html.RadioButtonFor(model => model.SelectSex, "M", null) M</h1>
-        <h1>@Html.RadioButtonFor(model => model.SelectSex, "W", null) W</h1>
-    </div>
-    <br /><br /><br /><br />
-    <div>
-        @Html.TextBoxFor(model => model.TimeStart, new { type = "datetime-local" })
-        @Html.TextBoxFor(model => model.TimeEnd, new { type = "datetime-local" })
-    </div>
-    <input type="submit" value="TakeBike">
 }

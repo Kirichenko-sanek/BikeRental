@@ -31,7 +31,7 @@ namespace BikeRental.BL
             }
             foreach (var bike in bikeList)
             {
-                orderList = _orderManager.GetOrdersOfBike(bike.Id);
+                orderList = _orderManager.GetOrdersByBike(bike.Id);
                 if(!orderList.Any()) oneBike = bike;
                 foreach (var order in orderList)
                 {
