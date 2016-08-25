@@ -57,7 +57,15 @@ namespace BikeRental.Data
                 {
                     new Photo()
                     {
-                        Url = "111"
+                        Url = "/assets/images/Bikes/1.jpg"
+                    },
+                    new Photo()
+                    {
+                        Url = "/assets/images/Bikes/2.jpg"
+                    },
+                    new Photo()
+                    {
+                        Url = "/assets/images/Bikes/3.jpg"
                     }
                 };
                 foreach (var photo in photos) context.Photos.Add(photo);

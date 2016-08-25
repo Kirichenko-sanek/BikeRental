@@ -61,6 +61,51 @@ namespace BikeRental.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before the end of the order remains.
+        /// </summary>
+        public static string BeforeEnd {
+            get {
+                return ResourceManager.GetString("BeforeEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Before the start of the order remains.
+        /// </summary>
+        public static string BeforeStart {
+            get {
+                return ResourceManager.GetString("BeforeStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date Order.
+        /// </summary>
+        public static string DateOrder {
+            get {
+                return ResourceManager.GetString("DateOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This Email is not registered.
         /// </summary>
         public static string EmailNotRegistered {
@@ -106,11 +151,47 @@ namespace BikeRental.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NotActive.
+        /// </summary>
+        public static string NotActive {
+            get {
+                return ResourceManager.GetString("NotActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Take Bike.
         /// </summary>
         public static string TakeBike {
             get {
                 return ResourceManager.GetString("TakeBike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time End.
+        /// </summary>
+        public static string TimeEnd {
+            get {
+                return ResourceManager.GetString("TimeEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Start.
+        /// </summary>
+        public static string TimeStart {
+            get {
+                return ResourceManager.GetString("TimeStart", resourceCulture);
             }
         }
         

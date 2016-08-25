@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="BeforeEnd" xml:space="preserve">
+    <value>Before the end of the order remains</value>
+  </data>
+  <data name="BeforeStart" xml:space="preserve">
+    <value>Before the start of the order remains</value>
+  </data>
+  <data name="DateOrder" xml:space="preserve">
+    <value>Date Order</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="EmailNotRegistered" xml:space="preserve">
     <value>Этот электронный адрес не зарегистрирован</value>
   </data>
@@ -132,8 +147,20 @@
   <data name="MyOrders" xml:space="preserve">
     <value>My Orders</value>
   </data>
+  <data name="NotActive" xml:space="preserve">
+    <value>NotActive</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
   <data name="TakeBike" xml:space="preserve">
     <value>Take Bike</value>
+  </data>
+  <data name="TimeEnd" xml:space="preserve">
+    <value>Time End</value>
+  </data>
+  <data name="TimeStart" xml:space="preserve">
+    <value>Time Start</value>
   </data>
   <data name="WrongPassword" xml:space="preserve">
     <value>Неверный пароль</value>

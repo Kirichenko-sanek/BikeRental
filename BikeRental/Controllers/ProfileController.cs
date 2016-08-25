@@ -100,7 +100,12 @@ namespace BikeRental.Controllers
             }
         }
 
-
+        public ActionResult DeleteOrder(long id)
+        {
+            var order = _orderManager.GetById(id);
+            _orderManager.Delete(order);
+            return RedirectToRoute("UserOrders");
+        }
 
 
 
