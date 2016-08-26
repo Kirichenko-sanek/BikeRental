@@ -150,6 +150,15 @@
   <data name="NotActive" xml:space="preserve">
     <value>NotActive</value>
   </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PriceOrder" xml:space="preserve">
+    <value>Price Order</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>

@@ -17,8 +17,8 @@ namespace BikeRental.Data.Repository
             return
                 _context.Bikes.Where(
                     x =>
-                        (x.Type.NameType == type && x.Sex == sex) ||
-                        (x.Type.NameType == type || x.Sex == sex));
+                        (x.Type.NameType == type && x.Sex == sex && x.Status) ||
+                        (x.Type.NameType == type || x.Sex == sex && x.Status));
         }
     }
 }

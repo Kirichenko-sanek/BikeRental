@@ -42,6 +42,12 @@
                         @Html.ActionLink(Resource.LogOff, "LogOff", "Account", null, new { @class = "btn" })
                     }
                 </li>
+                <li>
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink("AddBike", "AddBike", "Admin")
+                    }
+                </li>
             </ul>
         </div>
     </div>

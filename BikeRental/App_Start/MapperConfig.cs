@@ -15,6 +15,7 @@ namespace BikeRental.App_Start
                 cfg.CreateMap<Type, TypeViewModel>().AfterMap((p, m) =>
                 {
                     m.NameType = p.NameType;
+                    m.IdType = p.Id;
                 });
                 cfg.CreateMap<TakeBikeViewModel, Order>().AfterMap((p, m) =>
                 {
@@ -35,7 +36,16 @@ namespace BikeRental.App_Start
                     m.BeforeStart = p.TimeStart >= DateTime.Now ? p.TimeStart.Subtract(DateTime.Now) : TimeSpan.Zero;
                     m.BeforeEnd = p.TimeEnd >= DateTime.Now ? p.TimeEnd.Subtract(DateTime.Now) : TimeSpan.Zero;
                     m.Photo = p.Bike.Photo.Url;
+                    m.PriceOrder = p.TotalPrice;
                 });
+                cfg.CreateMap<AddBikeViewModel, Bike>().AfterMap((p, m) =>
+                {
+                    m.Sex = p.Bike.Sex;
+                    m.Price = p.Bike.Price;
+                    m.IdType = p.Bike.IdType;
+                    m.Status = true;
+                });
+                cfg.CreateMap<Bike, AddBikeViewModel>();
             });
         }
 

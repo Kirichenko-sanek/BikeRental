@@ -8,6 +8,7 @@ namespace BikeRental.Core
         public decimal Price { get; set; }
         public long IdPhoto { get; set; }
         public long IdType { get; set; }
+        public bool Status { get; set; }
 
         public virtual Type Type { get; set; }
         public virtual Photo Photo { get; set; }

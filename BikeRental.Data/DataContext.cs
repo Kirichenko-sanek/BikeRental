@@ -118,14 +118,16 @@ namespace BikeRental.Data
                         Sex = "Men",
                         Price = 50,
                         IdType = 1,
-                        IdPhoto = 1
+                        IdPhoto = 1,
+                        Status = true
                     },
                     new Bike()
                     {
                         Sex = "Women",
                         Price = 50,
                         IdType = 1,
-                        IdPhoto = 1
+                        IdPhoto = 1,
+                        Status = true
                     }
                 };
                 foreach (var bike in bikes) context.Bikes.Add(bike);

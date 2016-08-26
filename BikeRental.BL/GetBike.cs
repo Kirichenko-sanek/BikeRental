@@ -23,7 +23,7 @@ namespace BikeRental.BL
             Bike oneBike = null;
             if (type == null && sex == null)
             {
-                bikeList = _bikeManager.GetAll();
+                bikeList = _bikeManager.GetAll().Where(x=>x.Status);
             }
             else
             {
