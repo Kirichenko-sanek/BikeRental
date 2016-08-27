@@ -70,6 +70,15 @@ namespace BikeRental.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Bike.
+        /// </summary>
+        public static string AddBike {
+            get {
+                return ResourceManager.GetString("AddBike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Before the end of the order remains.
         /// </summary>
         public static string BeforeEnd {
@@ -84,6 +93,15 @@ namespace BikeRental.App_GlobalResources {
         public static string BeforeStart {
             get {
                 return ResourceManager.GetString("BeforeStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bikes.
+        /// </summary>
+        public static string Bikes {
+            get {
+                return ResourceManager.GetString("Bikes", resourceCulture);
             }
         }
         
@@ -187,6 +205,42 @@ namespace BikeRental.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select the price.
+        /// </summary>
+        public static string SelectThePrise {
+            get {
+                return ResourceManager.GetString("SelectThePrise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the sex.
+        /// </summary>
+        public static string SelectTheSex {
+            get {
+                return ResourceManager.GetString("SelectTheSex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the type.
+        /// </summary>
+        public static string SelectTheType {
+            get {
+                return ResourceManager.GetString("SelectTheType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sex.
+        /// </summary>
+        public static string Sex {
+            get {
+                return ResourceManager.GetString("Sex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string Status {
@@ -219,6 +273,15 @@ namespace BikeRental.App_GlobalResources {
         public static string TimeStart {
             get {
                 return ResourceManager.GetString("TimeStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
             }
         }
         

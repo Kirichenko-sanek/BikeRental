@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using BikeRental.Validators;
+using FluentValidation.Attributes;
+
 
 namespace BikeRental.ViewModel
 {

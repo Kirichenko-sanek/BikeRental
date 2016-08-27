@@ -45,7 +45,15 @@ namespace BikeRental.App_Start
                     m.IdType = p.Bike.IdType;
                     m.Status = true;
                 });
-                cfg.CreateMap<Bike, AddBikeViewModel>();
+                cfg.CreateMap<Bike, BikeViewModel>().AfterMap((p, m) =>
+                {
+                    m.Sex = p.Sex;
+                    m.Price = p.Price;
+                    m.Status = p.Status;
+                    m.IdBike = p.Id;
+                    m.Type = p.Type.NameType;
+                    m.Photo = p.Photo.Url;
+                });
             });
         }
 

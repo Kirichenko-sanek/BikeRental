@@ -104,6 +104,17 @@ namespace BikeRental.Data
                         IsActivated = true,
                         IdRole = 1,
                         IdPhoto = 1
+                    },
+                    new User()
+                    {
+                        FirstName = "Alexander",
+                        LastName = "Kirichenko",
+                        Password = pass,
+                        PasswordSalt = salt,
+                        Email = "kirichenko-sanek11@mail.ru",
+                        IsActivated = true,
+                        IdRole = 2,
+                        IdPhoto = 1
 
                     }
                 };

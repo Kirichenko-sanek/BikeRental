@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddPhotos.cs" />
+    <Compile Include="DeleteBike.cs" />
     <Compile Include="EditOrder.cs" />
     <Compile Include="GetBike.cs" />
     <Compile Include="Manager\BikeManager.cs" />

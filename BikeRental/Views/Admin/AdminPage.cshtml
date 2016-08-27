@@ -1,7 +1,9 @@
-﻿
+﻿@using BikeRental.App_GlobalResources
 @{
     ViewBag.Title = "AdminPage";
 }
 
+<header id="head" class="secondary"></header>
 <h2>AdminPage</h2>
-
+@Html.ActionLink(Resource.AddBike, "AddBike", "Admin")
+@Html.ActionLink(Resource.Bikes, "ListBike", "Admin")

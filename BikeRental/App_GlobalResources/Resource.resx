@@ -120,11 +120,17 @@
   <data name="Active" xml:space="preserve">
     <value>Active</value>
   </data>
+  <data name="AddBike" xml:space="preserve">
+    <value>Add Bike</value>
+  </data>
   <data name="BeforeEnd" xml:space="preserve">
     <value>Before the end of the order remains</value>
   </data>
   <data name="BeforeStart" xml:space="preserve">
     <value>Before the start of the order remains</value>
+  </data>
+  <data name="Bikes" xml:space="preserve">
+    <value>Bikes</value>
   </data>
   <data name="DateOrder" xml:space="preserve">
     <value>Date Order</value>
@@ -159,6 +165,18 @@
   <data name="PriceOrder" xml:space="preserve">
     <value>Price Order</value>
   </data>
+  <data name="SelectThePrise" xml:space="preserve">
+    <value>Select the price</value>
+  </data>
+  <data name="SelectTheSex" xml:space="preserve">
+    <value>Select the sex</value>
+  </data>
+  <data name="SelectTheType" xml:space="preserve">
+    <value>Select the type</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>Sex</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -170,6 +188,9 @@
   </data>
   <data name="TimeStart" xml:space="preserve">
     <value>Time Start</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
   </data>
   <data name="WrongPassword" xml:space="preserve">
     <value>Wrong Password</value>
