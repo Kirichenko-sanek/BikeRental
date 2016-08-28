@@ -54,6 +54,16 @@ namespace BikeRental.App_Start
                     m.Type = p.Type.NameType;
                     m.Photo = p.Photo.Url;
                 });
+                cfg.CreateMap<EditBikeViewModel, Bike>().AfterMap((p, m) =>
+                {
+                    m.Sex = p.Bike.Sex;
+                    m.Price = p.Bike.Price;
+                    m.IdType = p.Bike.IdType;
+                });
+                cfg.CreateMap<AddTypeViewModel, Type>().AfterMap((p, m) =>
+                {
+                    m.NameType = p.NameType;
+                });
             });
         }
 

@@ -1,4 +1,5 @@
-﻿using BikeRental.ViewModel;
+﻿using BikeRental.App_GlobalResources;
+using BikeRental.ViewModel;
 using FluentValidation;
 
 namespace BikeRental.Validators
@@ -7,8 +8,12 @@ namespace BikeRental.Validators
     {
         public LoginViewModelValidator()
         {
-            RuleFor(p => p.Email).NotEmpty().WithMessage("jk").EmailAddress().WithMessage("kll");
-            RuleFor(p => p.Password).NotEmpty().WithMessage("kl");
+            RuleFor(p => p.Email)
+                .NotEmpty()
+                .WithMessage(Resource.FieldCannotBeEmpty)
+                .EmailAddress()
+                .WithMessage(Resource.WrongFormatEmail);
+            RuleFor(p => p.Password).NotEmpty().WithMessage(Resource.FieldCannotBeEmpty);
         }
     }
 }

@@ -21,7 +21,8 @@
     }
 
     @Html.ActionLink(Resource.Delete, "DeleteBike", "Admin", new {id = bike.IdBike}, new {@class = "btn btn-action btn-lg", @role = "button"})
-    <br/>
-    <br/>
+    @Html.ActionLink(Resource.EditStatus, "EditStatus", "Admin", new { id = bike.IdBike }, new { @class = "btn btn-action btn-lg", @role = "button" })
+    @Html.ActionLink(Resource.Edit, "EditBike", "Admin", new { id = bike.IdBike }, new { @class = "btn btn-action btn-lg", @role = "button" })
+    
     <br/><br /><br /><br /><br /><br />
 }

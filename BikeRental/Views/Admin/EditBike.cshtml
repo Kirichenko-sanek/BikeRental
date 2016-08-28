@@ -1,16 +1,15 @@
 ﻿@using BikeRental.App_GlobalResources
-@model BikeRental.ViewModel.AddBikeViewModel
-
+@model BikeRental.ViewModel.EditBikeViewModel
 @{
-        ViewBag.Title = "AddBike";
+    ViewBag.Title = "EditBike";
 }
 
 <header id="head" class="secondary"></header>
 
-@using (Html.BeginForm("AddBike", "Admin", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("EditBike", "Admin", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(model => Model.Types)
+    @Html.HiddenFor(model => Model.Bike.IdBike)
     <div class="jumbotron top-space">
         <div class="container">
             <h3 class="text-center thin">Тип Велосипеда</h3>
@@ -24,7 +23,7 @@
                         </div>
 
                     </div>
-                }                
+                }
                 <p>@Html.ValidationMessageFor(model => model.Bike.IdType, "", new { @class = "text-danger" })</p>
             </div>
 
@@ -44,7 +43,7 @@
                 <div class="col-md-3 "></div>
                 <p>@Html.ValidationMessageFor(model => model.Bike.Sex, "", new { @class = "text-danger" })</p>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-3 "></div>
                 <div class="col-md-3 col-sm-3 highlight">
@@ -61,8 +60,9 @@
                 </div>
                 <div class="col-md-3 "></div>
             </div>
-            <input type="submit" value="@Resource.AddBike" class="btn btn-action btn-lg" style="width: 100%">
+            <input type="submit" value="@Resource.Edit" class="btn btn-action btn-lg" style="width: 100%">
         </div>
     </div>
-    
+
 }
+

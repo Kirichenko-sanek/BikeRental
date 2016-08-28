@@ -186,10 +186,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\AddTypeViewModelValidator.cs" />
     <Compile Include="Validators\BikeViewModelValidator.cs" />
     <Compile Include="Validators\LoginViewModelValidator.cs" />
     <Compile Include="ViewModel\AddBikeViewModel.cs" />
+    <Compile Include="ViewModel\AddTypeViewModel.cs" />
     <Compile Include="ViewModel\BikeViewModel.cs" />
+    <Compile Include="ViewModel\EditBikeViewModel.cs" />
     <Compile Include="ViewModel\ListBikeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\OrderViewModel.cs" />
@@ -274,6 +277,8 @@
     <Content Include="Views\Admin\AddBike.cshtml" />
     <Content Include="Views\Shared\Bikes.cshtml" />
     <Content Include="Views\Admin\ListBike.cshtml" />
+    <Content Include="Views\Admin\EditBike.cshtml" />
+    <Content Include="Views\Admin\AddType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

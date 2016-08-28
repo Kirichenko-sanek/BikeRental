@@ -79,6 +79,15 @@ namespace BikeRental.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Type.
+        /// </summary>
+        public static string AddType {
+            get {
+                return ResourceManager.GetString("AddType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Before the end of the order remains.
         /// </summary>
         public static string BeforeEnd {
@@ -124,11 +133,38 @@ namespace BikeRental.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Status.
+        /// </summary>
+        public static string EditStatus {
+            get {
+                return ResourceManager.GetString("EditStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This Email is not registered.
         /// </summary>
         public static string EmailNotRegistered {
             get {
                 return ResourceManager.GetString("EmailNotRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field Cannot Be Empty.
+        /// </summary>
+        public static string FieldCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("FieldCannotBeEmpty", resourceCulture);
             }
         }
         
@@ -282,6 +318,15 @@ namespace BikeRental.App_GlobalResources {
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong Format Email.
+        /// </summary>
+        public static string WrongFormatEmail {
+            get {
+                return ResourceManager.GetString("WrongFormatEmail", resourceCulture);
             }
         }
         

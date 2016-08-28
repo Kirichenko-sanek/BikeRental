@@ -5,5 +5,6 @@
 
 <header id="head" class="secondary"></header>
 <h2>AdminPage</h2>
-@Html.ActionLink(Resource.AddBike, "AddBike", "Admin")
-@Html.ActionLink(Resource.Bikes, "ListBike", "Admin")
+@Html.ActionLink(Resource.AddBike, "AddBike", "Admin",null, new { @class = "btn btn-action btn-lg", @role = "button" })
+@Html.ActionLink(Resource.Bikes, "ListBike", "Admin",null, new { @class = "btn btn-action btn-lg", @role = "button" })
+@Html.ActionLink(Resource.AddType, "AddType", "Admin", null, new { @class = "btn btn-action btn-lg", @role = "button" })
