@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Security;
-using BikeRental.App_GlobalResources;
 using BikeRental.BL;
 using BikeRental.Core;
 using BikeRental.Filters;
-using BikeRental.Interfases;
 using BikeRental.Interfases.Manager;
+using BikeRental.Resources.App_GlobalResources;
 using BikeRental.ViewModel;
 
 namespace BikeRental.Controllers
@@ -32,23 +31,14 @@ namespace BikeRental.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogIn(LoginViewModel model)
         {
-            try
+            var login = _userManager.LogIn(model);
+
+            if (login.Error != null)
             {
-                var user = _userManager.GetUserByEmail(model.Email);
-                if (user == null) throw new Exception(Resource.EmailNotRegistered);
-                var pass = PasswordHashing.HashPassword(model.Password, user.PasswordSalt);
-                if (user.Password != pass) throw new Exception(Resource.WrongPassword);
-                if (!user.IsActivated) throw new Exception();
-                FormsAuthentication.SetAuthCookie(user.Email, false);
-                Session["UserId"] = user.Id;
-                return RedirectToAction("Index", "Home");
+                return View(login);
             }
-            catch (Exception e)
-            {
-                model.Error = e.Message;
-                return View(model);
-            }
-            
+            Session["UserId"] = login.IdUser;
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult LogOff()

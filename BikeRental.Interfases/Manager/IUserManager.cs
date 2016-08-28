@@ -1,9 +1,10 @@
 ﻿using BikeRental.Core;
+using BikeRental.ViewModel;
 
 namespace BikeRental.Interfases.Manager
 {
     public interface IUserManager<T> : IManager<T> where T : User
     {
-        User GetUserByEmail(string email);
+        LoginViewModel LogIn(LoginViewModel model);
     }
 }

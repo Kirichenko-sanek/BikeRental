@@ -1,0 +1,13 @@
+D:\!!Sasha\BikeRental\BikeRental.Resources\bin\Debug\BikeRental.Resources.dll
+D:\!!Sasha\BikeRental\BikeRental.Resources\bin\Debug\BikeRental.Resources.pdb
+D:\!!Sasha\BikeRental\BikeRental.Resources\bin\Debug\en\BikeRental.Resources.resources.dll
+D:\!!Sasha\BikeRental\BikeRental.Resources\bin\Debug\ru\BikeRental.Resources.resources.dll
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.csprojResolveAssemblyReference.cache
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.App_GlobalResources.Resource.resources
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.App_GlobalResources.Resource.en.resources
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.App_GlobalResources.Resource.ru.resources
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.csproj.GenerateResource.Cache
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\en\BikeRental.Resources.resources.dll
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\ru\BikeRental.Resources.resources.dll
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.dll
+D:\!!Sasha\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.pdb

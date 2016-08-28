@@ -58,6 +58,10 @@
       <Project>{29e96058-c863-4817-a792-038cfc926f14}</Project>
       <Name>BikeRental.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BikeRental.ViewModel\BikeRental.ViewModel.csproj">
+      <Project>{bfef316e-17a4-4ed4-8823-f01ea11ec974}</Project>
+      <Name>BikeRental.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

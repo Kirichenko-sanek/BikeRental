@@ -1,28 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web.Mvc;
+using System.Web.Security;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.Interfases.Repository;
 using BikeRental.Interfases.Validator;
+using BikeRental.ViewModel;
+using BikeRental.Resources.App_GlobalResources;
 
 namespace BikeRental.BL.Manager
 {
     public class UserManager<T> : Manager<T>, IUserManager<T> where T : User
     {
-        private readonly IUserRepository<User> _userRepository;
 
-        public UserManager(IUserRepository<User> userRepository, IRepository<T> repository, IValidator<T> validator)
+        public UserManager(IRepository<T> repository, IValidator<T> validator)
             : base(repository, validator)
         {
-            _userRepository = userRepository;
         }
 
-        public User GetUserByEmail(string email)
+        public LoginViewModel LogIn(LoginViewModel model)
+        {
+            try
+            {
+                var user = GetAll().FirstOrDefault(x => x.Email == model.Email);
+                if (user == null) throw new Exception(Resource.EmailNotRegistered);
+                var pass = PasswordHashing.HashPassword(model.Password, user.PasswordSalt);
+                if (user.Password != pass) throw new Exception(Resource.WrongPassword);
+                if (!user.IsActivated) throw new Exception();               
+                FormsAuthentication.SetAuthCookie(user.Email, false);
+                model.IdUser = user.Id;
+                return model;
+            }
+            catch (Exception e)
+            {
+                model.Error = e.Message;
+                return model;
+            }
+            
+        }
+
+
+        /* public User GetUserByEmail(string email)
         {
             return _userRepository.GetUserByEmail(email);
-        }
+        }*/
     }
 }
