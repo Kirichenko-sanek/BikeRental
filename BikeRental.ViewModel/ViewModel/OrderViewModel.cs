@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BikeRental.ViewModel
+namespace BikeRental.ViewModel.ViewModel
 {
     public class OrderViewModel
     {

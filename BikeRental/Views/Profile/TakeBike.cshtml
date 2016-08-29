@@ -1,4 +1,4 @@
-﻿@model BikeRental.ViewModel.TakeBikeViewModel
+﻿@model BikeRental.ViewModel.ViewModel.TakeBikeViewModel
 @{ long userInSystem = Convert.ToInt64(Session["UserId"]);}
 @{
     ViewBag.Title = "TakeBike";
@@ -33,7 +33,7 @@
                 {
 
                     <div class="col-md-3 col-sm-6 highlight">
-                        <div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>@Html.RadioButtonFor(model => model.SelectType, @type.NameType, null) @type.NameType</h4>
+                        <div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>@Html.RadioButtonFor(model => model.SelectType, @type.IdType, null) @type.NameType</h4>
                         </div>
 
                     </div>

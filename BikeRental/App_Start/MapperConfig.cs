@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using BikeRental.Core;
-using BikeRental.ViewModel;
+using BikeRental.ViewModel.ViewModel;
 using Type = BikeRental.Core.Type;
 
 namespace BikeRental.App_Start

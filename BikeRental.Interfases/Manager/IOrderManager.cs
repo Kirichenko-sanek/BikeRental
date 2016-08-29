@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using BikeRental.Core;
-using BikeRental.ViewModel;
+using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.Interfases.Manager
 {

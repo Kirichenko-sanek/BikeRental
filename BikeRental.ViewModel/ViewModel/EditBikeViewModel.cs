@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BikeRental.ViewModel
+namespace BikeRental.ViewModel.ViewModel
 {
     public class EditBikeViewModel
     {

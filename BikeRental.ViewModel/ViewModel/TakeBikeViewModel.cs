@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BikeRental.ViewModel
+namespace BikeRental.ViewModel.ViewModel
 {
     public class TakeBikeViewModel
     {
@@ -11,7 +11,7 @@ namespace BikeRental.ViewModel
         public DateTime TimeStart { get; set; }
         public DateTime TimeEnd { get; set; }
         public DateTime DateOrder { get; set; }
-        public string SelectType { get; set; }
+        public long SelectType { get; set; }
         public string SelectSex { get; set; }
         public string Error { get; set; }
         

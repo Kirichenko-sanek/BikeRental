@@ -6,7 +6,7 @@ using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.Interfases.Repository;
 using BikeRental.Interfases.Validator;
-using BikeRental.ViewModel;
+using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.BL.Manager
 {

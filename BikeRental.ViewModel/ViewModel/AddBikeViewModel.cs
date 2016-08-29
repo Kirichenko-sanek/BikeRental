@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using BikeRental.Validators;
-using FluentValidation.Attributes;
 
-
-namespace BikeRental.ViewModel
+namespace BikeRental.ViewModel.ViewModel
 {
     public class AddBikeViewModel
     {

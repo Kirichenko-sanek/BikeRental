@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web;
 using BikeRental.Core;
-using BikeRental.ViewModel;
+using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.Interfases.Manager
 {
@@ -15,7 +15,5 @@ namespace BikeRental.Interfases.Manager
         EditBikeViewModel EditBikeGet(long id);
         void EditBikePost(EditBikeViewModel model, HttpPostedFileBase upload, string url);
         TakeBikeViewModel TakeBike(TakeBikeViewModel model, long userId);
-
-        //IQueryable<Bike> SerchBikes(string type, string sex);
     }
 }

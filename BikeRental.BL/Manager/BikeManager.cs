@@ -7,7 +7,7 @@ using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.Interfases.Repository;
 using BikeRental.Interfases.Validator;
-using BikeRental.ViewModel;
+using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.BL.Manager
 {
@@ -107,16 +107,19 @@ namespace BikeRental.BL.Manager
                 IQueryable<Bike> bikeList;
                 IQueryable<Order> orderList;
                 Bike oneBike = null;
-                if (model.SelectType == null && model.SelectSex == null)
+                if (model.SelectType == 0 && model.SelectSex == null)
                 {
                     bikeList = GetAll().Where(x => x.Status);
                 }
+                if (model.SelectType != 0 && model.SelectSex != null)
+                {
+                    bikeList =
+                        GetAll().Where(x => (x.Type.Id == model.SelectType && x.Sex == model.SelectSex && x.Status));
+                }
                 else
                 {
-                    bikeList = GetAll().Where(
-                        x =>
-                            (x.Type.NameType == model.SelectType && x.Sex == model.SelectSex && x.Status) ||
-                            (x.Type.NameType == model.SelectType || x.Sex == model.SelectSex && x.Status));
+                    bikeList =
+                        GetAll().Where(x => (x.Type.Id == model.SelectType || x.Sex == model.SelectSex && x.Status));
                 }
                 
                 foreach (var bike in bikeList)

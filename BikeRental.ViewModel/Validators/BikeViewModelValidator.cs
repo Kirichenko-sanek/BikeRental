@@ -1,8 +1,8 @@
 ﻿using BikeRental.Resources.App_GlobalResources;
-using BikeRental.ViewModel;
+using BikeRental.ViewModel.ViewModel;
 using FluentValidation;
 
-namespace BikeRental.Validators
+namespace BikeRental.ViewModel.Validators
 {
     public class BikeViewModelValidator : AbstractValidator<BikeViewModel>
     {

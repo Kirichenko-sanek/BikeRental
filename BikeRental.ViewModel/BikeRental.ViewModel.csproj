@@ -62,7 +62,6 @@
     <Compile Include="ViewModel\TakeBikeViewModel.cs" />
     <Compile Include="ViewModel\TypeViewModel.cs" />
     <Compile Include="ViewModel\UserOrdersPageViewModel.cs" />
-    <Compile Include="ViewModel\UserPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

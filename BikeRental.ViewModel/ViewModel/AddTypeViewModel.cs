@@ -1,7 +1,7 @@
-﻿using BikeRental.Validators;
+﻿using BikeRental.ViewModel.Validators;
 using FluentValidation.Attributes;
 
-namespace BikeRental.ViewModel
+namespace BikeRental.ViewModel.ViewModel
 {
     [Validator(typeof(AddTypeViewModelValidator))]
     public class AddTypeViewModel

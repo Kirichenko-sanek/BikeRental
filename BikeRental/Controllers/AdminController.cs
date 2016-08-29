@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
-using BikeRental.ViewModel;
+using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.Controllers
 {
