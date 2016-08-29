@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
-using AutoMapper;
-using BikeRental.BL;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.ViewModel;
@@ -34,14 +31,8 @@ namespace BikeRental.Controllers
         [HttpGet]
         public ActionResult AddBike(AddBikeViewModel model)
         {
-            var types = new List<TypeViewModel>();
-            var typesList = _typeManager.GetAll();
-            foreach (var type in typesList)
-            {
-                types.Add(Mapper.Map<Core.Type, TypeViewModel>(type));
-            }
-            model.Types = types;
-            return View(model);
+            
+            return View(_bikeManager.AddBikeGet(model));
         }
 
         [HttpPost]
@@ -49,12 +40,7 @@ namespace BikeRental.Controllers
         {
             try
             {
-                var entity = Mapper.Map<AddBikeViewModel, Bike>(model);
-                entity.Photo = new Photo
-                {
-                    Url = AddPhotos.AddImage(upload, Server.MapPath("/assets/images/Bikes/"), "/assets/images/Bikes/")
-                };
-                _bikeManager.Add(entity);
+                _bikeManager.AddBikePost(model, upload, Server.MapPath("/assets/images/Bikes/"));
                 return RedirectToAction("AdminPage", "Admin");
             }
             catch (Exception)
@@ -65,47 +51,27 @@ namespace BikeRental.Controllers
 
         public ActionResult ListBike(ListBikeViewModel model)
         {
-            var bikes = _bikeManager.GetAll();
-            List<BikeViewModel> listBikes = new List<BikeViewModel>();
-            foreach (var bike in bikes)
-            {
-                listBikes.Add(Mapper.Map<Bike, BikeViewModel>(bike));
-            }
-            model.Bikes = listBikes;
+            
+            model.Bikes = _bikeManager.ListBike();
             return View(model);
         }
 
         public ActionResult DeleteBike(long id)
         {
-
-            var delete = new DeleteBike(_bikeManager, _orderManager);
-            delete.DBike(id);
+            _bikeManager.DeleteBike(id);
             return RedirectToAction("ListBike", "Admin");
         }
 
         public ActionResult EditStatus(long id)
         {
-            var bike = _bikeManager.GetById(id);
-            bike.Status = bike.Status != true;
-
-            _bikeManager.Update(bike);
+            _bikeManager.EditStatus(id);
             return RedirectToAction("ListBike", "Admin");
         }
 
         [HttpGet]
         public ActionResult EditBike(EditBikeViewModel model, long id)
         {
-
-            var types = new List<TypeViewModel>();
-            var typesList = _typeManager.GetAll();
-            foreach (var type in typesList)
-            {
-                types.Add(Mapper.Map<Core.Type, TypeViewModel>(type));
-            }
-            model.Types = types;
-            var bike = _bikeManager.GetById(id);
-            model.Bike = Mapper.Map<Bike, BikeViewModel>(bike);
-            return View(model);
+            return View(_bikeManager.EditBikeGet(id));
         }
 
         [HttpPost]
@@ -113,13 +79,7 @@ namespace BikeRental.Controllers
         {
             try
             {
-                var bike = _bikeManager.GetById(model.Bike.IdBike);
-                bike = Mapper.Map<EditBikeViewModel, Bike>(model, bike);
-                bike.Photo = new Photo
-                {
-                    Url = AddPhotos.AddImage(upload, Server.MapPath("/assets/images/Bikes/"), "/assets/images/Bikes/")
-                };
-                _bikeManager.Update(bike);
+                _bikeManager.EditBikePost(model,upload, Server.MapPath("/assets/images/Bikes/"));
                 return RedirectToAction("ListBike", "Admin");
             }
             catch (Exception)
@@ -139,8 +99,7 @@ namespace BikeRental.Controllers
         {
             try
             {
-                var entity = Mapper.Map<AddTypeViewModel, Core.Type>(model);
-                _typeManager.Add(entity);
+                _typeManager.AddType(model);
                 return RedirectToAction("AdminPage", "Admin");
             }
             catch (Exception)

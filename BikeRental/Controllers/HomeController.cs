@@ -15,10 +15,10 @@ namespace BikeRental.Controllers
 
         public ActionResult Index()
         {
-            /*if (Session["UserId"] != null) return View();
+            if (Session["UserId"] != null) return View();
             if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated) return View();
             var user = _userManager.GetUserByEmail(User.Identity.Name);
-            Session["UserId"] = user.Id;*/
+            Session["UserId"] = user.Id;
             return View();
         }
 

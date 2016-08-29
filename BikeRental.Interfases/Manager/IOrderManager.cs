@@ -1,12 +1,15 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BikeRental.Core;
+using BikeRental.ViewModel;
 
 namespace BikeRental.Interfases.Manager
 {
     public interface IOrderManager<T> : IManager<T> where T : Order
     {
-        IQueryable<Order> GetActivOrders();
         IQueryable<Order> GetOrdersByBike(long id);
-        IQueryable<Order> GetOrdersByUser(long id);
+        List<OrderViewModel> GetOrdersByUser(long id);
+        void DeleteOrder(long id);
+        void EditAllOrder();        
     }
 }

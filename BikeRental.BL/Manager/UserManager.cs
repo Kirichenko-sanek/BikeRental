@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
 using System.Web.Security;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
@@ -40,10 +39,9 @@ namespace BikeRental.BL.Manager
             
         }
 
-
-        /* public User GetUserByEmail(string email)
+        public User GetUserByEmail(string email)
         {
-            return _userRepository.GetUserByEmail(email);
-        }*/
+            return GetAll().FirstOrDefault(x=>x.Email == email);
+        }
     }
 }

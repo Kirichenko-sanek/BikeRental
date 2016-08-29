@@ -1,11 +1,8 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Security;
-using BikeRental.BL;
 using BikeRental.Core;
 using BikeRental.Filters;
 using BikeRental.Interfases.Manager;
-using BikeRental.Resources.App_GlobalResources;
 using BikeRental.ViewModel;
 
 namespace BikeRental.Controllers

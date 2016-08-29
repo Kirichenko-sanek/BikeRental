@@ -32,16 +32,7 @@ namespace BikeRental.CW.Installers
             //Repository
             container.Register(Component.For<DataContext>().LifestyleSingleton());
             container.Register(
-                Component.For(typeof(IRepository<>)).ImplementedBy(typeof(Repository<>)).LifestyleTransient());
-            container.Register(
-                Component.For(typeof(IUserRepository<>)).ImplementedBy(typeof(UserRepository<>)).LifestyleTransient());
-            container.Register(
-                Component.For(typeof(ITypeRepository<>)).ImplementedBy(typeof(TypeRepository<>)).LifestyleTransient());
-            container.Register(
-                Component.For(typeof(IBikeRepository<>)).ImplementedBy(typeof(BikeRepository<>)).LifestyleTransient());
-            container.Register(
-                Component.For(typeof(IOrderRepository<>)).ImplementedBy(typeof(OrderRepository<>)).LifestyleTransient());
-
+                Component.For(typeof(IRepository<>)).ImplementedBy(typeof(Repository<>)).LifestyleTransient());            
 
             //Validator
             container.Register(

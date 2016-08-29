@@ -127,7 +127,7 @@ namespace BikeRental.Data
                     new Bike()
                     {
                         Sex = "Men",
-                        Price = 50,
+                        Price = 20,
                         IdType = 1,
                         IdPhoto = 1,
                         Status = true
@@ -135,9 +135,41 @@ namespace BikeRental.Data
                     new Bike()
                     {
                         Sex = "Women",
-                        Price = 50,
+                        Price = 20,
                         IdType = 1,
                         IdPhoto = 1,
+                        Status = true
+                    },
+                    new Bike()
+                    {
+                        Sex = "Men",
+                        Price = 20,
+                        IdType = 2,
+                        IdPhoto = 2,
+                        Status = true
+                    },
+                    new Bike()
+                    {
+                        Sex = "Women",
+                        Price = 20,
+                        IdType = 2,
+                        IdPhoto = 2,
+                        Status = true
+                    },
+                    new Bike()
+                    {
+                        Sex = "Men",
+                        Price = 20,
+                        IdType = 3,
+                        IdPhoto = 3,
+                        Status = true
+                    },
+                    new Bike()
+                    {
+                        Sex = "Women",
+                        Price = 20,
+                        IdType = 3,
+                        IdPhoto = 3,
                         Status = true
                     }
                 };

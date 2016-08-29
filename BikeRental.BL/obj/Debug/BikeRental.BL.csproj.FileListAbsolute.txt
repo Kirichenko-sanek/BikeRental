@@ -45,3 +45,5 @@ D:\!!Sasha\BikeRental\BikeRental.BL\bin\Debug\pt\FluentValidation.resources.dll
 D:\!!Sasha\BikeRental\BikeRental.BL\bin\Debug\ru\FluentValidation.resources.dll
 D:\!!Sasha\BikeRental\BikeRental.BL\bin\Debug\sv\FluentValidation.resources.dll
 D:\!!Sasha\BikeRental\BikeRental.BL\bin\Debug\tr\FluentValidation.resources.dll
+D:\!!Sasha\BikeRental\BikeRental.BL\bin\Debug\AutoMapper.dll
+D:\!!Sasha\BikeRental\BikeRental.BL\bin\Debug\AutoMapper.xml

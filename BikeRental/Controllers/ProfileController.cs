@@ -26,72 +26,29 @@ namespace BikeRental.Controllers
             _orderManager = orderManager;
         }
 
-        /*public ActionResult UserPage(long? id)
-        {
-            if (id != null) return UserPage(new UserPageViewModel(), id);
-            var user = _userManager.GetUserByEmail(User.Identity.Name);
-            Session["UserId"] = user.Id;
-            return UserPage(new UserPageViewModel(), user.Id);
-        }
-
-        [HttpPost]
-        public ActionResult UserPage(UserPageViewModel model, long? id)
-        {
-            return View();
-        }*/
-
         [HttpGet]
         public ActionResult TakeBike(TakeBikeViewModel model)
         {
-            List<TypeViewModel> types = new List<TypeViewModel>();
-            var typesList = _typeManager.GetAll();
-            foreach (var type in typesList)
-            {
-                types.Add(Mapper.Map<Core.Type, TypeViewModel>(type));
-            }
-            model.Types = types;
+            model.Types = _typeManager.GetAllTypes();
             return View(model);
         }
 
         [HttpPost]
         public ActionResult TakeBike(TakeBikeViewModel model, long userId)
         {
-            try
+            var takeBike = _bikeManager.TakeBike(model, userId);
+            if (takeBike.Error != null)
             {
-
-                var b = new GetBike(_bikeManager, _orderManager);
-                var o = new EditOrder(_orderManager);
-                o.EditAllOrder();
-                var bike = b.GetBikeOnDb(model.TimeStart, model.TimeEnd, model.SelectType, model.SelectSex);
-                if (bike == null) throw new Exception("К сожалению на выбранное вами время нет свободных велосипедов");
-                var entity = Mapper.Map<TakeBikeViewModel, Order>(model);
-                entity.IdBike = bike.Id;
-                entity.IdUser = userId;
-
-                entity.TotalPrice = Convert.ToDecimal(model.TimeEnd.Subtract(model.TimeStart).TotalHours)*bike.Price;
-
-                _orderManager.Add(entity);
-                return RedirectToAction("Index", "Home");
+                return View(takeBike);
             }
-            catch (Exception e)
-            {
-                model.Error = e.Message;
-                return View(model);
-            }
-
+            return RedirectToAction("Index", "Home");           
         }
 
         public ActionResult UserOrders(UserOrdersPageViewModel model, long id)
         {
             try
-            {
-                List<OrderViewModel> orders = new List<OrderViewModel>();
-                var orderList = _orderManager.GetOrdersByUser(id).OrderByDescending(x => x.DateOrder);
-                foreach (var order in orderList)
-                {
-                    orders.Add(Mapper.Map<Order,OrderViewModel>(order));
-                }
-                model.UserOrders = orders;
+            {               
+                model.UserOrders = _orderManager.GetOrdersByUser(id);
                 return View(model);
             }
             catch (Exception)
@@ -102,13 +59,8 @@ namespace BikeRental.Controllers
 
         public ActionResult DeleteOrder(long id)
         {
-            var order = _orderManager.GetById(id);
-            _orderManager.Delete(order);
+            _orderManager.DeleteOrder(id);
             return RedirectToRoute("UserOrders");
         }
-
-
-
-
     }
 }
