@@ -14,6 +14,7 @@ namespace BikeRental.ViewModel.ViewModel
         public long SelectType { get; set; }
         public string SelectSex { get; set; }
         public string Error { get; set; }
-        
+        public long PotentialBike { get; set; }
+        public DateTime AccessTime { get; set; }
     }
 }

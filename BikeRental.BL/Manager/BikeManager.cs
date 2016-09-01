@@ -125,19 +125,23 @@ namespace BikeRental.BL.Manager
                 foreach (var bike in bikeList)
                 {
                     orderList = _orderManager.GetOrdersByBike(bike.Id);
-                    if (!orderList.Any()) oneBike = bike;
+                    if (!orderList.Any())
+                    {
+                        oneBike = bike;
+                        break;
+                    }
+
                     foreach (var order in orderList)
                     {
                         if ((model.TimeStart < order.TimeStart && model.TimeEnd < order.TimeStart) ||
                             (model.TimeStart > order.TimeEnd && model.TimeEnd > order.TimeEnd))
                         {
-                            oneBike = bike;
+                            if (oneBike == null)
+                            {
+                                oneBike = bike;
+                            }                           
                         }
-                    }
-                    if (oneBike != null)
-                    {
-                        break;
-                    }
+                    }                    
                 }
                 if (oneBike == null) throw new Exception("К сожалению на выбранное вами время нет свободных велосипедов");
                 var entity = Mapper.Map<TakeBikeViewModel, Order>(model);
@@ -150,9 +154,39 @@ namespace BikeRental.BL.Manager
             }
             catch (Exception e)
             {
+                Bike bike;
+                if (model.SelectType == 0 && model.SelectSex == null)
+                {
+                    bike = GetAll().FirstOrDefault(x => x.Status);
+                }
+                if (model.SelectType != 0 && model.SelectSex != null)
+                {
+                    bike =
+                        GetAll().FirstOrDefault(x => (x.Type.Id == model.SelectType && x.Sex == model.SelectSex && x.Status));
+                }
+                else
+                {
+                    bike =
+                        GetAll().FirstOrDefault(x => (x.Type.Id == model.SelectType || x.Sex == model.SelectSex && x.Status));
+                }
+                model.PotentialBike = bike.Id;
                 model.Error = e.Message;
                 return model;
             }
+        }
+
+        public DateTime AccessTime(long idBike)
+        {
+            DateTime accessTime = new DateTime();
+            var orderList = _orderManager.GetOrdersByBike(idBike);
+            foreach (var order in orderList)
+            {
+                if (accessTime > order.TimeEnd)
+                {
+                    accessTime = order.TimeEnd;
+                }
+            }
+            return accessTime;
         }
     }
 }
