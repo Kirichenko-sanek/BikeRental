@@ -132,6 +132,9 @@
   <data name="BeforeStart" xml:space="preserve">
     <value>Before the start of the order remains</value>
   </data>
+  <data name="BikeAvailable" xml:space="preserve">
+    <value>Bike available from</value>
+  </data>
   <data name="Bikes" xml:space="preserve">
     <value>Bikes</value>
   </data>

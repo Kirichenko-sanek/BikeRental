@@ -106,6 +106,15 @@ namespace BikeRental.Resources.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bike available from.
+        /// </summary>
+        public static string BikeAvailable {
+            get {
+                return ResourceManager.GetString("BikeAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bikes.
         /// </summary>
         public static string Bikes {

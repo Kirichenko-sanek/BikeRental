@@ -32,13 +32,14 @@ namespace BikeRental.Controllers
         [HttpPost]
         public ActionResult TakeBike(TakeBikeViewModel model, long userId)
         {
-                var takeBike = _bikeManager.TakeBike(model, userId);
-                if (takeBike.Error != null)
-                {
-                    _bikeManager.AccessTime(takeBike.PotentialBike);
-                    return View(takeBike);
-                }
-                return RedirectToAction("Index", "Home");                                
+            var takeBike = _bikeManager.TakeBike(model, userId);
+            if (takeBike.Error != null)
+            {
+                takeBike.Types = _typeManager.GetAllTypes();
+                takeBike.AccessTime = _bikeManager.AccessTime(takeBike.PotentialBike);
+                return View(takeBike);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult UserOrders(UserOrdersPageViewModel model, long id)

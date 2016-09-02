@@ -1,4 +1,5 @@
-﻿@model BikeRental.ViewModel.ViewModel.TakeBikeViewModel
+﻿@using BikeRental.Resources.App_GlobalResources
+@model BikeRental.ViewModel.ViewModel.TakeBikeViewModel
 @{ long userInSystem = Convert.ToInt64(Session["UserId"]);}
 @{
     ViewBag.Title = "TakeBike";
@@ -12,15 +13,38 @@
     <div class="jumbotron top-space">
         <div class="container">
             <h4 class="text-center thin">@Html.DisplayTextFor(model => model.Error) </h4>
-            <h4 class="text-center thin">@Html.DisplayTextFor(model => model.AccessTime) </h4>
+            @if (Model.AccessTime > DateTime.Now)
+            {
+                <h4 class="text-center thin"> @Resource.BikeAvailable : @Html.DisplayTextFor(model => model.AccessTime) </h4>
+            }           
             <h3 class="text-center thin">Время Аренды</h3>
             <div class="row">
                 <div class="col-md-3 "></div>
                 <div class="col-md-3 col-sm-3 highlight">
                     <div class="h-caption">
-                        @Html.TextBoxFor(model => model.TimeStart, new {type = "datetime-local"})<h4>Время начала</h4>
+                        <div class="form-group">
+                            <div class="input-group date" id="datetimepicker2">
+                                @Html.TextBoxFor(model => model.TimeStart, new { htmlAttributes = new { @type = "datetime-local", @class = "form-control" }})<h4>Время начала</h4>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
+                <script type="text/javascript">
+                    $(function() {
+                        $('#datetimepicker2').datetimepicker({
+                            locale: 'ru'
+                        });
+                    });
+                </script>
+
+
+
+
+                
                 <div class="col-md-3 col-sm-3 highlight">
                     <div class="h-caption">
                         @Html.TextBoxFor(model => model.TimeEnd, new {type = "datetime-local"})<h4>Время окончания</h4>
@@ -28,6 +52,10 @@
                 </div>
                 <div class="col-md-3 "></div>
             </div>
+
+            
+
+
 
             <h3 class="text-center thin">Тип Велосипеда</h3>
             <div class="row">
@@ -37,11 +65,9 @@
                     <div class="col-md-3 col-sm-6 highlight">
                         <div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>@Html.RadioButtonFor(model => model.SelectType, @type.IdType, null) @type.NameType</h4>
                         </div>
-
                     </div>
                 }
             </div>
-
             <h3 class="text-center thin">Sex</h3>
             <div class="row">
                 <div class="col-md-3 "></div>

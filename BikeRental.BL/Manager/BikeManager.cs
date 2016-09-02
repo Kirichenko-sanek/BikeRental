@@ -125,6 +125,10 @@ namespace BikeRental.BL.Manager
                 foreach (var bike in bikeList)
                 {
                     orderList = _orderManager.GetOrdersByBike(bike.Id);
+                    if (model.PotentialBike == 0)
+                    {
+                        model.PotentialBike = bike.Id;
+                    }
                     if (!orderList.Any())
                     {
                         oneBike = bike;
@@ -154,22 +158,6 @@ namespace BikeRental.BL.Manager
             }
             catch (Exception e)
             {
-                Bike bike;
-                if (model.SelectType == 0 && model.SelectSex == null)
-                {
-                    bike = GetAll().FirstOrDefault(x => x.Status);
-                }
-                if (model.SelectType != 0 && model.SelectSex != null)
-                {
-                    bike =
-                        GetAll().FirstOrDefault(x => (x.Type.Id == model.SelectType && x.Sex == model.SelectSex && x.Status));
-                }
-                else
-                {
-                    bike =
-                        GetAll().FirstOrDefault(x => (x.Type.Id == model.SelectType || x.Sex == model.SelectSex && x.Status));
-                }
-                model.PotentialBike = bike.Id;
                 model.Error = e.Message;
                 return model;
             }
@@ -181,7 +169,7 @@ namespace BikeRental.BL.Manager
             var orderList = _orderManager.GetOrdersByBike(idBike);
             foreach (var order in orderList)
             {
-                if (accessTime > order.TimeEnd)
+                if (accessTime > order.TimeEnd || accessTime < DateTime.Now)
                 {
                     accessTime = order.TimeEnd;
                 }
