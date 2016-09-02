@@ -21,13 +21,15 @@ namespace BikeRental
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/assets/js/headroom.min.js",
                       "~/assets/js/jQuery.headroom.min.js",
-                      "~/assets/js/template.js"));
+                      "~/assets/js/template.js",
+                      "~/Scripts/build/jquery.datetimepicker.full.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/assets/css/bootstrap.min.css",
                       "~/assets/css/font-awesome.min.css",
                       "~/assets/css/bootstrap-theme.css",
-                      "~/assets/css/main.css"));
+                      "~/assets/css/main.css",
+                      "~/Content/jquery.datetimepicker.css"));
         }
     }
 }

@@ -69,5 +69,15 @@
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)
+    <script>
+        jQuery('#datetimepicker1').datetimepicker(
+        {
+            startDate : '@DateTime.Now'
+        });
+        jQuery('#datetimepicker2').datetimepicker(
+        {
+            startDate: '@DateTime.Now'
+        });
+    </script>
 </body>
 </html>

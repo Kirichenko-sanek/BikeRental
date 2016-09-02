@@ -21,41 +21,17 @@
             <div class="row">
                 <div class="col-md-3 "></div>
                 <div class="col-md-3 col-sm-3 highlight">
-                    <div class="h-caption">
-                        <div class="form-group">
-                            <div class="input-group date" id="datetimepicker2">
-                                @Html.TextBoxFor(model => model.TimeStart, new { htmlAttributes = new { @type = "datetime-local", @class = "form-control" }})<h4>Время начала</h4>
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                        
+                    <div class="h-caption">                       
+                        @Html.TextBoxFor(model => model.TimeStart, new {@id = "datetimepicker1", @type = "text", @value = DateTime.Now})<h4>Время начала</h4>
                     </div>
-                </div>
-                <script type="text/javascript">
-                    $(function() {
-                        $('#datetimepicker2').datetimepicker({
-                            locale: 'ru'
-                        });
-                    });
-                </script>
-
-
-
-
-                
+                </div>                    
                 <div class="col-md-3 col-sm-3 highlight">
                     <div class="h-caption">
-                        @Html.TextBoxFor(model => model.TimeEnd, new {type = "datetime-local"})<h4>Время окончания</h4>
+                        @Html.TextBoxFor(model => model.TimeEnd, new { @id = "datetimepicker2", @type = "text", @value = " " })<h4>Время окончания</h4>
                     </div>
                 </div>
                 <div class="col-md-3 "></div>
             </div>
-
-            
-
-
 
             <h3 class="text-center thin">Тип Велосипеда</h3>
             <div class="row">

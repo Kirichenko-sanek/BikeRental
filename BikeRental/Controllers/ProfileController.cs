@@ -26,6 +26,8 @@ namespace BikeRental.Controllers
         public ActionResult TakeBike(TakeBikeViewModel model)
         {
             model.Types = _typeManager.GetAllTypes();
+            model.TimeStart = DateTime.Now;
+            model.TimeEnd = DateTime.Now;
             return View(model);
         }
 
