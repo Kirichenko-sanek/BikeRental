@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Reflection;
+using System.Web.Mvc;
 using BikeRental.BL.Manager;
 using BikeRental.BL.Validator;
 using BikeRental.Core;
@@ -16,7 +17,8 @@ namespace BikeRental.CW.Installers
 {
     public class AdminInstaller : IWindsorInstaller
     {
-        private const string WebAssemblyName = "BikeRental";
+        private const string WebAssemblyName = "BikeRental.Ang";
+        //private string WebAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
 
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {

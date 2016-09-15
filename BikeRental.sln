@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental", "BikeRental\BikeRental.csproj", "{EBCDD61A-9B9D-4D1E-AE90-A88EF5895DE1}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.ViewModel", "BikeRental.ViewModel\BikeRental.ViewModel.csproj", "{BFEF316E-17A4-4ED4-8823-F01EA11EC974}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.Resources", "BikeRental.Resources\BikeRental.Resources.csproj", "{AE9BFFF0-3548-4E9A-AB21-536F59F8FAB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental.Ang", "BikeRental.Ang\BikeRental.Ang.csproj", "{2009FEE3-938B-4B56-8DFA-C52D6BE75B5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{AE9BFFF0-3548-4E9A-AB21-536F59F8FAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE9BFFF0-3548-4E9A-AB21-536F59F8FAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE9BFFF0-3548-4E9A-AB21-536F59F8FAB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2009FEE3-938B-4B56-8DFA-C52D6BE75B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2009FEE3-938B-4B56-8DFA-C52D6BE75B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2009FEE3-938B-4B56-8DFA-C52D6BE75B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2009FEE3-938B-4B56-8DFA-C52D6BE75B5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

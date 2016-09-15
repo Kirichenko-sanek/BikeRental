@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Security;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
@@ -38,6 +39,26 @@ namespace BikeRental.BL.Manager
             }
             
         }
+
+        /*public async Task<LoginViewModel> LogInAs(LoginViewModel model)
+        {
+            try
+            {
+                var user = GetAll().FirstOrDefault(x => x.Email == model.Email);
+                if (user == null) throw new Exception(Resource.EmailNotRegistered);
+                var pass = PasswordHashing.HashPassword(model.Password, user.PasswordSalt);
+                if (user.Password != pass) throw new Exception(Resource.WrongPassword);
+                if (!user.IsActivated) throw new Exception();
+                FormsAuthentication.SetAuthCookie(user.Email, false);
+                model.IdUser = user.Id;
+                return model;
+            }
+            catch (Exception e)
+            {
+                model.Error = e.Message;
+                return model;
+            }
+        }*/
 
         public User GetUserByEmail(string email)
         {
