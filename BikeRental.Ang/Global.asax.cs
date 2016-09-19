@@ -51,12 +51,9 @@ namespace BikeRental.Ang
             var dependencyResolver = new WindsorDependencyResolver(_container);
             configuration.DependencyResolver = dependencyResolver;
         }
+        
 
-
-
-
-
-        /*protected void FormsAuthentication_OnAuthenticate(Object sender, FormsAuthenticationEventArgs e)
+        protected void FormsAuthentication_OnAuthenticate(Object sender, FormsAuthenticationEventArgs e)
         {
             if (FormsAuthentication.CookiesSupported != true) return;
             if (Request.Cookies[FormsAuthentication.FormsCookieName] == null) return;
@@ -66,22 +63,19 @@ namespace BikeRental.Ang
                 string email = FormsAuthentication.Decrypt(Request.Cookies[FormsAuthentication.FormsCookieName].Value).Name;
                 string roles = string.Empty;
 
-
-
                 using (DataContext entities = new DataContext())
                 {
                     User user = entities.Users.SingleOrDefault(u => u.Email == email);
 
-                    if (user != null) roles = user.Roles.Role;//user.Roles;
+                    if (user != null) roles = user.Roles.Role;
                 }
-                //Let us set the Pricipal with our user specific details
                 e.User = new System.Security.Principal.GenericPrincipal(
                     new System.Security.Principal.GenericIdentity(email, "Forms"), roles.Split(';'));
             }
             catch (Exception)
             {
-                //somehting went wrong
+
             }
-        }*/
+        }
     } 
 }

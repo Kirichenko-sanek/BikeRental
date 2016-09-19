@@ -14,7 +14,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="home">
+<body class="home" ng-controller="rootController">
 
     <div class="navbar navbar-inverse navbar-fixed-top headroom">
         <div class="container">
@@ -24,10 +24,17 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
-                    
-                    <li>
+
+                    <li ng-if="userLog == 0">
+                        
                         <a ng-href="/#/login">
                             Login
+                        </a>
+
+                    </li>
+                    <li ng-if="userLog != 0">
+                        <a href="" ng-click="logoff()">
+                            LogOff
                         </a>
                     </li>
                     
@@ -37,9 +44,7 @@
     </div>
 
 
-<div class="page {{ pageClass }}" ng-view>
-    
-</div>
+    <div class="page {{ pageClass }}" ng-view=ng-view></div>
 
 
 

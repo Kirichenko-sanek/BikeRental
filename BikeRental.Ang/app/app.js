@@ -20,7 +20,7 @@
             .when("/home",
             {
                 templateUrl: "app/Index/Index.html",
-                controller: "HomeController"
+                controller: "IndexController"
                 
             });
     }

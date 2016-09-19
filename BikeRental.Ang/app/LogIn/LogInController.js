@@ -3,9 +3,9 @@
 
     app.controller('LogInController', LogInController);
 
-    LogInController.$inject = ['$scope', 'LogInService','$rootScope', '$location'];
+    LogInController.$inject = ['$scope', 'LogInService'];
 
-    function LogInController($scope, LogInService, $rootScope, $location) {
+    function LogInController($scope, LogInService) {
         $scope.pageClass = 'page-login';
         $scope.login = login;
         $scope.model = {
@@ -18,6 +18,7 @@
         function login() {
             LogInService.login($scope.model);
         }
+
     }
 
 })(angular.module('BikeRental'));

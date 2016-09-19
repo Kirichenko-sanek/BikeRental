@@ -186,8 +186,8 @@
     <Content Include="app\apiService.js" />
     <Content Include="app\Index\Index.html" />
     <Content Include="app\Index\IndexController.js" />
+    <Content Include="app\Index\rootController.js" />
     <Content Include="app\LogIn\login.html" />
-    <Content Include="app\notificationService.js" />
     <Content Include="assets\css\bootstrap-theme.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />

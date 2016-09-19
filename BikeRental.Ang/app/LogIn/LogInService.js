@@ -3,22 +3,25 @@
 
     app.factory('LogInService', LogInService);
 
-    LogInService.$inject = ['apiService', '$http', '$location'];
+    LogInService.$inject = ['apiService', '$http', '$location', '$rootScope'];
 
-    function LogInService(apiService, $http, $location) {
+    function LogInService(apiService, $http, $location, $rootScope) {
 
         var service = {
             login: login
-        }
 
-        function login(model) {          
-            $http.post('api/account/authenticate', model)
+            
+    }
+
+        function login(model) {
+            model.error = '';
+            $http.post('api/account/login', model)
                 .then(function (data) {
-                    if (data.data.Error != null) {
+                    if (data.data.Error !== '') {
                         model.error = data.data.Error;
                         $location.path('/login');
                     } else {
-                        model.error = '';
+                        $rootScope.userLog = data.data.IdUser;
                         $location.path('/home');
                     }
                 })
@@ -28,9 +31,9 @@
                 .finally(function() {
                     console.log('Finally');
                 });
-
-            //var loginMod = $http.post('#/api/Account/authenticate', model);
         }
+
+        
 
       
         return service;

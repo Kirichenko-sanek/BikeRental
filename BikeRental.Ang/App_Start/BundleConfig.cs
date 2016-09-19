@@ -30,14 +30,13 @@ namespace BikeRental.Ang
                       "~/node_modules/angular-mocks/angular-mocks.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/apps").Include(
-                "~/app/common.core.js",
-                "~/app/common.ui.js",
                 "~/app/app.js",
                 "~/app/apiService.js",
-                "~/app/notificationService.js",                
+                 "~/app/Index/rootController.js",
                 "~/app/LogIn/LogInService.js",
                 "~/app/LogIn/LogInController.js",
                 "~/app/Index/IndexController.js"
+               
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

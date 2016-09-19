@@ -3,9 +3,9 @@
 
     app.factory('apiService', apiService);
 
-    apiService.$inject = ['$http', '$location', 'notificationService', '$rootScope'];
+    apiService.$inject = ['$http', '$location', '$rootScope'];
 
-    function apiService($http, $location, notificationService, $rootScope) {
+    function apiService($http, $location,  $rootScope) {
         var service = {
             get: get,
             post: post
@@ -18,7 +18,7 @@
                     },
                     function(error) {
                         if (error.status == '401') {
-                            notificationService.displayError('Authentication required.');
+                            //notificationService.displayError('Authentication required.');
                             $rootScope.previousState = $location.path();
                             $location.path('/login');
                         } else if (failure != null) {
