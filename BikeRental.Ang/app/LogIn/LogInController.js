@@ -9,8 +9,8 @@
         $scope.pageClass = 'page-login';
         $scope.login = login;
         $scope.model = {
-            email: '',
-            password: '',
+            email: null,
+            password: null,
             error: '',
             userId: 0
     };

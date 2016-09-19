@@ -8,7 +8,7 @@
 
     function rootController($rootScope, $location, $http ) {
         $rootScope.logoff = logoff;
-
+        $rootScope.userInSystem = userInSystem();
        
 
         function logoff() {
@@ -29,6 +29,7 @@
         }
 
         function userInSystem() {
+            $rootScope.userLog = 0;
             $http.get('api/account/userInSystem')
                 .then(
                     function (data) {
@@ -45,7 +46,7 @@
         }
 
 
-        $rootScope.userInSystem = userInSystem();
+       
     }
 
 })(angular.module('BikeRental'));

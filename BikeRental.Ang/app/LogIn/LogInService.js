@@ -3,9 +3,9 @@
 
     app.factory('LogInService', LogInService);
 
-    LogInService.$inject = ['apiService', '$http', '$location', '$rootScope'];
+    LogInService.$inject = ['$http', '$location', '$rootScope'];
 
-    function LogInService(apiService, $http, $location, $rootScope) {
+    function LogInService($http, $location, $rootScope) {
 
         var service = {
             login: login

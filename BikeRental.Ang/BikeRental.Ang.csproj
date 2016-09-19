@@ -183,11 +183,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\apiService.js" />
     <Content Include="app\Index\Index.html" />
     <Content Include="app\Index\IndexController.js" />
     <Content Include="app\Index\rootController.js" />
     <Content Include="app\LogIn\login.html" />
+    <Content Include="app\TakeBike\takeBike.html" />
+    <Content Include="app\TakeBike\TakeBikeController.js" />
+    <Content Include="app\TakeBike\TakeBikeService.js" />
+    <Content Include="app\Type\TypeController.js" />
+    <Content Include="app\Type\TypeService.js" />
     <Content Include="assets\css\bootstrap-theme.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />
@@ -245,8 +249,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

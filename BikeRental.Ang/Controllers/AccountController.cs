@@ -1,8 +1,6 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 using System.Web.Http;
 using System.Web.Security;
-using BikeRental.BL.Manager;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.ViewModel.ViewModel;

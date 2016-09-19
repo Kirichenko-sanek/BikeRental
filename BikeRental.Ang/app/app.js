@@ -17,6 +17,11 @@
                 controller: "LogInController"
                
             })
+            .when("/takeBike",
+            {
+                templateUrl: "app/TakeBike/takeBike.html",
+                controller: "TakeBikeController"
+            })
             .when("/home",
             {
                 templateUrl: "app/Index/Index.html",

@@ -1,0 +1,40 @@
+﻿<header id="head" class="secondary"></header>
+<form ng-submit="takeBike()" class="form-signin" role="form" method="post">
+    <div class="jumbotron top-space">
+        <div class="container">
+            <h4 class="text-center thin">{{model.error}}</h4>
+            <h4 ng-if="model.accessTime > model.timeNow" class="text-center thin"> @Resource.BikeAvailable {{model.accessTime}} </h4>
+
+
+
+
+            <h3 class="text-center thin">Тип Велосипеда</h3>
+            <div class="row">
+                <div ng-repead="type in model.Types track by $index">
+                    <div class="col-md-3 col-sm-6 highlight">
+                        <div class="h-caption">
+
+                            <h4>
+                                <input type="radio" ng-model="model.selectType" value="{{type.IdType}}"   /> {{type.NameType}}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</form>

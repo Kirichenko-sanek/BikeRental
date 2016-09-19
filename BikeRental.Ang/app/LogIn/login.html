@@ -12,13 +12,12 @@
                             {{model.error}}
                         </div>
 
-                        <form ng-submit="login()" class="form-signin" role="form" method="post">
+                        <form ng-submit="login()" class="form-signin"  name="userLoginForm" role="form" method="post">
                             <div class="top-margin">
-                                <input type="text" id="inputUsername" class="form-control" placeholder="Email" ng-model="model.email" />
-                                <p> </p>
+                                <input type="email" class="form-control" placeholder="Email" ng-model="model.email" required/>
                             </div>
                             <div class="top-margin">
-                                <input type="password" class="form-control" placeholder="Password" ng-model="model.password" />
+                                <input type="password" class="form-control" placeholder="Password" ng-model="model.password" required/>
                                 <p> </p>
                             </div>
                             <div class="row">

@@ -35,8 +35,10 @@ namespace BikeRental.Ang
                  "~/app/Index/rootController.js",
                 "~/app/LogIn/LogInService.js",
                 "~/app/LogIn/LogInController.js",
-                "~/app/Index/IndexController.js"
-               
+                "~/app/Index/IndexController.js",
+                "~/app/TakeBike/TakeBikeController.js",
+                "~/app/TakeBike/TakeBikeService.js",
+                "~/app/Type/TypeService.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
