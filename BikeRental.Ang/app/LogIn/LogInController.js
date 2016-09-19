@@ -8,22 +8,15 @@
     function LogInController($scope, LogInService, $rootScope, $location) {
         $scope.pageClass = 'page-login';
         $scope.login = login;
-        $scope.user = {};
+        $scope.model = {
+            email: '',
+            password: '',
+            error: '',
+            userId: 0
+    };
 
         function login() {
-            LogInService.login($scope.user, loginCompleted);
-        }
-
-        function loginCompleted(result) {
-            if (result.data.success) {
-                LogInService.saveCredentials($scope.user);
-                $scope.userData.displayUserInfo();
-                if ($rootScope.previousState)
-                    $location.path($rootScope.previousState);
-                else
-                    $location.path('/');
-            }
-            
+            LogInService.login($scope.model);
         }
     }
 

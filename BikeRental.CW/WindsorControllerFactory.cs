@@ -29,6 +29,6 @@ namespace BikeRental.CW
             }
 
             return (IController)_kernel.Resolve(controllerType);
-        }
+        }       
     }
 }

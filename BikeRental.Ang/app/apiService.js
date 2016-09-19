@@ -13,32 +13,29 @@
 
         function get(url, config, success, failure) {
             return $http.get(url, config)
-                    .then(function (result) {
+                .then(function(result) {
                         success(result);
-                    }, function (error) {
+                    },
+                    function(error) {
                         if (error.status == '401') {
                             notificationService.displayError('Authentication required.');
                             $rootScope.previousState = $location.path();
                             $location.path('/login');
-                        }
-                        else if (failure != null) {
+                        } else if (failure != null) {
                             failure(error);
                         }
                     });
         }
 
-        function post(url, data, success, failure) {
+        function post(url, data) {
             return $http.post(url, data)
-                    .then(function (result) {
+                .then(function(result) {
                         success(result);
-                    }, function (error) {
-                        if (error.status == '401') {
-                            notificationService.displayError('Authentication required.');
+                    },
+                    function(error) {
+                        if (error.status === '401') {                            
                             $rootScope.previousState = $location.path();
                             $location.path('/login');
-                        }
-                        else if (failure != null) {
-                            failure(error);
                         }
                     });
         }

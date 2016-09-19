@@ -10,7 +10,7 @@ namespace BikeRental.Ang.Controllers
 {
     public class BaseApiController : ApiController
     {
-        protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage request, Func<HttpResponseMessage> function)
+        public HttpResponseMessage CreateHttpResponse(HttpRequestMessage request, Func<HttpResponseMessage> function)
         {
             HttpResponseMessage response = null;
 

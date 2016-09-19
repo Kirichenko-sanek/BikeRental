@@ -178,3 +178,11 @@ D:\Work\BikeRental\BikeRental.CW\bin\Debug\tr\FluentValidation.resources.dll
 D:\Work\BikeRental\BikeRental.CW\obj\Debug\BikeRental.CW.csprojResolveAssemblyReference.cache
 D:\Work\BikeRental\BikeRental.CW\obj\Debug\BikeRental.CW.dll
 D:\Work\BikeRental\BikeRental.CW\obj\Debug\BikeRental.CW.pdb
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\Newtonsoft.Json.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Net.Http.Formatting.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.WebHost.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\Newtonsoft.Json.xml
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Net.Http.Formatting.xml
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.xml
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.WebHost.xml

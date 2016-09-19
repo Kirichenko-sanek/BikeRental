@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Web.Http.Controllers;
+using System.Web.Http.Dispatcher;
 using System.Web.Mvc;
 using BikeRental.BL.Manager;
 using BikeRental.BL.Validator;
@@ -13,15 +14,16 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Microsoft.Practices.ServiceLocation;
 
+
 namespace BikeRental.CW.Installers
 {
     public class AdminInstaller : IWindsorInstaller
     {
-        private const string WebAssemblyName = "BikeRental.Ang";
-        //private string WebAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
+        private const string WebAssemblyName = "BikeRental";
 
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
+
             container.Register(Classes.FromAssemblyNamed(WebAssemblyName)
                 .BasedOn<IController>()
                 .LifestyleTransient()

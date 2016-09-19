@@ -1,29 +1,38 @@
-﻿(function (app) {
+﻿(function(app) {
 
 
     app.factory('LogInService', LogInService);
 
-    LogInService.$inject = ['apiService','notificationService','$http', '$base64', '$cookieStore', '$rootScope'];
+    LogInService.$inject = ['apiService', '$http', '$location'];
 
-    function LogInService(apiService, notificationService, $http, $base64, $cookieStore, $rootScope) {
+    function LogInService(apiService, $http, $location) {
 
         var service = {
             login: login
-
-
         }
 
-        function login(user, completed) {
-            apiService.post('/api/account/authenticate', user,
-            completed,
-            loginFailed);
+        function login(model) {          
+            $http.post('api/account/authenticate', model)
+                .then(function (data) {
+                    if (data.data.Error != null) {
+                        model.error = data.data.Error;
+                        $location.path('/login');
+                    } else {
+                        model.error = '';
+                        $location.path('/home');
+                    }
+                })
+                .catch(function(result) {
+                    console.log('Result: ', result);
+                })
+                .finally(function() {
+                    console.log('Finally');
+                });
+
+            //var loginMod = $http.post('#/api/Account/authenticate', model);
         }
 
-        function loginFailed(response) {
-            notificationService.displayError(response.data);
-        }
-
-
+      
         return service;
     }
 })(angular.module('BikeRental'));

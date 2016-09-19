@@ -36,7 +36,8 @@ namespace BikeRental.Ang
                 "~/app/apiService.js",
                 "~/app/notificationService.js",                
                 "~/app/LogIn/LogInService.js",
-                "~/app/LogIn/LogInController.js"
+                "~/app/LogIn/LogInController.js",
+                "~/app/Index/IndexController.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

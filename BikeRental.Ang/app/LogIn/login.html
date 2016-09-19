@@ -8,21 +8,27 @@
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
+                        <div>
+                            {{model.error}}
+                        </div>
 
-                        <form class="form-signin" role="form" novalidate angular-validator name="userLoginForm" angular-validator-submit="login()">
+                        <form ng-submit="login()" class="form-signin" role="form" method="post">
                             <div class="top-margin">
-                                <input type="text" class="form-control" placeholder="Email" data-ng-model="user.email"/>
+                                <input type="text" id="inputUsername" class="form-control" placeholder="Email" ng-model="model.email" />
                                 <p> </p>
                             </div>
                             <div class="top-margin">
-                                <input type="password" class="form-control" placeholder="Password" data-ng-model="user.password"/>
+                                <input type="password" class="form-control" placeholder="Password" ng-model="model.password" />
                                 <p> </p>
                             </div>
                             <div class="row">
                                 <input type="submit" value="LogIn" class="btn btn-action btn-lg" style="width: 100%">
-                                
-                            </div>                            
-                        </form>               
+
+                            </div>
+                        </form>
+
+                        
+
                     </div>
                 </div>
             </div>
