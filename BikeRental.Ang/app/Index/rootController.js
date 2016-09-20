@@ -29,7 +29,7 @@
         }
 
         function userInSystem() {
-            $rootScope.userLog = 0;
+            //$rootScope.userLog = 0;
             $http.get('api/account/userInSystem')
                 .then(
                     function (data) {

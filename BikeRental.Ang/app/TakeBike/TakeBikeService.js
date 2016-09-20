@@ -1,23 +1,41 @@
 ﻿(function (app) {
 
 
-    app.factory('TekeService', TekeService);
+    app.factory('TakeBikeService', TakeBikeService);
 
-    TekeService.$inject = [ '$http', '$location', '$rootScope'];
+    TakeBikeService.$inject = ['$http', '$location', '$rootScope'];
 
-    function TekeService($http, $location, $rootScope) {
+    function TakeBikeService($http, $location, $rootScope) {
 
         var service = {
             takeBike: takebike
         }
 
         function takebike(model) {
-
+            model.error = '';
+            $http.post('api/profile/takeBike/' + $rootScope.userLog, model)
+                .then(function (data) {
+                    if (data.data !== '') {
+                        model.error = data.data;
+                        $location.path('/takeBike');
+                    } else {
+                        $location.path('/home');
+                    }
+                })
+                .catch(function (result) {
+                    console.log('Result: ', result);
+                })
+                .finally(function () {
+                    console.log('Finally');
+                });
         }
 
 
 
         return service;
     }
+
+    
+
 })(angular.module('BikeRental'));
 

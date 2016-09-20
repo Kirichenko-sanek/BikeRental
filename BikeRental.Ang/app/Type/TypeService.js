@@ -3,25 +3,27 @@
 
     app.factory('TypeService', TypeService);
 
-    TypeService.$inject = ['$http', '$location', '$rootScope'];
+    TypeService.$inject = ['$http', '$location'];
 
-    function TypeService($http, $location, $rootScope) {
+    function TypeService($http, $location) {
 
         var service = {
             getType: getType
     }
 
-        function getType() {
+        function getType(model) {
             $http.get('api/profile/getTypes')
                 .then(
-                    function(data) {
-
+                    function (data) {
+                        model.types = data.data;
+                        $location.path('/takeBike');
                     })
                 .catch(function(result) {
                     console.log('Result: ', result);
                 })
                 .finally(function() {
                     console.log('Finally');
+
                 });
         }
 

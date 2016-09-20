@@ -6,30 +6,49 @@
             <h4 ng-if="model.accessTime > model.timeNow" class="text-center thin"> @Resource.BikeAvailable {{model.accessTime}} </h4>
 
 
+            <h3 class="text-center thin">Время Аренды</h3>
+            <div class="row">
+                <div class="col-md-3 "></div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <input id="datetimepicker1" type="text" ng-model="model.timeStart"/>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <input id="datetimepicker2" type="text" ng-model="model.timeEnd"/>
+                    </div>
+                </div>
+                <div class="col-md-3 "></div>
+            </div>
 
 
             <h3 class="text-center thin">Тип Велосипеда</h3>
             <div class="row">
-                <div ng-repead="type in model.Types track by $index">
-                    <div class="col-md-3 col-sm-6 highlight">
-                        <div class="h-caption">
-
-                            <h4>
-                                <input type="radio" ng-model="model.selectType" value="{{type.IdType}}"   /> {{type.NameType}}
-                            </h4>
-                        </div>
+                <div class="col-md-3 col-sm-6 highlight" ng-repeat="type in model.types">
+                    <div class="h-caption">
+                        <h4>
+                            <i class="fa fa-cogs fa-5"></i><input type="radio" value="{{type.IdType}}" ng-model="model.selectType"/> {{type.NameType}}
+                        </h4>
                     </div>
                 </div>
-
-
-
             </div>
-
-
-
-
-
-
+            <h3 class="text-center thin">Sex</h3>
+            <div class="row">
+                <div class="col-md-3 "></div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <h4><input type="radio" ng-model="model.selectSex" value="Men"/> Men </h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <h4><input type="radio" ng-model="model.selectSex" value="Women"/> Women </h4>
+                    </div>
+                </div>
+                <div class="col-md-3 "></div>
+            </div>
+            <input type="submit" value="TakeBike" class="btn btn-action btn-lg" style="width: 100%"/>
 
 
 
@@ -38,3 +57,13 @@
 
     </div>
 </form>
+<script>
+        jQuery('#datetimepicker1').datetimepicker(
+        {
+
+        });
+        jQuery('#datetimepicker2').datetimepicker(
+        {
+
+        });
+</script>

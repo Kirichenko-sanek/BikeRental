@@ -190,7 +190,6 @@
     <Content Include="app\TakeBike\takeBike.html" />
     <Content Include="app\TakeBike\TakeBikeController.js" />
     <Content Include="app\TakeBike\TakeBikeService.js" />
-    <Content Include="app\Type\TypeController.js" />
     <Content Include="app\Type\TypeService.js" />
     <Content Include="assets\css\bootstrap-theme.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -214,7 +213,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\jquery.datetimepicker.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -231,6 +232,7 @@
     <Content Include="package.json" />
     <Content Include="bower.json" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\build\jquery.datetimepicker.full.min.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="app\LogIn\LogInController.js" />

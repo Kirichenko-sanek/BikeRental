@@ -131,7 +131,11 @@ D:\Work\BikeRental\BikeRental.CW\bin\Debug\EntityFramework.dll
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\EntityFramework.SqlServer.dll
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\Newtonsoft.Json.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Net.Http.Formatting.dll
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Helpers.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.dll
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.WebHost.dll
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Mvc.dll
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Razor.dll
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.WebPages.Deployment.dll
@@ -151,7 +155,11 @@ D:\Work\BikeRental\BikeRental.CW\bin\Debug\EntityFramework.xml
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\EntityFramework.SqlServer.xml
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\Newtonsoft.Json.xml
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Net.Http.Formatting.xml
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Helpers.xml
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.xml
+D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.WebHost.xml
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Mvc.xml
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Razor.xml
 D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.WebPages.xml
@@ -178,11 +186,3 @@ D:\Work\BikeRental\BikeRental.CW\bin\Debug\tr\FluentValidation.resources.dll
 D:\Work\BikeRental\BikeRental.CW\obj\Debug\BikeRental.CW.csprojResolveAssemblyReference.cache
 D:\Work\BikeRental\BikeRental.CW\obj\Debug\BikeRental.CW.dll
 D:\Work\BikeRental\BikeRental.CW\obj\Debug\BikeRental.CW.pdb
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\Newtonsoft.Json.dll
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Net.Http.Formatting.dll
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.dll
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.WebHost.dll
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\Newtonsoft.Json.xml
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Net.Http.Formatting.xml
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.xml
-D:\Work\BikeRental\BikeRental.CW\bin\Debug\System.Web.Http.WebHost.xml

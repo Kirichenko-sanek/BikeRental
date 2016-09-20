@@ -1,26 +1,35 @@
-﻿(function (app) {
+﻿(function(app) {
 
 
-    app.controller('TakeBikeController', TakeBikeController);
+        app.controller('TakeBikeController', TakeBikeController);
 
-    TakeBikeController.$inject = ['$scope', 'TakeBikeService', 'TypeService'];
+        TakeBikeController.$inject = ['$scope', '$http', 'TakeBikeService', 'TypeService'];
 
-    function TakeBikeController($scope, TakeBikeService, TypeService) {
-        $scope.pageClass = 'page-takeBike';
-        $scope.model = {
-            errror: '',
-            timeStart: '',
-            timeEnd: '',
-            accessTime: '',
-            timeNow: Date(),
-            types: TypeService.getType(),
-            selectType:null
-    };
+        function TakeBikeController($scope, $http, TakeBikeService, TypeService) {
+
+            $scope.pageClass = 'page-takeBike';
+            $scope.takeBike = takeBike;
+            $scope.model = {
+                error: '',
+                timeStart: '',
+                timeEnd: '',
+                accessTime: '',
+                selectSex: '',
+                timeNow: Date(),
+                types:[],
+                //types: TypeService.getType(),
+                selectType: null
+
+            };
+            TypeService.getType($scope.model);
+
 
         function takeBike() {
             TakeBikeService.takeBike($scope.model);
         }
+        
+
+
 
     }
-
 })(angular.module('BikeRental'));

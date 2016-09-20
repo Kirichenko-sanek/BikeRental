@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.ViewModel.ViewModel;
@@ -22,20 +23,21 @@ namespace BikeRental.Ang.Controllers
             _orderManager = orderManager;
         }
 
-        [Route("takeBike")]
+        [Route("takeBike/{userId}")]
         [HttpPost]
-        public TakeBikeViewModel TakeBike(TakeBikeViewModel model, long userId)
+        public string TakeBike(TakeBikeViewModel model, long userId)
         {
             var takeBike = _bikeManager.TakeBike(model, userId);
-            return takeBike;
+            return takeBike.Error;
         }
 
         [Route("getTypes")]
         [HttpGet]
-        public TakeBikeViewModel GetTypes(TakeBikeViewModel model)
+        public List<TypeViewModel> GetTypes()
         {
-            model.Types = _typeManager.GetAllTypes();
-            return model;
+
+            var types = _typeManager.GetAllTypes();
+            return types;
         }
 
     }

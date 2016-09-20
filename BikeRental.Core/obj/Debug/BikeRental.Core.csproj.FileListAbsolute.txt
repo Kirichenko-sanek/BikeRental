@@ -9,6 +9,6 @@ C:\!!Sasha\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.dll
 C:\!!Sasha\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.pdb
 D:\Work\BikeRental\BikeRental.Core\bin\Debug\BikeRental.Core.dll
 D:\Work\BikeRental\BikeRental.Core\bin\Debug\BikeRental.Core.pdb
+D:\Work\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.csprojResolveAssemblyReference.cache
 D:\Work\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.dll
 D:\Work\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.pdb
-D:\Work\BikeRental\BikeRental.Core\obj\Debug\BikeRental.Core.csprojResolveAssemblyReference.cache
