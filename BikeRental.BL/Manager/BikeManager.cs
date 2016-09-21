@@ -101,66 +101,73 @@ namespace BikeRental.BL.Manager
 
         public TakeBikeViewModel TakeBike(TakeBikeViewModel model, long userId)
         {
-            try
-            {
-                _orderManager.EditAllOrder();
-                IQueryable<Bike> bikeList;
-                IQueryable<Order> orderList;
-                Bike oneBike = null;
-                if (model.SelectType == 0 && model.SelectSex == null)
-                {
-                    bikeList = GetAll().Where(x => x.Status);
-                }
-                if (model.SelectType != 0 && model.SelectSex != null)
-                {
-                    bikeList =
-                        GetAll().Where(x => (x.Type.Id == model.SelectType && x.Sex == model.SelectSex && x.Status));
-                }
-                else
-                {
-                    bikeList =
-                        GetAll().Where(x => (x.Type.Id == model.SelectType || x.Sex == model.SelectSex && x.Status));
-                }
-                
-                foreach (var bike in bikeList)
-                {
-                    orderList = _orderManager.GetOrdersByBike(bike.Id);
-                    if (model.PotentialBike == 0)
-                    {
-                        model.PotentialBike = bike.Id;
-                    }
-                    if (!orderList.Any())
-                    {
-                        oneBike = bike;
-                        break;
-                    }
 
-                    foreach (var order in orderList)
-                    {
-                        if ((model.TimeStart < order.TimeStart && model.TimeEnd < order.TimeStart) ||
-                            (model.TimeStart > order.TimeEnd && model.TimeEnd > order.TimeEnd))
-                        {
-                            if (oneBike == null)
-                            {
-                                oneBike = bike;
-                            }                           
-                        }
-                    }                    
+            _orderManager.EditAllOrder();
+            IQueryable<Bike> bikeList;
+            IQueryable<Order> orderList;
+            Bike oneBike = null;
+
+
+
+            if (model.SelectType == 0 && model.SelectSex == null)
+            {
+                bikeList = GetAll().Where(x => x.Status);
+            }
+            if (model.SelectType != 0 && model.SelectSex != null)
+            {
+                bikeList =
+                    GetAll().Where(x => (x.Type.Id == model.SelectType && x.Sex == model.SelectSex && x.Status));
+            }
+            else
+            {
+                bikeList =
+                    GetAll().Where(x => (x.Type.Id == model.SelectType || x.Sex == model.SelectSex && x.Status));
+            }
+
+            foreach (var bike in bikeList)
+            {
+                orderList = _orderManager.GetOrdersByBike(bike.Id);
+                if (model.PotentialBike == 0)
+                {
+                    model.PotentialBike = bike.Id;
                 }
-                if (oneBike == null) throw new Exception("К сожалению на выбранное вами время нет свободных велосипедов");
+                if (!orderList.Any())
+                {
+                    oneBike = bike;
+                    break;
+                }
+
+                foreach (var order in orderList)
+                {
+                    if ((model.TimeStart < order.TimeStart && model.TimeEnd < order.TimeStart) ||
+                        (model.TimeStart > order.TimeEnd && model.TimeEnd > order.TimeEnd))
+                    {
+                        if (oneBike == null)
+                        {
+                            oneBike = bike;
+                        }
+                    }
+                    else
+                    {
+                        oneBike = null;
+                    }
+                }
+            }
+            if (oneBike == null)
+            {
+                model.Error = Resources.App_GlobalResources.Resource.NotBike;
+            }
+            else
+            {
                 var entity = Mapper.Map<TakeBikeViewModel, Order>(model);
                 entity.IdBike = oneBike.Id;
                 entity.IdUser = userId;
-                
+
                 entity.TotalPrice = Convert.ToDecimal(model.TimeEnd.Subtract(model.TimeStart).TotalHours) * oneBike.Price;
                 _orderManager.Add(entity);
-                return model;
             }
-            catch (Exception e)
-            {
-                model.Error = e.Message;
-                return model;
-            }
+            return model;
+
         }
 
         public DateTime AccessTime(long idBike)

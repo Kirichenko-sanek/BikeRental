@@ -22,6 +22,11 @@
                 templateUrl: "app/TakeBike/takeBike.html",
                 controller: "TakeBikeController"
             })
+            .when("/userOrders",
+            {
+                templateUrl: "app/Orders/userOrders.html",
+                controller: "OrdersController"
+            })
             .when("/home",
             {
                 templateUrl: "app/Index/Index.html",

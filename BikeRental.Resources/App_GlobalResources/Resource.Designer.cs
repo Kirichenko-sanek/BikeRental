@@ -223,6 +223,15 @@ namespace BikeRental.Resources.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unfortunately at the time of your choice is not available bike.
+        /// </summary>
+        public static string NotBike {
+            get {
+                return ResourceManager.GetString("NotBike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Photo.
         /// </summary>
         public static string Photo {

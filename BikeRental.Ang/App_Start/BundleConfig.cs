@@ -38,7 +38,9 @@ namespace BikeRental.Ang
                 "~/app/Index/IndexController.js",
                 "~/app/TakeBike/TakeBikeController.js",
                 "~/app/TakeBike/TakeBikeService.js",
-                "~/app/Type/TypeService.js"
+                "~/app/Type/TypeService.js",
+                "~/app/Orders/OrdersController.js",
+                "~/app/Orders/OrdersService.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

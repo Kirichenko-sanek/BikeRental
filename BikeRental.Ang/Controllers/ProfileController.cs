@@ -40,5 +40,15 @@ namespace BikeRental.Ang.Controllers
             return types;
         }
 
+
+
+        [Route("getOrders/{userId}")]
+        [HttpGet]
+        public List<OrderViewModel> GetOrders(long idUser)
+        {
+            var userOrders = _orderManager.GetOrdersByUser(idUser);
+            return userOrders;
+        }
+
     }
 }

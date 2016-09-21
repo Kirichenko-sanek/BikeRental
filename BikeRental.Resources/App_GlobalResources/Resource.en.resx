@@ -171,6 +171,9 @@
   <data name="NotActive" xml:space="preserve">
     <value>NotActive</value>
   </data>
+  <data name="NotBike" xml:space="preserve">
+    <value>Unfortunately at the time of your choice is not available bike</value>
+  </data>
   <data name="Photo" xml:space="preserve">
     <value>Photo</value>
   </data>

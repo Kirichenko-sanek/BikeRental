@@ -24,7 +24,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
+                    <li ng-if="userLog != 0">
+                        <a ng-href="/#/userOrders" ng-click="getOrders()">
+                            MyOrders
+                        </a>
+                    </li>
 
+                    
                     <li ng-if="userLog == 0">
                         
                         <a ng-href="/#/login">
@@ -37,7 +43,11 @@
                             LogOff
                         </a>
                     </li>
+
+
                     
+
+
                 </ul>
             </div>
         </div>

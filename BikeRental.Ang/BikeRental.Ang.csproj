@@ -187,6 +187,9 @@
     <Content Include="app\Index\IndexController.js" />
     <Content Include="app\Index\rootController.js" />
     <Content Include="app\LogIn\login.html" />
+    <Content Include="app\Orders\OrdersController.js" />
+    <Content Include="app\Orders\OrdersService.js" />
+    <Content Include="app\Orders\userOrders.html" />
     <Content Include="app\TakeBike\takeBike.html" />
     <Content Include="app\TakeBike\TakeBikeController.js" />
     <Content Include="app\TakeBike\TakeBikeService.js" />

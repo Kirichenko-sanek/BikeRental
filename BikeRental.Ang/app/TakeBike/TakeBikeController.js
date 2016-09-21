@@ -17,7 +17,6 @@
                 selectSex: '',
                 timeNow: Date(),
                 types:[],
-                //types: TypeService.getType(),
                 selectType: null
 
             };
