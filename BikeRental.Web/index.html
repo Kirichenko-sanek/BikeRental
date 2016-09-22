@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html ng-app="BikeRental">
+<head>
+    <?xml version="1.0" encoding="windows-1251" ?>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - My ASP.NET Application</title>
+    
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+    <link href="/Content/jquery.datetimepicker.css" rel="stylesheet" />
+
+</head>
+<body class="home" ng-controller="rootController">
+    <div class="navbar navbar-inverse navbar-fixed-top headroom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" ng-href="/#/home"><img src="/assets/images/logo.png" alt="Progressus HTML5 template" /></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li ng-if="userLog != 0">
+                        <a ng-href="/#/userOrders" ng-click="getOrders()">
+                            MyOrders
+                        </a>
+                    </li>
+
+
+                    <li ng-if="userLog == 0">
+
+                        <a ng-href="/#/login">
+                            Login
+                        </a>
+
+                    </li>
+                    <li ng-if="userLog != 0">
+                        <a href="" ng-click="logoff()">
+                            LogOff
+                        </a>
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page {{ pageClass }}" ng-view=ng-view></div>
+
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+
+    <script src="/assets/js/headroom.min.js"></script>
+    <script src="/assets/js/jQuery.headroom.min.js"></script>
+    <script src="/assets/js/template.js"></script>
+    <script src="/Scripts/build/jquery.datetimepicker.full.min.js"></script>
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="/node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="/node_modules/angular-mocks/angular-mocks.js"></script>
+
+
+    <script src="/app/app.js"></script>
+    <script src="/app/Home/rootController.js"></script>
+    <script src="/app/LogIn/LogInService.js"></script>
+    <script src="/app/LogIn/LogInController.js"></script>
+    <script src="/app/Home/HomeController.js"></script>
+    <script src="/app/TakeBike/TakeBikeController.js"></script>
+    <script src="/app/TakeBike/TakeBikeService.js"></script>
+    <script src="/app/Type/TypeService.js"></script>
+    <script src="/app/Orders/OrdersController.js"></script>
+    <script src="/app/Orders/OrdersService.js"></script>
+</body>
+</html>

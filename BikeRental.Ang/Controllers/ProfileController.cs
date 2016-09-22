@@ -50,5 +50,12 @@ namespace BikeRental.Ang.Controllers
             return userOrders;
         }
 
+        [Route("go")]
+        [HttpGet]
+        public string Go()
+        {
+
+            return "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        }
     }
 }

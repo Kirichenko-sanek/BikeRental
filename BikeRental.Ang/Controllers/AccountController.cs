@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Security;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
@@ -7,6 +8,7 @@ using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.Ang.Controllers
 {
+    
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {

@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using System.Net.Http.Formatting;
-using System.Web.Http;
-using Newtonsoft.Json.Serialization;
+﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace BikeRental.Ang
 {
@@ -9,6 +7,10 @@ namespace BikeRental.Ang
     {
         public static void Register(HttpConfiguration config)
         {
+
+            var cors = new EnableCorsAttribute("", "", "") {SupportsCredentials = true};
+            config.EnableCors(cors);
+
 
             config.MapHttpAttributeRoutes();
 
