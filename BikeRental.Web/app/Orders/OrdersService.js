@@ -2,18 +2,18 @@
 
     app.factory('OrdersService', OrdersService);
 
-    OrdersService.$inject = ['$http','$rootScope'];
+    OrdersService.$inject = ['$http', '$rootScope', '$location'];
 
-    function OrdersService($http, $rootScope) {
+    function OrdersService($http, $rootScope, $location) {
 
         var service = {
             getOrders: getOrders
         }
 
-        function getOrders(model) {
+        function getOrders() {
             $http.get('http://localhost:64069/api/profile/getOrders/' + $rootScope.userLog)
                 .then(function (data) {
-                    model = data.data;
+                    return  data.data;
                 })
                 .catch(function (result) {
                     console.log('Result: ', result);

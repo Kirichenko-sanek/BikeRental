@@ -6,7 +6,6 @@
 
     function OrdersController($scope, OrdersService) {
         $scope.pageClass = 'page-orders';
-        $scope.getOrders = getOrders;
         $scope.model = {
             idOrder: null,
             idUder: null,
@@ -20,11 +19,9 @@
             photo: null,
             priceOrder: null
         };
-        $scope.getOrders();
+        $scope.model = OrdersService.getOrders();
 
-        function getOrders() {
-            OrdersService.getOrders($scope.model);
-        }
+
     }
 
 })(angular.module('BikeRental'));

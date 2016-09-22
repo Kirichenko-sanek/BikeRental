@@ -27,10 +27,7 @@ namespace BikeRental.Ang
             var config = GlobalConfiguration.Configuration;
 
             AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
             WebApiConfig.Register(config);
-
             GlobalConfiguration.Configuration.EnsureInitialized();
 
             FluentValidationModelValidatorProvider.Configure();
@@ -38,7 +35,8 @@ namespace BikeRental.Ang
            
 
 
-            
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
             MapperConfig.RegisterMapping();
 
             ConfigureWindsor(GlobalConfiguration.Configuration);

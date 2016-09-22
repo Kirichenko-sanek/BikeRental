@@ -4,8 +4,9 @@
     window.angular.module('BikeRental', ['ngRoute', 'ngCookies'])
         .config(config);
 
-    config.$inject = ['$routeProvider'];
-    function config($routeProvider) {
+    config.$inject = ['$routeProvider', '$httpProvider'];
+    function config($routeProvider, $httpProvider) {
+
         $routeProvider
             .when("/", {
                 templateUrl: "app/Home/home.html",
@@ -33,6 +34,8 @@
                 controller: "HomeController"
                 
             });
+
+
 
 
     }

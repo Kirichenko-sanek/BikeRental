@@ -8,7 +8,6 @@ using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.Ang.Controllers
 {
-    
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {

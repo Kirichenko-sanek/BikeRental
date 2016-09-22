@@ -3,6 +3,7 @@
 
     app.controller('rootController', rootController);
 
+    app.option
 
     rootController.$inject = ['$rootScope', '$location', '$http'];
 
@@ -35,6 +36,8 @@
                     function (data) {
                         if (data.data !== 0) {
                             $rootScope.userLog = data.data;
+                        } else {
+                            $rootScope.userLog = 0;
                         }
                     })
                 .catch(function (result) {

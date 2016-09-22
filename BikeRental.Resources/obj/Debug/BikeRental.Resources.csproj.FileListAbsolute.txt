@@ -36,3 +36,4 @@ D:\Work\BikeRental\BikeRental.Resources\obj\Debug\en\BikeRental.Resources.resour
 D:\Work\BikeRental\BikeRental.Resources\obj\Debug\ru\BikeRental.Resources.resources.dll
 D:\Work\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.dll
 D:\Work\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.pdb
+D:\Work\BikeRental\BikeRental.Resources\obj\Debug\BikeRental.Resources.csprojResolveAssemblyReference.cache

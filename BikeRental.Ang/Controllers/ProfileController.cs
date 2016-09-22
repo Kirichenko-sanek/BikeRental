@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.ViewModel.ViewModel;
@@ -44,9 +45,9 @@ namespace BikeRental.Ang.Controllers
 
         [Route("getOrders/{userId}")]
         [HttpGet]
-        public List<OrderViewModel> GetOrders(long idUser)
+        public List<OrderViewModel> GetOrders(long userId)
         {
-            var userOrders = _orderManager.GetOrdersByUser(idUser);
+            var userOrders = _orderManager.GetOrdersByUser(userId);
             return userOrders;
         }
 
