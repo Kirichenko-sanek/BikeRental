@@ -6,19 +6,19 @@
             <header class="page-header">
                 <h1 class="page-title">MyOrders</h1>
             </header>
-            <div ng-repeat="order in model">
+            <div ng-repeat="order in model.orders">
                 <p>
-                    <img src="{{order.photo}}" alt="" class="img-rounded pull-right" width="300">
+                    <img src="{{order.Photo}}" alt="" class="img-rounded pull-right" width="300">
                 </p>
-                <h4>@Resource.DateOrder : {{order.dateOrder}}</h4>
-                <h4>@Resource.TimeStart : {{order.timeStart}}</h4>
+                <h4>@Resource.DateOrder : {{order.DateOrder}}</h4>
+                <h4>@Resource.TimeStart : {{order.TimeStart}}</h4>
                 <h4>@Resource.TimeEnd : {{order.TimeEnd}}</h4>
-                <h4>@Resource.PriceOrder : {{order.priceOrder}}</h4>
+                <h4>@Resource.PriceOrder : {{order.PriceOrder}}</h4>
                 
-                <h4 ng-if="order.status == true" style="color: green">@Resource.Status : @Resource.Active</h4>
-                <h4 ng-if="order.status == false" style="color: red">@Resource.Status : @Resource.NotActive</h4>
-                <h4>@Resource.BeforeStart : {{order.beforeStart}}</h4>
-                <h4>@Resource.BeforeEnd : {{order.beforeEnd}}</h4>
+                <h4 ng-if="order.Status == true" style="color: green">@Resource.Status : @Resource.Active</h4>
+                <h4 ng-if="order.Status == false" style="color: red">@Resource.Status : @Resource.NotActive</h4>
+                <h4>@Resource.BeforeStart : {{order.BeforeStart}}</h4>
+                <h4>@Resource.BeforeEnd : {{order.BeforeEnd}}</h4>
 
                 <header class="page-header"> </header>
             </div>

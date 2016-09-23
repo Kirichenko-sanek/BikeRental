@@ -10,16 +10,18 @@
             getOrders: getOrders
         }
 
-        function getOrders() {
+        function getOrders(model) {
             $http.get('http://localhost:64069/api/profile/getOrders/' + $rootScope.userLog)
                 .then(function (data) {
-                    return  data.data;
+                    model.orders = data.data;
+                    $location.path('/userOrders');
                 })
                 .catch(function (result) {
                     console.log('Result: ', result);
                 })
-                .finally(function () {
+                .finally(function () {                 
                     console.log('Finally');
+                    
                 });
         }
 

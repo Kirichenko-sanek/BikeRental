@@ -3,7 +3,7 @@
     <div class="jumbotron top-space">
         <div class="container">
             <h4 class="text-center thin">{{model.error}}</h4>
-            <h4 ng-if="model.accessTime > model.timeNow" class="text-center thin"> @Resource.BikeAvailable {{model.accessTime}} </h4>
+            <h4 ng-if="model.accessTime != null" class="text-center thin"> @Resource.BikeAvailable {{model.accessTime}} </h4>
 
 
             <h3 class="text-center thin">Время Аренды</h3>

@@ -26,10 +26,14 @@ namespace BikeRental.Ang.Controllers
 
         [Route("takeBike/{userId}")]
         [HttpPost]
-        public string TakeBike(TakeBikeViewModel model, long userId)
+        public TakeBikeViewModel TakeBike(TakeBikeViewModel model, long userId)
         {
             var takeBike = _bikeManager.TakeBike(model, userId);
-            return takeBike.Error;
+            if (takeBike.Error != null)
+            {
+                takeBike.AccessTime = _bikeManager.AccessTime(takeBike.PotentialBike);
+            }     
+            return takeBike;
         }
 
         [Route("getTypes")]

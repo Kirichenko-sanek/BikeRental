@@ -6,20 +6,11 @@
 
     function OrdersController($scope, OrdersService) {
         $scope.pageClass = 'page-orders';
-        $scope.model = {
-            idOrder: null,
-            idUder: null,
-            idBike: null,
-            timeStart: null,
-            timeEnd: null,
-            dateOrder: null,
-            status: null,
-            beforStart: null,
-            beforEnd: null,
-            photo: null,
-            priceOrder: null
-        };
-        $scope.model = OrdersService.getOrders();
+        $scope.model = 
+        {
+            orders: []
+        }
+        OrdersService.getOrders($scope.model);
 
 
     }

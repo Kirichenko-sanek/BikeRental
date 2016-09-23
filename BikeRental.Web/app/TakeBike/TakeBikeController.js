@@ -13,9 +13,8 @@
                 error: '',
                 timeStart: '',
                 timeEnd: '',
-                accessTime: '',
+                accessTime: null,
                 selectSex: '',
-                timeNow: Date(),
                 types:[],
                 selectType: null
 

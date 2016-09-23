@@ -15,8 +15,9 @@
             model.error = '';
             $http.post('http://localhost:64069/api/profile/takeBike/' + $rootScope.userLog, model)
                 .then(function (data) {
-                    if (data.data !== '') {
-                        model.error = data.data;
+                    if (data.data.Error !== '') {
+                        model.error = data.data.Error;
+                        model.accessTime = data.data.AccessTime;
                         $location.path('/takeBike');
                     } else {
                         $location.path('/home');
