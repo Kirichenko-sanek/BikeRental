@@ -1,7 +1,7 @@
 ﻿(function () {
 
 
-    window.angular.module('BikeRental', ['ngRoute', 'ngCookies'])
+    window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'LocalStorageModule'])
         .config(config);
 
     config.$inject = ['$routeProvider', '$httpProvider'];

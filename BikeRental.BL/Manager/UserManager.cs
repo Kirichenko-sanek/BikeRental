@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Security;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
@@ -27,8 +28,9 @@ namespace BikeRental.BL.Manager
                 if (user == null) throw new Exception(Resource.EmailNotRegistered);
                 var pass = PasswordHashing.HashPassword(model.Password, user.PasswordSalt);
                 if (user.Password != pass) throw new Exception(Resource.WrongPassword);
-                if (!user.IsActivated) throw new Exception();               
-                FormsAuthentication.SetAuthCookie(user.Email, false);
+                if (!user.IsActivated) throw new Exception();
+                model.Role = user.Roles.Role;              
+                FormsAuthentication.SetAuthCookie(user.Email, true);
                 model.IdUser = user.Id;
                 return model;
             }
@@ -36,17 +38,17 @@ namespace BikeRental.BL.Manager
             {
                 model.Error = e.Message;
                 return model;
-            }
-            
+            }            
         }
 
-        /*public async Task<LoginViewModel> LogInAs(LoginViewModel model)
+        public LoginViewModel LogInApi(string email, string password)
         {
+            var model = new LoginViewModel();
             try
             {
-                var user = GetAll().FirstOrDefault(x => x.Email == model.Email);
+                var user = GetAll().FirstOrDefault(x => x.Email == email);
                 if (user == null) throw new Exception(Resource.EmailNotRegistered);
-                var pass = PasswordHashing.HashPassword(model.Password, user.PasswordSalt);
+                var pass = PasswordHashing.HashPassword(password, user.PasswordSalt);
                 if (user.Password != pass) throw new Exception(Resource.WrongPassword);
                 if (!user.IsActivated) throw new Exception();
                 FormsAuthentication.SetAuthCookie(user.Email, false);
@@ -58,7 +60,7 @@ namespace BikeRental.BL.Manager
                 model.Error = e.Message;
                 return model;
             }
-        }*/
+        }
 
         public User GetUserByEmail(string email)
         {

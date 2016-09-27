@@ -10,5 +10,6 @@ namespace BikeRental.ViewModel.ViewModel
         public string Password { get; set; }
         public string Error { get; set; }
         public long IdUser { get; set; }
+        public string Role { get; set; }
     }
 }

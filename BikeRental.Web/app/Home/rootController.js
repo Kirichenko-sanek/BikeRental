@@ -5,47 +5,37 @@
 
     app.option
 
-    rootController.$inject = ['$rootScope', '$location', '$http'];
+    rootController.$inject = ['$rootScope', '$location', '$http', 'localStorageService'];
 
-    function rootController($rootScope, $location, $http) {
+    function rootController($rootScope, $location, $http, localStorageService) {
         $rootScope.logoff = logoff;
         $rootScope.userInSystem = userInSystem();
        
 
         function logoff() {
-            $http.post('http://localhost:64069/api/account/logoff')
-                .then(
-                    function (data) {
-                        if (data.data === true) {
-                            $rootScope.userLog = 0;
-                            $location.path('/home');
-                        }
-                    })
-                .catch(function (result) {
-                    console.log('Result: ', result);
-                })
-                .finally(function () {
-                    console.log('Finally');
-                });
+            localStorageService.remove('authorizationData');
+            $rootScope.userLog = 0;
+            $location.path('/home');
         }
 
         function userInSystem() {
-            //$rootScope.userLog = 0;
-            $http.get('http://localhost:64069/api/account/userInSystem')
-                .then(
-                    function (data) {
-                        if (data.data !== 0) {
+            var aut = localStorageService.get('authorizationData');
+            if (aut !== undefined) {
+                $http.post('http://localhost:64069/api/account/userInSystem?userName=' + aut.userName)
+                    .then(
+                        function (data) {
                             $rootScope.userLog = data.data;
-                        } else {
-                            $rootScope.userLog = 0;
-                        }
+                        })
+                    .catch(function(result) {
+                        console.log('Result: ', result);
                     })
-                .catch(function (result) {
-                    console.log('Result: ', result);
-                })
-                .finally(function () {
-                    console.log('Finally');
-                });
+                    .finally(function() {
+                        console.log('Finally');
+                    });
+            } else {
+                $rootScope.userLog = 0;
+            }
+
         }
 
 
