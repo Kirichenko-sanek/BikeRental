@@ -94,6 +94,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\AddBike\addBike.html" />
+    <Content Include="app\AddBike\AddBikeController.js" />
+    <Content Include="app\AddBike\AddBikeService.js" />
+    <Content Include="app\Admin\adminPage.html" />
+    <Content Include="app\ListBike\listBike.html" />
+    <Content Include="app\ListBike\ListBikeController.js" />
+    <Content Include="app\ListBike\ListBikeService.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -162,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BikeRental.Resources\BikeRental.Resources.csproj">
+      <Project>{ae9bfff0-3548-4e9a-ab21-536f59f8fab8}</Project>
+      <Name>BikeRental.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

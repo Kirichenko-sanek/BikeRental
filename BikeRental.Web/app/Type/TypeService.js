@@ -16,7 +16,7 @@
                 .then(
                     function (data) {
                         model.types = data.data;
-                        $location.path('/takeBike');
+                        //$location.path('/takeBike');
                     })
                 .catch(function(result) {
                     console.log('Result: ', result);

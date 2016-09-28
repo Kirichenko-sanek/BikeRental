@@ -113,7 +113,7 @@ namespace BikeRental.BL.Manager
             {
                 bikeList = GetAll().Where(x => x.Status);
             }
-            if (model.SelectType != 0 && model.SelectSex != null)
+            else if (model.SelectType != 0 && model.SelectSex != null)
             {
                 bikeList =
                     GetAll().Where(x => (x.Type.Id == model.SelectType && x.Sex == model.SelectSex && x.Status));

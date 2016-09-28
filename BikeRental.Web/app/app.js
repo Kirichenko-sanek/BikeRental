@@ -1,7 +1,7 @@
 ﻿(function () {
 
 
-    window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'LocalStorageModule'])
+    window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'angularFileUpload'])
         .config(config);
 
     config.$inject = ['$routeProvider', '$httpProvider'];
@@ -27,6 +27,21 @@
             {
                 templateUrl: "app/Orders/userOrders.html",
                 controller: "OrdersController"
+            })
+            .when("/adminPage",
+            {
+                templateUrl: "app/Admin/adminPage.html"
+                
+            })
+            .when("/addBike",
+            {
+                templateUrl: "app/AddBike/addBike.html",
+                controller: "AddBikeController"
+            })
+            .when("/listBike",
+            {
+                templateUrl: "app/ListBike/listBike.html",
+                controller: "ListBikeController"
             })
             .when("/home",
             {

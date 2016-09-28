@@ -10,15 +10,15 @@
                 <p>
                     <img src="{{order.Photo}}" alt="" class="img-rounded pull-right" width="300">
                 </p>
-                <h4>@Resource.DateOrder : {{order.DateOrder}}</h4>
-                <h4>@Resource.TimeStart : {{order.TimeStart}}</h4>
-                <h4>@Resource.TimeEnd : {{order.TimeEnd}}</h4>
-                <h4>@Resource.PriceOrder : {{order.PriceOrder}}</h4>
+                <h4> Date order : {{order.DateOrder}}</h4>
+                <h4> Time start : {{order.TimeStart}}</h4>
+                <h4> Time end : {{order.TimeEnd}}</h4>
+                <h4> Price order : {{order.PriceOrder}}</h4>
                 
-                <h4 ng-if="order.Status == true" style="color: green">@Resource.Status : @Resource.Active</h4>
-                <h4 ng-if="order.Status == false" style="color: red">@Resource.Status : @Resource.NotActive</h4>
-                <h4>@Resource.BeforeStart : {{order.BeforeStart}}</h4>
-                <h4>@Resource.BeforeEnd : {{order.BeforeEnd}}</h4>
+                <h4 ng-if="order.Status == true" style="color: green"> Status : Active</h4>
+                <h4 ng-if="order.Status == false" style="color: red"> Status : NotActive</h4>
+                <h4>Before start : {{order.BeforeStart}}</h4>
+                <h4>Before end : {{order.BeforeEnd}}</h4>
 
                 <header class="page-header"> </header>
             </div>

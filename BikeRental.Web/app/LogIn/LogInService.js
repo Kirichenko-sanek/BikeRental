@@ -20,10 +20,11 @@
                 .then(function (data) {
                     localStorageService.set('authorizationData',
                     { token: data.data.access_token, userName: model.email });
-                    $http.post('http://localhost:64069/api/account/userInSystem?userName=' + aut.userName)
+                    $http.post('http://localhost:64069/api/account/userInSystem?userName=' + model.email)
                     .then(
                         function (data) {
                             $rootScope.userLog = data.data;
+                            $location.path('/home');
                         })
                     .catch(function (result) {
                         console.log('Result: ', result);
@@ -32,7 +33,7 @@
                         console.log('Finally');
                     });
 
-                    $location.path('/home');
+                    
 
                 })
                 .catch(function (result) {

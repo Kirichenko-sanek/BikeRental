@@ -1,0 +1,62 @@
+﻿<header id="head" class="secondary"></header>
+<form ng-submit="addBike()" class="form-signin" role="form" method="post">
+    <div class="jumbotron top-space">
+        <div class="container">
+            
+            <h3 class="text-center thin">Type bike</h3>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 highlight" ng-repeat="type in model.types">
+                    <div class="h-caption">
+                        <h4>
+                            <i class="fa fa-cogs fa-5"></i><input type="radio" value="{{type.IdType}}" ng-model="model.idType" /> {{type.NameType}}
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-center thin">Sex</h3>
+            <div class="row">
+                <div class="col-md-3 "></div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <h4><input type="radio" ng-model="model.sex" value="Men"/> Men </h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <h4><input type="radio" ng-model="model.sex" value="Women"/> Women </h4>
+                    </div>
+                </div>
+                <div class="col-md-3 "></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 "></div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <input type="text" ng-model="model.price" autocomplete="off" required />
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 highlight">
+                    <div class="h-caption">
+                        <p>Photo</p>
+                        <input type="file" file-model="myFile"/>
+                        
+                    </div>
+                </div>
+                <div class="col-md-3 "></div>
+            </div>
+
+            
+            <input type="submit" value="AddBike" class="btn btn-action btn-lg" style="width: 100%" />
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</form>

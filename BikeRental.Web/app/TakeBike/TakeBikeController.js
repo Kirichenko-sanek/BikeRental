@@ -14,12 +14,14 @@
                 timeStart: '',
                 timeEnd: '',
                 accessTime: null,
-                selectSex: '',
+                selectSex: null,
                 types:[],
-                selectType: null
+                selectType: 0
 
             };
             TypeService.getType($scope.model);
+
+            
 
 
         function takeBike() {
