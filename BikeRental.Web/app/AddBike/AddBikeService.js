@@ -3,9 +3,9 @@
 
     app.factory('AddBikeService', AddBikeService);
 
-    AddBikeService.$inject = ['$http','$parse', '$location', '$rootScope', 'localStorageService'];
+    AddBikeService.$inject = ['$http', '$location', '$rootScope', 'localStorageService'];
 
-    function AddBikeService($http,$parse, $location, $rootScope, localStorageService) {
+    function AddBikeService($http, $location, $rootScope, localStorageService) {
 
         var service = {
             addBike: addBike

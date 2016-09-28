@@ -2,12 +2,13 @@
 
     app.factory('OrdersService', OrdersService);
 
-    OrdersService.$inject = ['$http', '$rootScope', '$location'];
+    OrdersService.$inject = ['$http','$route', '$rootScope', '$location'];
 
-    function OrdersService($http, $rootScope, $location) {
+    function OrdersService($http, $route, $rootScope, $location) {
 
         var service = {
-            getOrders: getOrders
+            getOrders: getOrders,
+            deleteOrder: deleteOrder
         }
 
         function getOrders(model) {
@@ -22,6 +23,21 @@
                 .finally(function () {                 
                     console.log('Finally');
                     
+                });
+        }
+
+        function deleteOrder(id) {
+            $http.post('http://localhost:64069/api/profile/deleteOrder/' + id)
+                .then(
+                    function (data) {
+                        $route.reload();
+
+                    })
+                .catch(function (result) {
+                    console.log('Result: ', result);
+                })
+                .finally(function () {
+                    console.log('Finally');
                 });
         }
 

@@ -3,9 +3,9 @@
 
     app.controller('AddBikeController', AddBikeController);
 
-    AddBikeController.$inject = ['$scope', 'AddBikeService', 'TypeService', 'FileUpload'];
+    AddBikeController.$inject = ['$scope', 'AddBikeService', 'TypeService'];
 
-    function AddBikeController($scope, AddBikeService, TypeService, FileUpload) {
+    function AddBikeController($scope, AddBikeService, TypeService) {
         $scope.pageClass = 'page-addBike';
         $scope.addBike = addBike;
         $scope.model = {

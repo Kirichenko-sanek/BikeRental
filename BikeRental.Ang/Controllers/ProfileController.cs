@@ -45,8 +45,6 @@ namespace BikeRental.Ang.Controllers
             return types;
         }
 
-
-
         [Route("getOrders/{userId}")]
         [HttpGet]
         public List<OrderViewModel> GetOrders(long userId)
@@ -54,6 +52,16 @@ namespace BikeRental.Ang.Controllers
             var userOrders = _orderManager.GetOrdersByUser(userId);
             return userOrders;
         }
+
+        [Route("deleteOrder/{id}")]
+        [HttpPost]
+        public void DeleteOrder(long id)
+        {
+            _orderManager.DeleteOrder(id);
+        }
+
+
+
 
         [Route("go")]
         [HttpGet]
