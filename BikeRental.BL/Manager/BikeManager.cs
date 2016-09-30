@@ -106,8 +106,7 @@ namespace BikeRental.BL.Manager
             IQueryable<Bike> bikeList;
             IQueryable<Order> orderList;
             Bike oneBike = null;
-
-
+           
 
             if (model.SelectType == 0 && model.SelectSex == null)
             {

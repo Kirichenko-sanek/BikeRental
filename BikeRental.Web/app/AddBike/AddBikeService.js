@@ -12,7 +12,7 @@
 
         }
 
-        function addBike(model) {
+        function addBike(model,file) {
             $http.post('http://localhost:64069/api/admin/addBike', model)
                .then(function (data) {
                    /*if (data.data.Error !== '') {

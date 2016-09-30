@@ -16,9 +16,18 @@
         };
         TypeService.getType($scope.model);       
 
+        $scope.file = {}
+        
+        $scope.options = {
+            change: function(file) {
+                file.$upload('http://localhost:64069/api/admin/upload', $scope.file);
+                //file.$preview($scope.items[i]);
+                $scope.file = file;
+            }
+        }
 
         function addBike() {         
-            AddBikeService.addBike($scope.model);
+            AddBikeService.addBike($scope.model, $scope.file);
         }
 
     }

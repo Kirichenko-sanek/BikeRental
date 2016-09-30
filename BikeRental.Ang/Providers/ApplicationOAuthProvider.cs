@@ -87,7 +87,7 @@ namespace BikeRental.Ang.Providers
                 identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
                 identity.AddClaim(new Claim("sub", context.UserName));
                 identity.AddClaim(new Claim("role", "user"));
-
+                
                 context.Validated(identity);
             }
             catch (Exception e)

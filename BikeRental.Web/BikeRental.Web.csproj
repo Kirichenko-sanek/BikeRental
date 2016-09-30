@@ -97,10 +97,15 @@
     <Content Include="app\AddBike\addBike.html" />
     <Content Include="app\AddBike\AddBikeController.js" />
     <Content Include="app\AddBike\AddBikeService.js" />
-    <Content Include="app\Admin\adminPage.html" />
+    <Content Include="app\EditBike\editBike.html" />
+    <Content Include="app\EditBike\EditBikeController.js" />
+    <Content Include="app\EditBike\EditBikeService.js" />
     <Content Include="app\ListBike\listBike.html" />
     <Content Include="app\ListBike\ListBikeController.js" />
     <Content Include="app\ListBike\ListBikeService.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -110,7 +115,17 @@
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
     <Content Include="assets\fonts\fontawesome-webfont.woff" />
     <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

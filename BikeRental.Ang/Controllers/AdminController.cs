@@ -28,13 +28,21 @@ namespace BikeRental.Ang.Controllers
         }
 
 
+        [Route("upload")]
+        [HttpPost]
+        public void Upload()
+        {
+            var request = HttpContext.Current.Request;
+             
+        }
+
         [Route("addBike")]
         [HttpPost]
-        public bool AddBike(AddBikeViewModel model, HttpPostedFileBase upload)
+        public bool AddBike(AddBikeViewModel model)
         {
             try
             {
-                _bikeManager.AddBikePost(model, upload, HostingEnvironment.MapPath("/assets/images/Bikes/"));
+                //_bikeManager.AddBikePost(model, upload, HostingEnvironment.MapPath("/assets/images/Bikes/"));
                 return true;
             }
             catch (Exception)
@@ -63,5 +71,13 @@ namespace BikeRental.Ang.Controllers
         {
             _bikeManager.EditStatus(id);
         }
+
+        [Route("getBike/{id}")]
+        [HttpGet]
+        public EditBikeViewModel GetBike(long id)
+        {
+            return _bikeManager.EditBikeGet(id);
+        }
+
     }
 }

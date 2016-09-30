@@ -14,10 +14,15 @@
         function getOrders(model) {
             $http.get('http://localhost:64069/api/profile/getOrders/' + $rootScope.userLog)
                 .then(function (data) {
-                    model.orders = data.data;
+                    if (data.data.length === 0) {
+                        model.orders = null;
+                    } else {
+                        model.orders = data.data;
+                    }
                     $location.path('/userOrders');
                 })
                 .catch(function (result) {
+                    model.orders = null;
                     console.log('Result: ', result);
                 })
                 .finally(function () {                 

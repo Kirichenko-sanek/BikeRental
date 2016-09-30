@@ -1,33 +1,42 @@
 ﻿<header id="head" class="secondary"></header>
-<div class="container">
+<div class="container" style="width: 100%">
     <div class="row">
-        <article class="col-sm-2 maincontent"></article>
-        <article class="col-sm-8 maincontent">
-            <header class="page-header">
-                <h1 class="page-title">MyOrders</h1>
-            </header>
-            <div ng-repeat="order in model.orders">
-                <p>
-                    <img src="{{order.Photo}}" alt="" class="img-rounded pull-right" width="300">
-                </p>
-                <h4> Date order : {{order.DateOrder}}</h4>
-                <h4> Time start : {{order.TimeStart}}</h4>
-                <h4> Time end : {{order.TimeEnd}}</h4>
-                <h4> Price order : {{order.PriceOrder}}</h4>
-                
-                <h4 ng-if="order.Status == true" style="color: green"> Status : Active</h4>
-                <h4 ng-if="order.Status == false" style="color: red"> Status : NotActive</h4>
-                <h4>Before start : {{order.BeforeStart}}</h4>
-                <h4>Before end : {{order.BeforeEnd}}</h4>
-
-                <a ng-click="deleteOrder(order.IdOrder)" class="btn btn-action btn-lg">Delete</a>
-                <header class="page-header"> </header>
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
+            <div class="row">
+                <header class="page-header">
+                    <h1 class="page-title">MyOrders</h1>
+                </header>
             </div>
+            <div class="row" ng-if="model.orders == null">
+                <h4>
+                    You do not have active orders. <a ng-href="/#/takeBike">Would you like to take a bike?</a>
+                </h4>
+            </div>
+            <div ng-repeat="order in model.orders">
+                <div class="row">
 
-
-
-
-        </article>
-        <article class="col-sm-2 maincontent"></article>
+                    <div class="col-md-6">
+                        <h4> Date order : {{order.DateOrder | date:'yyyy-MM-dd HH:mm'}}</h4>
+                        <h4> Time start : {{order.TimeStart | date:'yyyy-MM-dd HH:mm'}}</h4>
+                        <h4> Time end : {{order.TimeEnd | date:'yyyy-MM-dd HH:mm'}}</h4>
+                        <h4> Price order : {{order.PriceOrder}} UAH</h4>
+                        <h4 ng-if="order.Status == true" style="color: green"> Status : Active</h4>
+                        <h4 ng-if="order.Status == false" style="color: red"> Status : NotActive</h4>
+                        <h4>Before start : {{order.BeforeStart | date:'yyyy-MM-dd HH:mm'}}</h4>
+                        <h4>Before end : {{order.BeforeEnd | date:'yyyy-MM-dd HH:mm'}}</h4>           
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{order.Photo}}" alt="">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <a ng-click="showConfirm($event,order.IdOrder)" class="btn btn-action btn-lg" style="background-color: red">Delete order</a>
+                </div>
+                <div class="row">
+                    <header class="page-header"> </header>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

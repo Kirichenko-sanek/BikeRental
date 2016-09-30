@@ -1,36 +1,42 @@
 ﻿<header id="head" class="secondary"></header>
-<div class="container">
-    <div class="row">
-        <article class="col-xs-12 maincontent">
-            <header class="page-header">
-                <h1 class="page-title">LogIn</h1>
-            </header>
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div>
-                            {{model.error}}
+
+<div class="container" style="width: 100%">
+    <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12 top-margin">
+        <div class="card card-block">
+            <form ng-submit="login()" class="form-signin" name="userLoginForm" role="form" method="post">
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>LogIn</h4>
+                            </div>
+
+                            <div class="panel-body">
+                                <h4><label>Email</label></h4>
+                                <input type="email" class="form-control" placeholder="Email" ng-model="model.email" required />
+                            </div>
+                            <div class="panel-body">
+                                <h4><label>Password</label></h4>
+                                <input type="password" class="form-control" placeholder="Password" ng-model="model.password" required />
+                            </div>
+
                         </div>
-
-                        <form ng-submit="login()" class="form-signin"  name="userLoginForm" role="form" method="post">
-                            <div class="top-margin">
-                                <input type="email" class="form-control" placeholder="Email" ng-model="model.email" required/>
-                            </div>
-                            <div class="top-margin">
-                                <input type="password" class="form-control" placeholder="Password" ng-model="model.password" required/>
-                                <p> </p>
-                            </div>
-                            <div class="row">
-                                <input type="submit" value="LogIn" class="btn btn-action btn-lg" style="width: 100%">
-
-                            </div>
-                        </form>
-
-                        
-
                     </div>
                 </div>
-            </div>
-        </article>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+                        <div class="alert alert-danger" ng-if="model.error != ''">
+                            <strong>{{model.error}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-3 col-xs-6">
+                        <input type="submit" value="LogIn" class="btn btn-action btn-lg" style="width: 100%">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
