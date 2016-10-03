@@ -13,6 +13,7 @@ using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.Ang.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/Admin")]
     public class AdminController : ApiController
     {
@@ -30,6 +31,7 @@ namespace BikeRental.Ang.Controllers
 
 
         [Route("upload")]
+        [AllowAnonymous]
         [HttpPost]
         public string Upload()
         {
@@ -42,13 +44,16 @@ namespace BikeRental.Ang.Controllers
 
         [Route("addBike")]
         [HttpPost]
-        public bool AddBike(BikeViewModel model)
+        public void AddBike(BikeViewModel model)
         {
-
                 _bikeManager.AddBikeApi(model);
+        }
 
-                return true;
-
+        [Route("editBike")]
+        [HttpPost]
+        public void EditBike(EditBikeViewModel model)
+        {
+            _bikeManager.EditBikeApi(model);
         }
 
         [Route("getBikes")]

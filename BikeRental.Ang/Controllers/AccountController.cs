@@ -20,7 +20,7 @@ using Owin;
 
 namespace BikeRental.Ang.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {

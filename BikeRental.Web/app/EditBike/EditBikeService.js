@@ -8,7 +8,8 @@
     function EditBikeService($http,$routeParams, $location, $rootScope, localStorageService) {
 
         var service = {
-            getBike: getBike
+            getBike: getBike,
+            editBike: editBike
         }
 
         function getBike(model) {
@@ -27,7 +28,40 @@
                 });
         }
 
+        function editBike(model, file) {
+            if (file !== null) {
+                var fd = new FormData();
+                fd.set('file', file);
+                file.$upload($rootScope.localAddress + 'api/admin/upload', fd)
+                    .then(function (data) {
+                        model.Bike.photo = data.data;
+                        $http.post($rootScope.localAddress + 'api/admin/editBike', model)
+                            .then(function (data) {
+                                $location.path('/listBike');
+                            })
+                            .catch(function (result) {
+                                console.log('Result: ', result);
+                            })
+                            .finally(function () {
+                                console.log('Finally');
+                            });
+                    });
+            } else {
+                $http.post($rootScope.localAddress + 'api/admin/editBike', model)
+                           .then(function (data) {
+                               $location.path('/listBike');
+                           })
+                           .catch(function (result) {
+                               console.log('Result: ', result);
+                           })
+                           .finally(function () {
+                               console.log('Finally');
+                           });
+            }
+           
 
+
+        }
 
 
 

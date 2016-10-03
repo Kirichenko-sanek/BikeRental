@@ -58,7 +58,7 @@ namespace BikeRental.BL.Manager
             _manager.Add(entity);
         }
 
-
+        
         public List<BikeViewModel> ListBike()
         {
             var bikes = _manager.GetAll();
@@ -111,6 +111,21 @@ namespace BikeRental.BL.Manager
             bike.Photo = new Photo
             {
                 Url = AddPhotos.AddImage(upload, url, "/assets/images/Bikes/")
+            };
+            _manager.Update(bike);
+        }
+
+        public void EditBikeApi(EditBikeViewModel model)
+        {
+            var bike = _manager.GetById(model.Bike.IdBike);
+
+            bike.Sex = model.Bike.Sex;
+            bike.Price = model.Bike.Price;
+            bike.IdType = model.Bike.IdType;
+            bike.Status = true;
+            bike.Photo = new Photo
+            {
+                Url = model.Bike.Photo
             };
             _manager.Update(bike);
         }

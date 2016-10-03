@@ -3,9 +3,9 @@
 
     app.controller('rootController', rootController);
 
-    rootController.$inject = ['$rootScope', '$location', '$http', 'localStorageService'];
+    rootController.$inject = ['$q','$rootScope', '$location', '$http', 'localStorageService'];
 
-    function rootController($rootScope, $location, $http, localStorageService) {
+    function rootController($q, $rootScope, $location, $http, localStorageService) {
         $rootScope.localAddress = 'http://localhost:64069/';
         $rootScope.logoff = logoff;
         $rootScope.userInSystem = userInSystem();
@@ -23,11 +23,13 @@
             var aut = localStorageService.get('authorizationData');
             
             if (aut !== null) {
+                $http.defaults.headers.common['Authorization'] = 'Bearer ' + aut.token;
                 $http.post($rootScope.localAddress + 'api/account/userInSystem?userName=' + aut.userName)
                     .then(
                         function (data) {
                             $rootScope.userLog = data.data;
                             $rootScope.userNameLog = aut.userName;
+                            
                         })
                     .catch(function(result) {
                         console.log('Result: ', result);

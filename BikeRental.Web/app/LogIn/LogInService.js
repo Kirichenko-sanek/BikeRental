@@ -20,6 +20,7 @@
                 .then(function (data) {
                     localStorageService.set('authorizationData',
                     { token: data.data.access_token, userName: model.email });
+                    $http.defaults.headers.common['Authorization'] = 'Bearer ' + data.data.access_token;
                     $http.post($rootScope.localAddress + 'api/account/userInSystem?userName=' + model.email)
                     .then(
                         function (data) {

@@ -7,6 +7,7 @@ using BikeRental.ViewModel.ViewModel;
 
 namespace BikeRental.Ang.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/Profile")]
     public class ProfileController : ApiController
     {
