@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Http;
+using BikeRental.BL;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.ViewModel.ViewModel;
@@ -30,25 +31,24 @@ namespace BikeRental.Ang.Controllers
 
         [Route("upload")]
         [HttpPost]
-        public void Upload()
+        public string Upload()
         {
-            var request = HttpContext.Current.Request;
-             
+            var request = HttpContext.Current.Request.Files;
+            var a = request["Files"];
+            HttpPostedFileBase filebase = new HttpPostedFileWrapper(a);
+            var url = AddPhotos.AddImage(filebase, HostingEnvironment.MapPath("/assets/images/Bikes/"), "/assets/images/Bikes/");
+            return url;
         }
 
         [Route("addBike")]
         [HttpPost]
-        public bool AddBike(AddBikeViewModel model)
+        public bool AddBike(BikeViewModel model)
         {
-            try
-            {
-                //_bikeManager.AddBikePost(model, upload, HostingEnvironment.MapPath("/assets/images/Bikes/"));
+
+                _bikeManager.AddBikeApi(model);
+
                 return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+
         }
 
         [Route("getBikes")]

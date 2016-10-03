@@ -12,7 +12,7 @@
         }
 
         function getOrders(model) {
-            $http.get('http://localhost:64069/api/profile/getOrders/' + $rootScope.userLog)
+            $http.get($rootScope.localAddress + 'api/profile/getOrders/' + $rootScope.userLog)
                 .then(function (data) {
                     if (data.data.length === 0) {
                         model.orders = null;
@@ -32,7 +32,7 @@
         }
 
         function deleteOrder(id) {
-            $http.post('http://localhost:64069/api/profile/deleteOrder/' + id)
+            $http.post($rootScope.localAddress + 'api/profile/deleteOrder/' + id)
                 .then(
                     function (data) {
                         $route.reload();

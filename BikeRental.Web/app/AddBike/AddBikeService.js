@@ -12,23 +12,25 @@
 
         }
 
-        function addBike(model,file) {
-            $http.post('http://localhost:64069/api/admin/addBike', model)
-               .then(function (data) {
-                   /*if (data.data.Error !== '') {
-                       model.error = data.data.Error;
-                       model.accessTime = data.data.AccessTime;
-                       $location.path('/takeBike');
-                   } else {
-                       $location.path('/home');
-                   }*/
-               })
-               .catch(function (result) {
-                   console.log('Result: ', result);
-               })
-               .finally(function () {
-                   console.log('Finally');
-               });
+        function addBike(model, file) {
+            var fd = new FormData();
+            fd.set('file', file);
+            file.$upload($rootScope.localAddress + 'api/admin/upload', fd)
+                .then(function(data) {
+                    model.photo = data.data;
+                    $http.post($rootScope.localAddress + 'api/admin/addBike', model)
+                        .then(function(data) {
+                            $location.path('/listBike');
+                        })
+                        .catch(function(result) {
+                            console.log('Result: ', result);
+                        })
+                        .finally(function() {
+                            console.log('Finally');
+                        });
+                });
+
+
         }
        
 

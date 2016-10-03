@@ -10,6 +10,7 @@ namespace BikeRental.Interfases.Manager
     {
         AddBikeViewModel AddBikeGet(AddBikeViewModel model);
         void AddBikePost(AddBikeViewModel model, HttpPostedFileBase upload, string url);
+        void AddBikeApi(BikeViewModel model);
         List<BikeViewModel> ListBike();
         void DeleteBike(long id);
         void EditStatus(long id);

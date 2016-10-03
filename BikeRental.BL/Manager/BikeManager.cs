@@ -42,6 +42,22 @@ namespace BikeRental.BL.Manager
             _manager.Add(entity);
         }
 
+        public void AddBikeApi(BikeViewModel model)
+        {
+            var entity = new Bike
+            {
+                Sex = model.Sex,
+                Price = model.Price,
+                IdType = model.IdType,
+                Status = true,
+                Photo = new Photo
+                {
+                    Url = model.Photo           
+                }
+            };
+            _manager.Add(entity);
+        }
+
 
         public List<BikeViewModel> ListBike()
         {

@@ -13,7 +13,7 @@
 
         function getBike(model) {
             var currentId = $routeParams.id;
-            $http.get('http://localhost:64069/api/admin/getBike/' + currentId)
+            $http.get($rootScope.localAddress + 'api/admin/getBike/' + currentId)
                 .then(function (data) {
                     model.Types = data.data.Types;
                     model.Bike = data.data.Bike;

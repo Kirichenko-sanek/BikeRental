@@ -12,12 +12,12 @@
         }
 
         function takebike(model) {
-            if (model.timeStart > model.timeEnd || model.timeStart < Date()) {
+            model.error = '';
+            if (model.timeStart > model.timeEnd) {
                 model.error = 'Rental period is entered incorrectly';
                 $location.path('/takeBike');
-            } else {
-                model.error = '';
-                $http.post('http://localhost:64069/api/profile/takeBike/' + $rootScope.userLog, model)
+            } else {            
+                $http.post($rootScope.localAddress + 'api/profile/takeBike/' + $rootScope.userLog, model)
                     .then(function(data) {
                         if (data.data.Error !== '') {
                             model.error = data.data.Error;

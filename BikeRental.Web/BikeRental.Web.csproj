@@ -155,9 +155,6 @@
     <Content Include="assets\css\main.css" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\images\bg_header.jpg" />
-    <Content Include="assets\images\Bikes\1.jpg" />
-    <Content Include="assets\images\Bikes\2.jpg" />
-    <Content Include="assets\images\Bikes\3.jpg" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\js\google-map.js" />
     <Content Include="assets\js\headroom.min.js" />

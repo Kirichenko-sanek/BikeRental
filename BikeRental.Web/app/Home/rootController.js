@@ -6,8 +6,10 @@
     rootController.$inject = ['$rootScope', '$location', '$http', 'localStorageService'];
 
     function rootController($rootScope, $location, $http, localStorageService) {
+        $rootScope.localAddress = 'http://localhost:64069/';
         $rootScope.logoff = logoff;
         $rootScope.userInSystem = userInSystem();
+        
        
 
         function logoff() {
@@ -21,7 +23,7 @@
             var aut = localStorageService.get('authorizationData');
             
             if (aut !== null) {
-                $http.post('http://localhost:64069/api/account/userInSystem?userName=' + aut.userName)
+                $http.post($rootScope.localAddress + 'api/account/userInSystem?userName=' + aut.userName)
                     .then(
                         function (data) {
                             $rootScope.userLog = data.data;

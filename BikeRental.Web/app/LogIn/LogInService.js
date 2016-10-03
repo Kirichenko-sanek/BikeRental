@@ -16,11 +16,11 @@
         function login(model) {
             model.error = '';
             var aut = "grant_type=password&username=" + model.email + "&password=" + model.password;
-            $http.post('http://localhost:64069/token', aut)
+            $http.post($rootScope.localAddress + 'token', aut)
                 .then(function (data) {
                     localStorageService.set('authorizationData',
                     { token: data.data.access_token, userName: model.email });
-                    $http.post('http://localhost:64069/api/account/userInSystem?userName=' + model.email)
+                    $http.post($rootScope.localAddress + 'api/account/userInSystem?userName=' + model.email)
                     .then(
                         function (data) {
                             $rootScope.userLog = data.data;

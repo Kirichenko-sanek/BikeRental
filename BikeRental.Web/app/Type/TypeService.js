@@ -3,16 +3,16 @@
 
     app.factory('TypeService', TypeService);
 
-    TypeService.$inject = ['$http', '$location'];
+    TypeService.$inject = ['$http', '$location', '$rootScope'];
 
-    function TypeService($http, $location) {
+    function TypeService($http, $location, $rootScope) {
 
         var service = {
             getType: getType
     }
 
         function getType(model) {
-            $http.get('http://localhost:64069/api/profile/getTypes')
+            $http.get($rootScope.localAddress + 'api/profile/getTypes')
                 .then(
                     function (data) {
                         model.types = data.data;

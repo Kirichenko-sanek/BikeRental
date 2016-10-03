@@ -15,7 +15,7 @@
                     <div class="col-md-4">
                         <h4>Type : {{bike.Type}}</h4>
                         <h4>Sex : {{bike.Sex}}</h4>
-                        <h4>Price : {{bike.Price}}</h4>
+                        <h4>Price : {{bike.Price}} UAH</h4>
                         <h4 ng-if="bike.Status == true" style="color: green"> Status : Active</h4>
                         <h4 ng-if="bike.Status == false" style="color: red"> Status : NotActive</h4>
                         <div class="btn-group">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <img src="{{bike.Photo}}" alt="">
+                        <img src="{{localAddress + bike.Photo}}" alt="">
                     </div>
                 </div>
                 <div class="row">

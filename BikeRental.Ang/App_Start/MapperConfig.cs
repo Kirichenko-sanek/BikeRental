@@ -45,6 +45,16 @@ namespace BikeRental.Ang
                     m.IdType = p.Bike.IdType;
                     m.Status = true;
                 });
+                cfg.CreateMap<BikeViewModel, Bike>().AfterMap((p, m) =>
+                {
+                    m.Sex = p.Sex;
+                    m.Price = p.Price;
+                    m.IdType = p.IdType;
+                    m.Status = true;
+                });
+
+
+                
                 cfg.CreateMap<Bike, BikeViewModel>().AfterMap((p, m) =>
                 {
                     m.Sex = p.Sex;

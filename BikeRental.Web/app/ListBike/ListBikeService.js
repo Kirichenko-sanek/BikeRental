@@ -3,9 +3,9 @@
 
     app.factory('ListBikeService', ListBikeService);
 
-    ListBikeService.$inject = ['$http','$route', '$location'];
+    ListBikeService.$inject = ['$http', '$rootScope', '$route', '$location'];
 
-    function ListBikeService($http,$route, $location) {
+    function ListBikeService($http, $rootScope, $route, $location) {
 
         var service = {
             listBike: listBike,
@@ -14,7 +14,7 @@
         }
 
         function listBike(model) {
-            $http.get('http://localhost:64069/api/admin/getBikes')
+            $http.get($rootScope.localAddress + 'api/admin/getBikes')
                 .then(
                     function (data) {
                         model.bikes = data.data;
@@ -29,7 +29,7 @@
         }
 
         function deleteBike(id) {
-            $http.post('http://localhost:64069/api/admin/deleteBike/' + id)
+            $http.post($rootScope.localAddress + 'api/admin/deleteBike/' + id)
                 .then(
                     function (data) {
                         $route.reload();
@@ -44,7 +44,7 @@
         }
 
         function editStatus(id) {
-            $http.post('http://localhost:64069/api/admin/editStatus/' + id)
+            $http.post($rootScope.localAddress + 'api/admin/editStatus/' + id)
                 .then(
                     function (data) {
                         $route.reload();
