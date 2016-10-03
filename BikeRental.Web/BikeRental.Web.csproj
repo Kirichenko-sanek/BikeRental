@@ -95,14 +95,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\AddBike\addBike.html" />
-    <Content Include="app\AddBike\AddBikeController.js" />
-    <Content Include="app\AddBike\AddBikeService.js" />
+    <Content Include="app\AddBike\addBikeController.js" />
+    <Content Include="app\AddBike\addBikeService.js" />
     <Content Include="app\EditBike\editBike.html" />
-    <Content Include="app\EditBike\EditBikeController.js" />
-    <Content Include="app\EditBike\EditBikeService.js" />
+    <Content Include="app\EditBike\editBikeController.js" />
+    <Content Include="app\EditBike\editBikeService.js" />
     <Content Include="app\ListBike\listBike.html" />
-    <Content Include="app\ListBike\ListBikeController.js" />
-    <Content Include="app\ListBike\ListBikeService.js" />
+    <Content Include="app\ListBike\listBikeController.js" />
+    <Content Include="app\ListBike\listBikeService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
@@ -136,19 +136,19 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\Home\home.html" />
-    <Content Include="app\Home\HomeController.js" />
+    <Content Include="app\Home\homeController.js" />
     <Content Include="app\Home\rootController.js" />
     <Content Include="index.html" />
     <Content Include="app\LogIn\login.html" />
-    <Content Include="app\LogIn\LogInController.js" />
-    <Content Include="app\LogIn\LogInService.js" />
-    <Content Include="app\Orders\OrdersController.js" />
-    <Content Include="app\Orders\OrdersService.js" />
+    <Content Include="app\LogIn\logInController.js" />
+    <Content Include="app\LogIn\logInService.js" />
+    <Content Include="app\Orders\ordersController.js" />
+    <Content Include="app\Orders\ordersService.js" />
     <Content Include="app\Orders\userOrders.html" />
     <Content Include="app\TakeBike\takeBike.html" />
-    <Content Include="app\TakeBike\TakeBikeController.js" />
-    <Content Include="app\TakeBike\TakeBikeService.js" />
-    <Content Include="app\Type\TypeService.js" />
+    <Content Include="app\TakeBike\takeBikeController.js" />
+    <Content Include="app\TakeBike\takeBikeService.js" />
+    <Content Include="app\Type\typeService.js" />
     <Content Include="assets\css\bootstrap-theme.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />

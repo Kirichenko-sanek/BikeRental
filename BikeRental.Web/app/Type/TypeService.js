@@ -1,22 +1,17 @@
-﻿(function (app) {
+﻿(function(app) {
+    app.factory('typeService', typeService);
+    typeService.$inject = ['$http', '$location', '$rootScope'];
 
-
-    app.factory('TypeService', TypeService);
-
-    TypeService.$inject = ['$http', '$location', '$rootScope'];
-
-    function TypeService($http, $location, $rootScope) {
-
+    function typeService($http, $location, $rootScope) {
         var service = {
             getType: getType
-    }
+        }
 
         function getType(model) {
             $http.get($rootScope.localAddress + 'api/profile/getTypes')
                 .then(
-                    function (data) {
+                    function(data) {
                         model.types = data.data;
-                        //$location.path('/takeBike');
                     })
                 .catch(function(result) {
                     console.log('Result: ', result);
@@ -26,10 +21,6 @@
 
                 });
         }
-
-
-
         return service;
     }
 })(angular.module('BikeRental'));
-

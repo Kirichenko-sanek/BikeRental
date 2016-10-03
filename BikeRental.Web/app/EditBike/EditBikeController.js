@@ -1,36 +1,26 @@
-﻿(function (app) {
+﻿(function(app) {
+    app.controller('editBikeController', editBikeController);
+    editBikeController.$inject = ['$scope', '$http', 'editBikeService'];
 
-
-    app.controller('EditBikeController', EditBikeController);
-
-    EditBikeController.$inject = ['$scope', '$http', 'EditBikeService'];
-
-    function EditBikeController($scope, $http, EditBikeService) {
-        
+    function editBikeController($scope, $http, editBikeService) {
         $scope.pageClass = 'page-editBike';
         $scope.editBike = editBike;
         $scope.model = {
             Types: [],
             Bike: null
-
         };
         $scope.file = null;
 
         $scope.options = {
-            change: function (file) {
+            change: function(file) {
                 //file.$preview($scope.items[i]);
                 $scope.file = file;
             }
         }
-
-
-        EditBikeService.getBike($scope.model);
+        editBikeService.getBike($scope.model);
 
         function editBike() {
-            EditBikeService.editBike($scope.model, $scope.file);
+            editBikeService.editBike($scope.model, $scope.file);
         }
-
-
-
     }
 })(angular.module('BikeRental'));

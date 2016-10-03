@@ -1,12 +1,8 @@
-﻿(function (app) {
+﻿(function(app) {
+	app.controller('homeController', homeController);
+	homeController.$inject = ['$scope'];
 
-
-    app.controller('HomeController', HomeController);
-
-
-    HomeController.$inject = ['$scope'];
-    function HomeController($scope) {
-        $scope.pageClass = 'page-home';
-    }
-
+	function homeController($scope) {
+		$scope.pageClass = 'page-home';
+	}
 })(angular.module('BikeRental'));

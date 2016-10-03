@@ -1,15 +1,10 @@
-﻿(function (app) {
+﻿(function(app) {
+    app.factory('addBikeService', addBikeService);
+    addBikeService.$inject = ['$http', '$location', '$rootScope', 'localStorageService'];
 
-
-    app.factory('AddBikeService', AddBikeService);
-
-    AddBikeService.$inject = ['$http', '$location', '$rootScope', 'localStorageService'];
-
-    function AddBikeService($http, $location, $rootScope, localStorageService) {
-
+    function addBikeService($http, $location, $rootScope, localStorageService) {
         var service = {
             addBike: addBike
-
         }
 
         function addBike(model, file) {
@@ -29,15 +24,7 @@
                             console.log('Finally');
                         });
                 });
-
-
         }
-       
-
-
-
-
         return service;
     }
 })(angular.module('BikeRental'));
-

@@ -33,8 +33,10 @@ namespace BikeRental.Ang
                     m.TimeEnd = p.TimeEnd;
                     m.DateOrder = p.DateOrder;
                     m.Status = p.Status;
-                    m.BeforeStart = p.TimeStart >= DateTime.Now ? p.TimeStart.Subtract(DateTime.Now) : TimeSpan.Zero;
-                    m.BeforeEnd = p.TimeEnd >= DateTime.Now ? p.TimeEnd.Subtract(DateTime.Now) : TimeSpan.Zero;
+                    var ts = p.TimeStart >= DateTime.Now ? (p.TimeStart.Subtract(DateTime.Now)) : TimeSpan.Zero;
+                    m.BeforeStart = String.Format("{0:00}.{1:00}:{2:00}:{3:00}",ts.Days, ts.Hours, ts.Minutes, ts.Seconds);
+                    var tsEnd = p.TimeEnd >= DateTime.Now ? p.TimeEnd.Subtract(DateTime.Now) : TimeSpan.Zero;
+                    m.BeforeEnd = String.Format("{0:00}.{1:00}:{2:00}:{3:00}", tsEnd.Days, tsEnd.Hours, tsEnd.Minutes, tsEnd.Seconds);
                     m.Photo = p.Bike.Photo.Url;
                     m.PriceOrder = p.TotalPrice;
                 });
@@ -45,16 +47,6 @@ namespace BikeRental.Ang
                     m.IdType = p.Bike.IdType;
                     m.Status = true;
                 });
-                cfg.CreateMap<BikeViewModel, Bike>().AfterMap((p, m) =>
-                {
-                    m.Sex = p.Sex;
-                    m.Price = p.Price;
-                    m.IdType = p.IdType;
-                    m.Status = true;
-                });
-
-
-                
                 cfg.CreateMap<Bike, BikeViewModel>().AfterMap((p, m) =>
                 {
                     m.Sex = p.Sex;

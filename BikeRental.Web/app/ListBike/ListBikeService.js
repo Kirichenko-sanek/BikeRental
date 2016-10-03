@@ -1,12 +1,8 @@
-﻿(function (app) {
+﻿(function(app) {
+    app.factory('listBikeService', listBikeService);
+    listBikeService.$inject = ['$http', '$rootScope', '$route', '$location'];
 
-
-    app.factory('ListBikeService', ListBikeService);
-
-    ListBikeService.$inject = ['$http', '$rootScope', '$route', '$location'];
-
-    function ListBikeService($http, $rootScope, $route, $location) {
-
+    function listBikeService($http, $rootScope, $route, $location) {
         var service = {
             listBike: listBike,
             deleteBike: deleteBike,
@@ -16,29 +12,28 @@
         function listBike(model) {
             $http.get($rootScope.localAddress + 'api/admin/getBikes')
                 .then(
-                    function (data) {
+                    function(data) {
                         model.bikes = data.data;
                     })
-                .catch(function (result) {
+                .catch(function(result) {
                     console.log('Result: ', result);
                 })
-                .finally(function () {
+                .finally(function() {
                     console.log('Finally');
-
                 });
         }
 
         function deleteBike(id) {
             $http.post($rootScope.localAddress + 'api/admin/deleteBike/' + id)
                 .then(
-                    function (data) {
+                    function(data) {
                         $route.reload();
 
                     })
-                .catch(function (result) {
+                .catch(function(result) {
                     console.log('Result: ', result);
                 })
-                .finally(function () {
+                .finally(function() {
                     console.log('Finally');
                 });
         }
@@ -46,20 +41,16 @@
         function editStatus(id) {
             $http.post($rootScope.localAddress + 'api/admin/editStatus/' + id)
                 .then(
-                    function (data) {
+                    function(data) {
                         $route.reload();
-
                     })
-                .catch(function (result) {
+                .catch(function(result) {
                     console.log('Result: ', result);
                 })
-                .finally(function () {
+                .finally(function() {
                     console.log('Finally');
                 });
         }
-
-
         return service;
     }
 })(angular.module('BikeRental'));
-

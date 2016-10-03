@@ -1,16 +1,11 @@
-﻿(function (app) {
-
-
+﻿(function(app) {
     app.controller('rootController', rootController);
-
-    rootController.$inject = ['$q','$rootScope', '$location', '$http', 'localStorageService'];
+    rootController.$inject = ['$q', '$rootScope', '$location', '$http', 'localStorageService'];
 
     function rootController($q, $rootScope, $location, $http, localStorageService) {
         $rootScope.localAddress = 'http://localhost:64069/';
         $rootScope.logoff = logoff;
         $rootScope.userInSystem = userInSystem();
-        
-       
 
         function logoff() {
             localStorageService.remove('authorizationData');
@@ -21,15 +16,15 @@
 
         function userInSystem() {
             var aut = localStorageService.get('authorizationData');
-            
+
             if (aut !== null) {
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + aut.token;
                 $http.post($rootScope.localAddress + 'api/account/userInSystem?userName=' + aut.userName)
                     .then(
-                        function (data) {
+                        function(data) {
                             $rootScope.userLog = data.data;
                             $rootScope.userNameLog = aut.userName;
-                            
+
                         })
                     .catch(function(result) {
                         console.log('Result: ', result);
@@ -40,11 +35,6 @@
             } else {
                 $rootScope.userLog = 0;
             }
-
         }
-
-
-       
     }
-
 })(angular.module('BikeRental'));

@@ -1,71 +1,42 @@
-﻿(function () {
-
-
+﻿(function() {
     window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'oi.file', 'LocalStorageModule', 'ngAria', 'ngAnimate', 'ngMaterial'])
         .config(config);
-
     config.$inject = ['$routeProvider', '$httpProvider'];
-    function config($routeProvider, $httpProvider) {
 
+    function config($routeProvider, $httpProvider) {
         $routeProvider
             .when("/", {
                 templateUrl: "app/Home/home.html",
-                controller: "HomeController"
+                controller: "homeController"
             })
-            .when("/login",
-            {
+            .when("/login", {
                 templateUrl: "app/LogIn/login.html",
-                controller: "LogInController"
-               
+                controller: "logInController"
+
             })
-            .when("/takeBike",
-            {
+            .when("/takeBike", {
                 templateUrl: "app/TakeBike/takeBike.html",
-                controller: "TakeBikeController"
+                controller: "takeBikeController"
             })
-            .when("/userOrders",
-            {
+            .when("/userOrders", {
                 templateUrl: "app/Orders/userOrders.html",
-                controller: "OrdersController"
+                controller: "ordersController"
             })
-            .when("/adminPage",
-            {
-                templateUrl: "app/Admin/adminPage.html"
-                
-            })
-            .when("/addBike",
-            {
+            .when("/addBike", {
                 templateUrl: "app/AddBike/addBike.html",
-                controller: "AddBikeController"
+                controller: "addBikeController"
             })
-            .when("/listBike",
-            {
+            .when("/listBike", {
                 templateUrl: "app/ListBike/listBike.html",
-                controller: "ListBikeController"
+                controller: "listBikeController"
             })
-            .when("/editBike/:id",
-            {
+            .when("/editBike/:id", {
                 templateUrl: "app/EditBike/editBike.html",
-                controller: "EditBikeController"
+                controller: "editBikeController"
             })
-            .when("/home",
-            {
+            .when("/home", {
                 templateUrl: "app/Home/home.html",
-                controller: "HomeController"
-                
+                controller: "homeController"
             });
-
-
-
-
     }
-
-
-
 })();
-
-
-
-
-
-

@@ -1,11 +1,8 @@
-﻿(function (app) {
+﻿(function(app) {
+    app.controller('logInController', logInController);
+    logInController.$inject = ['$scope', 'logInService'];
 
-
-    app.controller('LogInController', LogInController);
-
-    LogInController.$inject = ['$scope', 'LogInService'];
-
-    function LogInController($scope, LogInService) {
+    function logInController($scope, logInService) {
         $scope.pageClass = 'page-login';
         $scope.login = login;
         $scope.model = {
@@ -13,12 +10,11 @@
             password: null,
             error: '',
             userId: 0
-    };
+        };
 
         function login() {
-            LogInService.login($scope.model);
+            logInService.login($scope.model);
         }
 
     }
-
 })(angular.module('BikeRental'));

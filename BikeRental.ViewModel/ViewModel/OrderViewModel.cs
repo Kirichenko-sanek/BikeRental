@@ -11,8 +11,8 @@ namespace BikeRental.ViewModel.ViewModel
         public DateTime TimeEnd { get; set; }
         public DateTime DateOrder { get; set; }
         public bool Status { get; set; }
-        public TimeSpan BeforeStart { get; set; }
-        public TimeSpan BeforeEnd { get; set; }
+        public string BeforeStart { get; set; }
+        public string BeforeEnd { get; set; }
         public string Photo { get; set; }
         public decimal PriceOrder { get; set; }
     }

@@ -1,11 +1,11 @@
-﻿(function (app) {
+﻿(function(app) {
 
 
-    app.controller('AddBikeController', AddBikeController);
+    app.controller('addBikeController', addBikeController);
 
-    AddBikeController.$inject = ['$scope', 'AddBikeService','$http', 'TypeService'];
+    addBikeController.$inject = ['$scope', 'addBikeService', '$http', 'typeService'];
 
-    function AddBikeController($scope, AddBikeService,$http, TypeService) {
+    function addBikeController($scope, addBikeService, $http, typeService) {
         $scope.pageClass = 'page-addBike';
         $scope.addBike = addBike;
         $scope.model = {
@@ -14,26 +14,23 @@
             price: null,
             idType: null,
             idPhoto: null,
-            photo:''
+            photo: ''
         };
-        TypeService.getType($scope.model);       
+        typeService.getType($scope.model);
 
         $scope.file = {}
-        
+
         $scope.options = {
-            change: function (file) {       
+            change: function(file) {
                 //file.$preview($scope.items[i]);
                 $scope.file = file;
             }
         }
 
-        function addBike() {         
-            AddBikeService.addBike($scope.model, $scope.file);
+        function addBike() {
+            addBikeService.addBike($scope.model, $scope.file);
         }
 
     }
 
 })(angular.module('BikeRental'));
-
-
-

@@ -1,12 +1,8 @@
-﻿(function (app) {
+﻿(function(app) {
+    app.factory('editBikeService', editBikeService);
+    editBikeService.$inject = ['$http', '$routeParams', '$location', '$rootScope', 'localStorageService'];
 
-
-    app.factory('EditBikeService', EditBikeService);
-
-    EditBikeService.$inject = ['$http','$routeParams', '$location', '$rootScope', 'localStorageService'];
-
-    function EditBikeService($http,$routeParams, $location, $rootScope, localStorageService) {
-
+    function editBikeService($http, $routeParams, $location, $rootScope, localStorageService) {
         var service = {
             getBike: getBike,
             editBike: editBike
@@ -15,15 +11,15 @@
         function getBike(model) {
             var currentId = $routeParams.id;
             $http.get($rootScope.localAddress + 'api/admin/getBike/' + currentId)
-                .then(function (data) {
+                .then(function(data) {
                     model.Types = data.data.Types;
                     model.Bike = data.data.Bike;
 
                 })
-                .catch(function (result) {
+                .catch(function(result) {
                     console.log('Result: ', result);
                 })
-                .finally(function () {
+                .finally(function() {
                     console.log('Finally');
                 });
         }
@@ -33,39 +29,32 @@
                 var fd = new FormData();
                 fd.set('file', file);
                 file.$upload($rootScope.localAddress + 'api/admin/upload', fd)
-                    .then(function (data) {
+                    .then(function(data) {
                         model.Bike.photo = data.data;
                         $http.post($rootScope.localAddress + 'api/admin/editBike', model)
-                            .then(function (data) {
+                            .then(function(data) {
                                 $location.path('/listBike');
                             })
-                            .catch(function (result) {
+                            .catch(function(result) {
                                 console.log('Result: ', result);
                             })
-                            .finally(function () {
+                            .finally(function() {
                                 console.log('Finally');
                             });
                     });
             } else {
                 $http.post($rootScope.localAddress + 'api/admin/editBike', model)
-                           .then(function (data) {
-                               $location.path('/listBike');
-                           })
-                           .catch(function (result) {
-                               console.log('Result: ', result);
-                           })
-                           .finally(function () {
-                               console.log('Finally');
-                           });
+                    .then(function(data) {
+                        $location.path('/listBike');
+                    })
+                    .catch(function(result) {
+                        console.log('Result: ', result);
+                    })
+                    .finally(function() {
+                        console.log('Finally');
+                    });
             }
-           
-
-
         }
-
-
-
         return service;
     }
 })(angular.module('BikeRental'));
-

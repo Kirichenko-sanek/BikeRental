@@ -1,43 +1,33 @@
-﻿(function (app) {
+﻿(function(app) {
+    app.controller('listBikeController', listBikeController);
+    listBikeController.$inject = ['$scope', '$http', 'listBikeService', '$mdDialog'];
 
-
-    app.controller('ListBikeController', ListBikeController);
-
-    ListBikeController.$inject = ['$scope', '$http', 'ListBikeService', '$mdDialog'];
-
-    function ListBikeController($scope, $http, ListBikeService, $mdDialog) {
-
+    function listBikeController($scope, $http, listBikeService, $mdDialog) {
         $scope.pageClass = 'page-listBike';
         $scope.deleteBike = deleteBike;
         $scope.editStatus = editStatus;
         $scope.model = {
-            bikes:[]
-
+            bikes: []
         };
-
-        ListBikeService.listBike($scope.model);
+        listBikeService.listBike($scope.model);
 
         function deleteBike(id) {
-            ListBikeService.deleteBike(id);
+            listBikeService.deleteBike(id);
         }
 
         function editStatus(id) {
-            ListBikeService.editStatus(id);
+            listBikeService.editStatus(id);
         }
-
-        $scope.showConfirm = function (ev, id) {
+        $scope.showConfirm = function(ev, id) {
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.confirm()
-                  .title('You really want to delete the bike?')
-                  .targetEvent(ev)
-                  .ok('Delete')
-                  .cancel('Cancel');
-
-            $mdDialog.show(confirm).then(function () {
+                .title('You really want to delete the bike?')
+                .targetEvent(ev)
+                .ok('Delete')
+                .cancel('Cancel');
+            $mdDialog.show(confirm).then(function() {
                 deleteBike(id);
-            }, function () {
-            });
+            }, function() {});
         }
-
     }
 })(angular.module('BikeRental'));
