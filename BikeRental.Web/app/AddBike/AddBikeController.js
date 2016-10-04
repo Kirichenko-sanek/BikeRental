@@ -1,6 +1,5 @@
 ﻿(function(app) {
 
-
     app.controller('addBikeController', addBikeController);
 
     addBikeController.$inject = ['$scope', 'addBikeService', '$http', 'typeService'];

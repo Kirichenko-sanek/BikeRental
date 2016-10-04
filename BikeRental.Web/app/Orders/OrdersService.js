@@ -33,7 +33,6 @@
                 .then(
                     function(data) {
                         $route.reload();
-
                     })
                 .catch(function(result) {
                     console.log('Result: ', result);

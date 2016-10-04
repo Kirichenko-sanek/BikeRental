@@ -34,9 +34,9 @@ namespace BikeRental.Ang
                     m.DateOrder = p.DateOrder;
                     m.Status = p.Status;
                     var ts = p.TimeStart >= DateTime.Now ? (p.TimeStart.Subtract(DateTime.Now)) : TimeSpan.Zero;
-                    m.BeforeStart = String.Format("{0:00}.{1:00}:{2:00}:{3:00}",ts.Days, ts.Hours, ts.Minutes, ts.Seconds);
+                    m.BeforeStart = String.Format("{0:00}.{1:00}:{2:00}",ts.Days, ts.Hours, ts.Minutes);
                     var tsEnd = p.TimeEnd >= DateTime.Now ? p.TimeEnd.Subtract(DateTime.Now) : TimeSpan.Zero;
-                    m.BeforeEnd = String.Format("{0:00}.{1:00}:{2:00}:{3:00}", tsEnd.Days, tsEnd.Hours, tsEnd.Minutes, tsEnd.Seconds);
+                    m.BeforeEnd = String.Format("{0:00}.{1:00}:{2:00}", tsEnd.Days, tsEnd.Hours, tsEnd.Minutes);
                     m.Photo = p.Bike.Photo.Url;
                     m.PriceOrder = p.TotalPrice;
                 });

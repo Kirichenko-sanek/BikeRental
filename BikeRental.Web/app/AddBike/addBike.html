@@ -13,12 +13,12 @@
                             <div class="panel-body">
                                 <h4><label>Type bike</label></h4>
                                 <div ng-repeat="type in model.types">
-                                    <h4><input type="radio" value="{{type.IdType}}" ng-model="model.idType" /> {{type.NameType}}</h4>
+                                    <h4><input type="radio" value="{{type.IdType}}" ng-model="model.idType"/> {{type.NameType}}</h4>
                                 </div>
                             </div>
                             <div class="panel-body">
                                 <h4><label>Sex</label></h4>
-                                <h4><input type="radio" ng-model="model.sex" value="Men"/> Men </h4>
+                                <h4><input type="radio" ng-model="model.sex" ng-checked="true" value="Men" /> Men </h4>
                                 <h4><input type="radio" ng-model="model.sex" value="Women"/> Women </h4>
                             </div>
                             <div class="panel-body">

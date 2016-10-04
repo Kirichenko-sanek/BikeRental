@@ -24,7 +24,6 @@
                         function(data) {
                             $rootScope.userLog = data.data;
                             $rootScope.userNameLog = aut.userName;
-
                         })
                     .catch(function(result) {
                         console.log('Result: ', result);

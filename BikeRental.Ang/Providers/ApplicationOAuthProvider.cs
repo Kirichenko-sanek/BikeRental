@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
-using BikeRental.Ang.Controllers;
-using BikeRental.BL.Manager;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
-using Castle.Windsor;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security.OAuth;
-using WebMatrix.WebData;
 
 namespace BikeRental.Ang.Providers
 {
@@ -24,26 +15,6 @@ namespace BikeRental.Ang.Providers
         {
             _userManager = userManager;
         }
-
-
-        //        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
-        //        {
-        //            context.Validated();
-        //        }
-        //
-        //        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-        //        {
-        //            //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-        //
-        //           
-        //
-        //            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-        //            identity.AddClaim(new Claim("sub", context.UserName));
-        //            identity.AddClaim(new Claim("role", "user"));
-        //
-        //            context.Validated(identity);
-        //
-        //        }
 
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
@@ -69,13 +40,7 @@ namespace BikeRental.Ang.Providers
             {
                 bool isValidUser = false;
                 context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-
-
-                //IUserManager<User> manager = _container.Resolve<IUserManager<User>>();
-
-
                 var login = _userManager.LogInApi(context.UserName, context.Password);
-
 
                 if (login.Error != null)
                 {

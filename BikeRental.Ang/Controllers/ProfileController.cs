@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 using BikeRental.ViewModel.ViewModel;
@@ -59,17 +58,6 @@ namespace BikeRental.Ang.Controllers
         public void DeleteOrder(long id)
         {
             _orderManager.DeleteOrder(id);
-        }
-
-
-
-
-        [Route("go")]
-        [HttpGet]
-        public string Go()
-        {
-
-            return "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         }
     }
 }
