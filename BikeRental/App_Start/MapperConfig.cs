@@ -33,8 +33,10 @@ namespace BikeRental.App_Start
                     m.TimeEnd = p.TimeEnd;
                     m.DateOrder = p.DateOrder;
                     m.Status = p.Status;
-                    m.BeforeStart = p.TimeStart >= DateTime.Now ? p.TimeStart.Subtract(DateTime.Now) : TimeSpan.Zero;
-                    m.BeforeEnd = p.TimeEnd >= DateTime.Now ? p.TimeEnd.Subtract(DateTime.Now) : TimeSpan.Zero;
+                    var ts = p.TimeStart >= DateTime.Now ? (p.TimeStart.Subtract(DateTime.Now)) : TimeSpan.Zero;
+                    m.BeforeStart = String.Format("{0:00}.{1:00}:{2:00}", ts.Days, ts.Hours, ts.Minutes);
+                    var tsEnd = p.TimeEnd >= DateTime.Now ? p.TimeEnd.Subtract(DateTime.Now) : TimeSpan.Zero;
+                    m.BeforeEnd = String.Format("{0:00}.{1:00}:{2:00}", tsEnd.Days, tsEnd.Hours, tsEnd.Minutes);
                     m.Photo = p.Bike.Photo.Url;
                     m.PriceOrder = p.TotalPrice;
                 });

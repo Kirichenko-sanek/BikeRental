@@ -35,7 +35,7 @@ namespace BikeRental.Data
             modelBuilder.Configurations.Add(new UserMap());
         }
 
-        private class BikeRentalInitializer :DropCreateDatabaseAlways<DataContext>
+        private class BikeRentalInitializer :CreateDatabaseIfNotExists<DataContext>
         {
             protected override void Seed(DataContext context)
             {

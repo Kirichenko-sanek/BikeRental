@@ -15,7 +15,6 @@
         }
 
         $scope.showConfirm = function(ev, id) {
-            // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.confirm()
                 .title('You really want to delete the order?')
                 .targetEvent(ev)

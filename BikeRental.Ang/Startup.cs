@@ -32,6 +32,7 @@ namespace BikeRental.Ang
 
             app.UseOAuthAuthorizationServer(oAuthServerOptions);
             app.UseOAuthBearerAuthentication(oAuthBearerOptions);
+
         }
 
        

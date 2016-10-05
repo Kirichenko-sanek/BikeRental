@@ -1,9 +1,9 @@
-﻿(function(app) {
+(function(app) {
     app.controller('rootController', rootController);
     rootController.$inject = ['$q', '$rootScope', '$location', '$http', 'localStorageService'];
 
     function rootController($q, $rootScope, $location, $http, localStorageService) {
-        $rootScope.localAddress = 'http://localhost:64069/';
+        $rootScope.localAddress = 'http://localhost:64070/';
         $rootScope.logoff = logoff;
         $rootScope.userInSystem = userInSystem();
 

@@ -32,6 +32,7 @@ namespace BikeRental.Ang
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             MapperConfig.RegisterMapping();
 
+            GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             ConfigureWindsor(GlobalConfiguration.Configuration);
         }
 
