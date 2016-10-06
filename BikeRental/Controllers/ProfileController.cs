@@ -38,7 +38,6 @@ namespace BikeRental.Controllers
             if (takeBike.Error != null)
             {
                 takeBike.Types = _typeManager.GetAllTypes();
-                takeBike.AccessTime = _bikeManager.AccessTime(takeBike.PotentialBike);
                 return View(takeBike);
             }
             return RedirectToAction("Index", "Home");

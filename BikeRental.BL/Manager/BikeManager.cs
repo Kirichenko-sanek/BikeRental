@@ -156,31 +156,45 @@ namespace BikeRental.BL.Manager
 
             foreach (var bike in bikeList)
             {
-                orderList = _orderManager.GetOrdersByBike(bike.Id);
+                orderList = _orderManager.GetOrdersByBike(bike.Id).OrderBy(x => x.TimeEnd);
                 if (model.PotentialBike == 0)
                 {
                     model.PotentialBike = bike.Id;
+                    model.AccessTime = AccessTime(bike.Id, model.TimeStart, model.TimeEnd);
+                }
+                else
+                {
+                    DateTime time = AccessTime(bike.Id, model.TimeStart, model.TimeEnd);
+                    if (model.AccessTime > time)
+                    {
+                        model.PotentialBike = bike.Id;
+                        model.AccessTime = time;
+                    }
                 }
                 if (!orderList.Any())
                 {
                     oneBike = bike;
                     break;
                 }
-
+                DateTime lastOrderEnd = DateTime.MinValue;
                 foreach (var order in orderList)
                 {
-                    if ((model.TimeStart < order.TimeStart && model.TimeEnd < order.TimeStart) ||
-                        (model.TimeStart > order.TimeEnd && model.TimeEnd > order.TimeEnd))
+                    if (model.TimeStart < order.TimeStart && model.TimeEnd < order.TimeStart)
                     {
-                        if (oneBike == null)
+                        if (model.TimeStart > lastOrderEnd)
                         {
                             oneBike = bike;
+                            break;
                         }
+
                     }
-                    else
-                    {
-                        oneBike = null;
-                    }
+
+                    lastOrderEnd = order.TimeEnd;
+
+                }
+                if (model.TimeStart > lastOrderEnd)
+                {
+                    oneBike = bike;
                 }
             }
             if (oneBike == null)
@@ -189,6 +203,7 @@ namespace BikeRental.BL.Manager
             }
             else
             {
+                model.Error = null;
                 var entity = Mapper.Map<TakeBikeViewModel, Order>(model);
                 entity.IdBike = oneBike.Id;
                 entity.IdUser = userId;
@@ -200,18 +215,35 @@ namespace BikeRental.BL.Manager
 
         }
 
-        public DateTime AccessTime(long idBike)
+        public DateTime AccessTime(long idBike, DateTime timeStart, DateTime timeEnd)
         {
             DateTime accessTime = new DateTime();
-            var orderList = _orderManager.GetOrdersByBike(idBike);
-            foreach (var order in orderList)
+            accessTime = DateTime.MaxValue;
+            var orderList = _orderManager.GetOrdersByBike(idBike).OrderBy(x=>x.TimeEnd);
+            if (!orderList.Any())
             {
-                if (accessTime > order.TimeEnd || accessTime < DateTime.Now)
-                {
-                    accessTime = order.TimeEnd;
-                }
+                return accessTime;
             }
-            return accessTime;
+            else
+            {
+                DateTime lastOrderEnd = DateTime.MinValue;
+                foreach (var order in orderList)
+                {
+                    if (timeStart < order.TimeStart && timeEnd < order.TimeStart)
+                    {
+                        accessTime = lastOrderEnd;
+                        break;
+                    }
+
+                    lastOrderEnd = order.TimeEnd;
+                }
+                if (accessTime == DateTime.MaxValue)
+                {
+                    accessTime = lastOrderEnd;
+                }
+                return accessTime;
+            }
+
         }
     }
 }

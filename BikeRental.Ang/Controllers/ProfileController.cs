@@ -29,10 +29,7 @@ namespace BikeRental.Ang.Controllers
         public TakeBikeViewModel TakeBike(TakeBikeViewModel model, long userId)
         {
             var takeBike = _bikeManager.TakeBike(model, userId);
-            if (takeBike.Error != null)
-            {
-                takeBike.AccessTime = _bikeManager.AccessTime(takeBike.PotentialBike);
-            }     
+     
             return takeBike;
         }
 

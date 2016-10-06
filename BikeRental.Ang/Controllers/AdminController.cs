@@ -34,7 +34,7 @@ namespace BikeRental.Ang.Controllers
             var request = HttpContext.Current.Request.Files;
             var a = request["Files"];
             HttpPostedFileBase filebase = new HttpPostedFileWrapper(a);
-            var url = AddPhotos.AddImage(filebase, HostingEnvironment.MapPath("/assets/images/Bikes/"), "/assets/images/Bikes/");
+            var url = AddPhotos.AddImage(filebase, HostingEnvironment.MapPath("/rentalapi/assets/images/Bikes/"), "/assets/images/Bikes/");
             return url;
         }
 

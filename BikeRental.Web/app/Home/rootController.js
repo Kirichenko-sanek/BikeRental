@@ -3,7 +3,7 @@
     rootController.$inject = ['$q', '$rootScope', '$location', '$http', 'localStorageService'];
 
     function rootController($q, $rootScope, $location, $http, localStorageService) {
-        $rootScope.localAddress = 'http://localhost:64070/';
+        $rootScope.localAddress = '/rentalapi/';
         $rootScope.logoff = logoff;
         $rootScope.userInSystem = userInSystem();
 

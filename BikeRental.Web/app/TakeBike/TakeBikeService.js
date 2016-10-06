@@ -15,7 +15,7 @@
             } else {
                 $http.post($rootScope.localAddress + 'api/profile/takeBike/' + $rootScope.userLog, model)
                     .then(function(data) {
-                        if (data.data.Error !== '') {
+                        if (data.data.Error !== null) {
                             model.error = data.data.Error;
                             model.accessTime = data.data.AccessTime;
                             $location.path('/takeBike');

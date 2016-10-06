@@ -18,6 +18,6 @@ namespace BikeRental.Interfases.Manager
         EditBikeViewModel EditBikeGet(long id);
         void EditBikePost(EditBikeViewModel model, HttpPostedFileBase upload, string url);
         TakeBikeViewModel TakeBike(TakeBikeViewModel model, long userId);
-        DateTime AccessTime(long idBike);
+        DateTime AccessTime(long idBike, DateTime timeStart, DateTime timeEnd);
     }
 }

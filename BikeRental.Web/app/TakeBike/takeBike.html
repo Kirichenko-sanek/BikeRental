@@ -54,7 +54,7 @@
                     <div class="col-sm-12 col-md-12 col-xs-12">
                         <div class="alert alert-danger" ng-if="model.error != ''">
                             <strong>{{model.error}}</strong>
-                            <p ng-if="model.accessTime != null"> Bike available from {{model.accessTime | date:'yyyy-MM-dd HH:mm'}} </p>
+                            <p ng-if="model.error != null"> Bike available from {{model.accessTime | date:'yyyy-MM-dd HH:mm'}} </p>
                         </div>
                     </div>
                 </div>

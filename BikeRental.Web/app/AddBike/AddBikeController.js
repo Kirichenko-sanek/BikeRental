@@ -13,6 +13,7 @@
             price: null,
             idType: null,
             idPhoto: null,
+            idBike: null,
             photo: ''
         };
         typeService.getType($scope.model);
