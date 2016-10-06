@@ -116,6 +116,18 @@ namespace BikeRental.Data
                         IdRole = 2,
                         IdPhoto = 1
 
+                    },
+                    new User()
+                    {
+                        FirstName = "Alexander",
+                        LastName = "Kirichenko",
+                        Password = pass,
+                        PasswordSalt = salt,
+                        Email = "test@mail.ru",
+                        IsActivated = true,
+                        IdRole = 1,
+                        IdPhoto = 1
+
                     }
                 };
                 foreach (var user in users) context.Users.Add(user);

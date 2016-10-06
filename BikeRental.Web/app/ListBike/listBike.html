@@ -3,12 +3,10 @@
     <div class="row">
         <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
             <div class="row">
-                <header class="col-xs-4 page-header">
+                <header class="page-header">
                     <h2 class="page-title">Bikes </h2>
                 </header>
-                <header class="col-xs-8 page-header">
-                    <h2 class="page-title"><a ng-href="/#/addBike">Add new bike? </a></h2>
-                </header>
+                
             </div>
             <div  ng-repeat="bike in model.bikes">
                 <div class="row">
@@ -23,7 +21,7 @@
                                 Options <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="" ng-click="showConfirm($event,bike.IdBike)">Delete bike</a></li>
+                                <li ><a href="" style="background-color: red" ng-click="showConfirm($event,bike.IdBike)">Delete bike</a></li>
                                 <li><a href="" ng-click="editStatus(bike.IdBike)">Edit status</a></li>
                                 <li><a ng-href="/#/editBike/{{bike.IdBike}}">Edit bike</a></li>
                             </ul>

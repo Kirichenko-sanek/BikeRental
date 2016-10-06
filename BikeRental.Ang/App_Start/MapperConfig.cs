@@ -39,6 +39,8 @@ namespace BikeRental.Ang
                     m.BeforeEnd = String.Format("{0:00}.{1:00}:{2:00}", tsEnd.Days, tsEnd.Hours, tsEnd.Minutes);
                     m.Photo = p.Bike.Photo.Url;
                     m.PriceOrder = p.TotalPrice;
+                    m.Type = p.Bike.Type.NameType;
+                    m.Sex = p.Bike.Sex;
                 });
                 cfg.CreateMap<AddBikeViewModel, Bike>().AfterMap((p, m) =>
                 {

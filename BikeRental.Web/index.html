@@ -27,12 +27,7 @@
             <div class="navbar-collapse collapse">
 
                 <ul class="nav navbar-nav pull-right">
-                    <!--<li ng-if="userNameLog != null">
-                        {{userNameLog}}
-                    </li>-->
-                    <!--<li>
-                        <a ng-href="/#/home">Home</a>
-                    </li>-->
+
                     <li ng-if="userLog != 0">
                         <a ng-href="/#/takeBike">Take Bike</a>
                     </li>
@@ -41,10 +36,22 @@
                             MyOrders
                         </a>
                     </li>
-                    <li ng-if="userLog == 1">
-                        <a ng-href="/#/listBike">
-                            Admin Page
-                        </a>
+                    <li ng-if="userLog == 1 || userLog == 8" class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Admin pages <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a ng-href="/#/listBike">
+                                List bikes
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-href="/#/addBike">
+                                Add new bike
+                            </a>
+                        </li>
+                    </ul>
+
+                        
                     </li>
                     <li ng-if="userLog == 0">
                         <a class="btn" ng-href="/#/login">

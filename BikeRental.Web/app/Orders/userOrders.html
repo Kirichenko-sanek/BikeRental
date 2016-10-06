@@ -1,7 +1,7 @@
 ﻿<header id="head" class="secondary"></header>
 <div class="container" style="width: 100%">
     <div class="row">
-        <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
+        <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-offset-2 col-sm-8 col-xs-12">
             <div class="row">
                 <header class="page-header">
                     <h1 class="page-title">MyOrders</h1>
@@ -16,14 +16,16 @@
                 <div class="row">
 
                     <div class="col-md-6">
-                        <h4> Date order : {{order.DateOrder | date:'yyyy-MM-dd HH:mm'}}</h4>
-                        <h4> Time start : {{order.TimeStart | date:'yyyy-MM-dd HH:mm'}}</h4>
-                        <h4> Time end : {{order.TimeEnd | date:'yyyy-MM-dd HH:mm'}}</h4>
-                        <h4> Price order : {{order.PriceOrder}} UAH</h4>
-                        <h4 ng-if="order.Status == true" style="color: green"> Status : Active</h4>
-                        <h4 ng-if="order.Status == false" style="color: red"> Status : NotActive</h4>
-                        <h4>Before start : {{order.BeforeStart | date:'yyyy-MM-dd HH:mm'}}</h4>
-                        <h4>Before end : {{order.BeforeEnd | date:'yyyy-MM-dd HH:mm'}}</h4>           
+                        <h4> You ordered bike : {{order.DateOrder | date:'dd-MM-yyyy HH:mm'}}</h4>
+                        <h4> Bike will be at your disposal : {{order.TimeStart | date:'dd-MM-yyyy HH:mm'}}</h4>
+                        <h4> The bike must be returned : {{order.TimeEnd | date:'dd-MM-yyyy HH:mm'}}</h4>
+                        <h4> Price rental bike : {{order.PriceOrder}} UAH</h4>
+                        <h4> Type bike : {{order.Type}}</h4>
+                        <h4> Sex bike : {{order.Sex}}</h4>
+                        <h4 ng-if="order.Status == true" style="color: green"> Order status : Active</h4>
+                        <h4 ng-if="order.Status == false" style="color: red"> Order status : NotActive</h4>
+                        <h4>Before start of the order remains : {{order.BeforeStart}}</h4>
+                        <h4>Before end of the order remains : {{order.BeforeEnd}}</h4>           
                     </div>
                     <div class="col-md-6">
                         <img src="{{localAddress + order.Photo}}" alt="">
@@ -31,7 +33,7 @@
                     
                 </div>
                 <div class="row">
-                    <a ng-click="showConfirm($event,order.IdOrder)" class="btn btn-action btn-lg" style="background-color: red">Delete order</a>
+                        <a ng-click="showConfirm($event,order.IdOrder)" class="btn btn-action btn-lg" style="background-color: red">Delete order</a>                 
                 </div>
                 <div class="row">
                     <header class="page-header"> </header>

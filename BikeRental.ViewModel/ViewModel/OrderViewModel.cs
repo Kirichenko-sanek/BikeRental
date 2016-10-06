@@ -15,5 +15,7 @@ namespace BikeRental.ViewModel.ViewModel
         public string BeforeEnd { get; set; }
         public string Photo { get; set; }
         public decimal PriceOrder { get; set; }
+        public string Type { get; set; }
+        public string Sex { get; set; }
     }
 }
