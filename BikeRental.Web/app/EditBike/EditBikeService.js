@@ -16,7 +16,10 @@
                     model.Bike = data.data.Bike;
 
                 })
-                .catch(function(result) {
+                .catch(function (result) {
+                    if (status === 401) {
+                        $location.path('/login');
+                    }
                     console.log('Result: ', result);
                 })
                 .finally(function() {
@@ -35,7 +38,7 @@
                             .then(function(data) {
                                 $location.path('/listBike');
                             })
-                            .catch(function(result) {
+                            .catch(function (result) {
                                 console.log('Result: ', result);
                             })
                             .finally(function() {
@@ -47,7 +50,10 @@
                     .then(function(data) {
                         $location.path('/listBike');
                     })
-                    .catch(function(result) {
+                    .catch(function (result) {
+                        if (status === 401) {
+                            $location.path('/login');
+                        }
                         console.log('Result: ', result);
                     })
                     .finally(function() {

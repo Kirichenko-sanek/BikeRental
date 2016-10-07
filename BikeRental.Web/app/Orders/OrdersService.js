@@ -20,6 +20,9 @@
                 })
                 .catch(function(result) {
                     model.orders = null;
+                    if (status === 401) {
+                        $location.path('/login');
+                    }
                     console.log('Result: ', result);
                 })
                 .finally(function() {
@@ -34,7 +37,10 @@
                     function(data) {
                         $route.reload();
                     })
-                .catch(function(result) {
+                .catch(function (result) {
+                    if (status === 401) {
+                        $location.path('/login');
+                    }
                     console.log('Result: ', result);
                 })
                 .finally(function() {

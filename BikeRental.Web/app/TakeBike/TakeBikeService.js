@@ -23,7 +23,10 @@
                             $location.path('/userOrders');
                         }
                     })
-                    .catch(function(result) {
+                    .catch(function (result) {
+                        if (status === 401) {
+                            $location.path('/login');
+                        }
                         console.log('Result: ', result);
                     })
                     .finally(function() {
