@@ -1,43 +1,53 @@
-﻿<header id="head" class="secondary"></header>
-<div class="container" style="width: 100%">
-    <div class="row">
-        <div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-offset-2 col-sm-8 col-xs-12">
-            <div class="row">
-                <header class="page-header">
-                    <h1 class="page-title">MyOrders</h1>
-                </header>
+﻿<div class="container">
+    <div class="divPanel page-content">
+        <div class="row-fluid">
+            <div class="span12" id="divMain">
+                <hr style="margin: 45px 0 35px" />
+                <div class="lead">
+                    <h2>My orders</h2>
+                    <h3 ng-if="model.orders == null">
+                        You do not have active orders. <a ng-href="/#/takeBike">Would you like to take a bike?</a>
+                    </h3>
+                </div>
             </div>
-            <div class="row" ng-if="model.orders == null">
-                <h4>
-                    You do not have active orders. <a ng-href="/#/takeBike">Would you like to take a bike?</a>
-                </h4>
-            </div>
-            <div ng-repeat="order in model.orders">
-                <div class="row">
+            <div ng-repeat="order in model.orders" class="span12" id="divMain">
+                <div  class="row-fluid">
+                    <div class="span7">
+                        <br />
+                        <h3>{{order.Type}} ({{order.Sex}})</h3>
+                        <p>
+                            <img src="{{localAddress + order.Photo}}" class="img-polaroid" style="margin: 12px 0px; width: 100%" alt="">
+                        </p>
+                    </div>
+                    <div class="span5 sidebar">
+                        <div class="sidebox">
+                            <h4 class="sidebox-title">Before start of the order remains : {{order.BeforeStart}}</h4>
+                            <h4 class="sidebox-title">Before end of the order remains : {{order.BeforeEnd}}</h4>
+                        </div>
 
-                    <div class="col-md-6">
-                        <h4> You ordered bike : {{order.DateOrder | date:'dd-MM-yyyy HH:mm'}}</h4>
-                        <h4> Bike will be at your disposal : {{order.TimeStart | date:'dd-MM-yyyy HH:mm'}}</h4>
-                        <h4> The bike must be returned : {{order.TimeEnd | date:'dd-MM-yyyy HH:mm'}}</h4>
-                        <h4> Price rental bike : {{order.PriceOrder}} UAH</h4>
-                        <h4> Type bike : {{order.Type}}</h4>
-                        <h4> Sex bike : {{order.Sex}}</h4>
-                        <h4 ng-if="order.Status == true" style="color: green"> Order status : Active</h4>
-                        <h4 ng-if="order.Status == false" style="color: red"> Order status : NotActive</h4>
-                        <h4>Before start of the order remains : {{order.BeforeStart}}</h4>
-                        <h4>Before end of the order remains : {{order.BeforeEnd}}</h4>           
+                        <div class="sidebox">
+                            <h4 class="sidebox-title"> Price rental bike : {{order.PriceOrder}} UAH</h4>
+                            <h4 class="sidebox-title" ng-if="order.Status == true" style="color: green">
+                                Order status : Active
+                                <button ng-click="showConfirm($event,order.IdOrder)" class="btn btn-danger" type="button">Delete order</button>
+                            </h4>
+                            <h4 class="sidebox-title" ng-if="order.Status == false" style="color: red">
+                                Order status : NotActive
+                                <button ng-click="showConfirm($event,order.IdOrder)" class="btn btn-danger" type="button">Delete order</button>
+                            </h4>
+
+                        </div>
+
+                        <div class="sidebox">
+                            <h4 class="sidebox-title"> You ordered bike : {{order.DateOrder | date:'dd-MM-yyyy HH:mm'}}</h4>
+                            <h4 class="sidebox-title" style="color: green"> Bike will be available : {{order.TimeStart | date:'dd-MM-yyyy HH:mm'}}</h4>
+                            <h4 class="sidebox-title" style="color: orange"> The bike must be returned : {{order.TimeEnd | date:'dd-MM-yyyy HH:mm'}}</h4>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="{{localAddress + order.Photo}}" alt="">
-                    </div>
-                    
+
                 </div>
-                <div class="row">
-                        <a ng-click="showConfirm($event,order.IdOrder)" class="btn btn-action btn-lg" style="background-color: red">Delete order</a>                 
-                </div>
-                <div class="row">
-                    <header class="page-header"> </header>
-                </div>
+                <hr style="border-color: grey" />
+
             </div>
         </div>
     </div>

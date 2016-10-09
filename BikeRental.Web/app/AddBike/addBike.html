@@ -1,47 +1,47 @@
-﻿<header id="head" class="secondary"></header>
-<form ng-submit="addBike()" class="form-signin" role="form" method="post" enctype="multipart/form-data">
-
-    <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div class="card card-block" style="background-color: white">
-                    <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12 top-margin">
-                        <div class="col-sm-12 col-md-12 col-xs-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4>Add bike</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <h4><label>Type bike</label></h4>
-                                    <div ng-repeat="type in model.types">
-                                        <h4><input type="radio" value="{{type.IdType}}" ng-model="model.idType" /> {{type.NameType}}</h4>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <h4><label>Sex</label></h4>
-                                    <h4><input type="radio" ng-model="model.sex" ng-checked="true" value="Men" /> Men </h4>
-                                    <h4><input type="radio" ng-model="model.sex" value="Women" /> Women </h4>
-                                </div>
-                                <div class="panel-body">
-                                    <h4><label>Price</label></h4>
-                                    <h4><input type="text" ng-model="model.price" autocomplete="off" required />UAH</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <h4><label>Photo</label></h4>
-                                    <input type="file" oi-file="options">
-                                </div>
+﻿<div class="container">
+    <form ng-submit="addBike()" class="form-signin" role="form" method="post" enctype="multipart/form-data">
+        <div class="divPanel page-content">
+            <div class="row-fluid">
+                <div class="span12" id="divMain">
+                    <hr style="margin: 45px 0 35px"/>
+                    <div class="lead">
+                        <h2>Add bike</h2>
+                    </div>
+                    <div class="span3 sidebar">
+                        <div class="sidebox">
+                            <h3>Type bike</h3>
+                            <div ng-repeat="type in model.types">
+                                <h4><input type="radio" value="{{type.IdType}}" ng-model="model.idType"/> {{type.NameType}}</h4>
                             </div>
                         </div>
+                        <div class="sidebox">
+                            <h3>Price</h3>
+                            <h4>
+                                <input type="text" style="width: 70%" ng-model="model.price" autocomplete="off" required/> UAH
+                            </h4>
+                        </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-10 col-xs-12">
-                            <input type="submit" value="AddBike" class="btn btn-action btn-lg" style="width: 100%"/>
+                    <div class="span6 sidebar">
+                        <div class="sidebox">
+                            <h3>Photo</h3>
+                            <input type="file" oi-file="options">
+                            <img ng-src="{{model.thumb}}" alt=""/>
+                        </div>
+                    </div>
+                    <div class="span2 sidebar">
+                        <div class="sidebox">
+                            <h3>Sex</h3>
+                            <h4><input type="radio" ng-model="model.sex" ng-checked="true" value="Men"/> Men</h4>
+                            <h4><input type="radio" ng-model="model.sex" value="Women"/> Women</h4>
+                        </div>
+                        <div class="sidebox">
+                            <h4 class="sidebox-title">
+                                <input type="submit" value="AddBike" class="btn btn-primary" style="width: 100%"/>
+                            </h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-</form>
+    </form>
+</div>

@@ -1,43 +1,45 @@
-﻿<header id="head" class="secondary"></header>
-<div class="container" style="width: 100%">
-    <div class="row">
-        <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
-            <div class="row">
-                <header class="page-header">
-                    <h2 class="page-title">Bikes </h2>
-                </header>
-                
+﻿<div class="container">
+    <div class="divPanel page-content">
+        <div class="row-fluid">
+            <div class="span12" id="divMain">
+                <hr style="margin: 45px 0 35px"/>
+                <div class="lead">
+                    <h2>List bikes</h2>                 
+                </div>
             </div>
-            <div  ng-repeat="bike in model.bikes">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h4>Type : {{bike.Type}}</h4>
-                        <h4>Sex : {{bike.Sex}}</h4>
-                        <h4>Price : {{bike.Price}} UAH</h4>
-                        <h4 ng-if="bike.Status == true" style="color: green"> Status : Active</h4>
-                        <h4 ng-if="bike.Status == false" style="color: red"> Status : NotActive</h4>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                Options <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li ><a href="" style="background-color: red" ng-click="showConfirm($event,bike.IdBike)">Delete bike</a></li>
-                                <li><a href="" ng-click="editStatus(bike.IdBike)">Edit status</a></li>
-                                <li><a ng-href="/#/editBike/{{bike.IdBike}}">Edit bike</a></li>
-                            </ul>
+            <div ng-repeat="bike in model.bikes" class="span12" id="divMain">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <p>
+                            <img src="{{localAddress + bike.Photo}}" class="img-polaroid" style="margin: 12px 0px; width: 100%" alt="">
+                        </p>
+                    </div>
+                    <div class="span4 sidebar">
+                        <div class="sidebox">
+                            <h4 class="sidebox-title">Type : {{bike.Type}}</h4>
+                            <h4 class="sidebox-title">Sex : {{bike.Sex}}</h4>
+                            <h4 class="sidebox-title">Price : {{bike.Price}} UAH</h4>
+                            <h4 class="sidebox-title" ng-if="bike.Status == true" style="color: green">
+                                Status : Active
+                                <button ng-click="editStatus(bike.IdBike)" class="btn btn-warning" type="button">Edit status</button>
+                            </h4>
+                            <h4 class="sidebox-title" ng-if="bike.Status == false" style="color: red">
+                                Status : NotActive
+                                <button ng-click="editStatus(bike.IdBike)" class="btn btn-warning" type="button">Edit status</button>
+                            </h4>
+                        </div>
+
+                        <div class="sidebox">
+                            <h3 class="sidebox-title">Options</h3>
+                            <h4 class="sidebox-title">
+                                <a ng-href="/#/editBike/{{bike.IdBike}}" class="btn btn-warning">Edit bike</a>
+                                <a ng-click="showConfirm($event,bike.IdBike)" class="btn btn-danger">Delete bike</a>
+                            </h4>
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <img src="{{localAddress + bike.Photo}}" alt="">
-                    </div>
                 </div>
-                <div class="row">
-                    
-                </div>
-                <div class="row">
-                    <header class="page-header"> </header>
-                </div>
-            </div>
+                <hr style="border-color: grey" />
+            </div>           
         </div>
     </div>
 </div>

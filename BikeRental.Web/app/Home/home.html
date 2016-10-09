@@ -1,40 +1,36 @@
-﻿<div id="head">
+﻿<div id="decorative1" style="position: relative">
     <div class="container">
-        <div class="row">
-            <h1 class="lead" style="color: orangered">Progressus</h1>
+        <div class="divPanel headerArea">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="headerSeparator"></div>
+                    <div id="divHeaderText" class="page-content">
+                        <div id="divHeaderLine1">BikeProf</div><br/>
+                        <div ng-if="userLog == 0" id="divHeaderLine2">To rent a bike you need to login</div><br/>
+                        <div ng-if="userLog != 0" id="divHeaderLine3"><a class="btn btn-large btn-primary" ng-href="/#/takeBike">Take bike</a>
+                        </div>
 
-            <div ng-if="userLog == 0">
-                <p>
-                    <h3 style="color: orangered"> To rent a bike you need to login</h3>
-                </p>
-            </div>
-            <p ng-if="userLog != 0">
-                <a ng-href="/#/takeBike" class="btn btn-action btn-lg">Take bike</a>
-            </p>
-        </div>
-    </div>
-</div>
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="card card-block" style="background-color: white">
-                <div class="container text-center">
-                    <h2 class="thin">
-                        About Me
-                    </h2>
-                    <h3>
-                        <p class="text-muted">
-                            Our huge inventory of new bikes ensure your comfort and safety.
-                            All equipment is maintained in-house by professional mechanics. Our customer service staff
-                            can answer your questions about which type and size of bike is best for your needs. We’re more
-                            than happy to share some tips on good trails, scenic routes, and other cycling information – just ask!
-                        </p>
-                    </h3>
-
+                    </div>
+                    <div id="headerSeparator2"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-            
-
+<div id="contentOuterSeparator"></div>
+<div class="container">
+    <div class="divPanel page-content">
+        <div class="row-fluid">
+            <div class="span12" id="divMain">
+                <h1>Welcome</h1>
+                <p>
+                    Our huge inventory of new bikes ensure your comfort and safety.
+                    All equipment is maintained in-house by professional mechanics. Our customer service staff
+                    can answer your questions about which type and size of bike is best for your needs. We’re more
+                    than happy to share some tips on good trails, scenic routes, and other cycling information – just ask!
+                </p>
+                <hr style="margin:45px 0 35px" />
+            </div>
+        </div>
+    </div>
+</div>

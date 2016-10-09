@@ -1,5 +1,5 @@
 ﻿(function() {
-    window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'oi.file', 'LocalStorageModule', 'ngAria', 'ngAnimate', 'ngMaterial'])
+    window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'oi.file', 'LocalStorageModule', 'ngAria', 'ngAnimate', 'ngMaterial', 'ngProgress'])
         .config(config);
     config.$inject = ['$routeProvider', '$httpProvider'];
 

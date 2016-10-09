@@ -105,27 +105,25 @@
     <Content Include="app\ListBike\listBikeService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="scripts\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="scripts\bootstrap\css\bootstrap.min.css" />
+    <Content Include="scripts\bootstrap\js\bootstrap.min.js" />
+    <Content Include="scripts\fontawesome\css\font-awesome.min.css" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="styles\bright-lights-big-city.jpg" />
+    <Content Include="styles\custom.css" />
+    <Content Include="scripts\carousel\style.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="package.json" />
-    <Content Include="assets\fonts\fontawesome-webfont.eot" />
-    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="assets\fonts\FontAwesome.otf" />
-    <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="scripts\default.js" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="scripts\fontawesome\font\fontawesome-webfont.ttf" />
+    <Content Include="scripts\fontawesome\font\fontawesome-webfont.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,34 +147,16 @@
     <Content Include="app\TakeBike\takeBikeController.js" />
     <Content Include="app\TakeBike\takeBikeService.js" />
     <Content Include="app\Type\typeService.js" />
-    <Content Include="assets\css\bootstrap-theme.css" />
-    <Content Include="assets\css\bootstrap.min.css" />
-    <Content Include="assets\css\font-awesome.min.css" />
-    <Content Include="assets\css\main.css" />
-    <Content Include="assets\fonts\fontawesome-webfont.svg" />
-    <Content Include="assets\images\bg_header.jpg" />
-    <Content Include="assets\images\logo.png" />
-    <Content Include="assets\js\google-map.js" />
-    <Content Include="assets\js\headroom.min.js" />
-    <Content Include="assets\js\html5shiv.js" />
-    <Content Include="assets\js\jQuery.headroom.min.js" />
-    <Content Include="assets\js\respond.min.js" />
-    <Content Include="assets\js\template.js" />
     <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\jquery.datetimepicker.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\build\jquery.datetimepicker.full.min.js" />
     <None Include=".bin\node.cmd" />
-    <None Include="scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="scripts\jquery-1.10.2.js" />
-    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\carousel\jquery.carouFredSel-6.2.0-packed.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +167,9 @@
       <Project>{ae9bfff0-3548-4e9a-ab21-536f59f8fab8}</Project>
       <Name>BikeRental.Resources</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="scripts\icons\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

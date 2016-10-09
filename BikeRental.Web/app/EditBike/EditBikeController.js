@@ -13,7 +13,7 @@
 
         $scope.options = {
             change: function(file) {
-                //file.$preview($scope.items[i]);
+                file.$preview($scope.model);
                 $scope.file = file;
             }
         }

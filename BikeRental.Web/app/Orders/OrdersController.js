@@ -25,5 +25,6 @@
                 deleteOrder(id);
             }, function() {});
         }
+        
     }
 })(angular.module('BikeRental'));

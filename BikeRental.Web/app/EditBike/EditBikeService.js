@@ -14,7 +14,6 @@
                 .then(function(data) {
                     model.Types = data.data.Types;
                     model.Bike = data.data.Bike;
-
                 })
                 .catch(function (result) {
                     if (status === 401) {
