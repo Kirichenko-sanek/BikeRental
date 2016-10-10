@@ -32,8 +32,8 @@
                         <div class="sidebox">
                             <h3 class="sidebox-title">Options</h3>
                             <h4 class="sidebox-title">
-                                <a ng-href="/#/editBike/{{bike.IdBike}}" class="btn btn-warning">Edit bike</a>
-                                <a ng-click="showConfirm($event,bike.IdBike)" class="btn btn-danger">Delete bike</a>
+                                <button ng-click="goEdit(bike.IdBike)" class="btn btn-warning">Edit bike</button>
+                                <button ng-click="showConfirm($event,bike.IdBike)" class="btn btn-danger">Delete bike</button>
                             </h4>
                         </div>
                     </div>

@@ -1,11 +1,12 @@
 ﻿(function(app) {
     app.controller('listBikeController', listBikeController);
-    listBikeController.$inject = ['$scope', '$http', 'listBikeService', '$mdDialog'];
+    listBikeController.$inject = ['$scope', '$http', 'listBikeService', '$mdDialog', '$location'];
 
-    function listBikeController($scope, $http, listBikeService, $mdDialog) {
+    function listBikeController($scope, $http, listBikeService, $mdDialog, $location) {
         $scope.pageClass = 'page-listBike';
         $scope.deleteBike = deleteBike;
         $scope.editStatus = editStatus;
+        $scope.goEdit = goEdit;
         $scope.model = {
             bikes: []
         };
@@ -13,6 +14,10 @@
 
         function deleteBike(id) {
             listBikeService.deleteBike(id);
+        }
+
+        function goEdit(id) {
+            $location.path('/editBike/'+ id);
         }
 
         function editStatus(id) {

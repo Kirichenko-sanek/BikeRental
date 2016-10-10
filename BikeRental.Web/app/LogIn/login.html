@@ -2,20 +2,22 @@
     <div class="divPanel page-content">
         <div class="row-fluid">
             <hr style="margin: 45px 0 35px" />
-            <div class="span7">
-                <h2>LogIn</h2>
-                <form ng-submit="login()" class="form-signin" name="userLoginForm" role="form" method="post">
-                    <h4>Email</h4>
-                    <input type="email" class="input-block-level" placeholder="Email" ng-model="model.email" required />
-                    <h4>Password</h4>
-                    <input type="password" class="input-block-level" placeholder="Password" ng-model="model.password" required />
+            <div class="span4 offset2">
+                <div class="sidebox">
+                    <h2>LogIn</h2>
+                    <form ng-submit="login()" class="form-signin" name="userLoginForm" role="form" method="post">
+                        <h4>Email</h4>
+                        <input type="email" class="input-block-level" placeholder="Email" ng-model="model.email" required />
+                        <h4>Password</h4>
+                        <input type="password" class="input-block-level" placeholder="Password" ng-model="model.password" required />
 
-                    <div class="sidebox" ng-if="model.error != ''">
-                        <strong>{{model.error}}</strong>
-                    </div>
-                    <br ng-if="model.error != ''" />
-                    <input type="submit" value="LogIn" class="btn btn-primary" style="width: 50%">
-                </form>
+                        <div class="sidebox" ng-if="model.error != ''">
+                            <strong>{{model.error}}</strong>
+                        </div>
+                        <br ng-if="model.error != ''" />
+                        <input type="submit" value="LogIn" class="btn btn-primary" style="width: 50%">
+                    </form>
+                </div>
             </div>
             <div class="span4">
                 <div class="sidebox">
@@ -28,6 +30,7 @@
                         <li>Take bike</li>
                         <li>Order management</li>
                     </ul>
+                    <br/><br/><br/>
                 </div>
             </div>
         </div>
