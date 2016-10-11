@@ -1,9 +1,10 @@
 ﻿(function() {
     window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'oi.file', 'LocalStorageModule', 'ngAria', 'ngAnimate', 'ngMaterial', 'ngProgress'])
-        .config(config);
-    config.$inject = ['$routeProvider', '$httpProvider'];
+        .config(config).run(run);
+    config.$inject = ['$routeProvider'];
+    run.$inject = ['localStorageService', '$http', '$rootScope'];
 
-    function config($routeProvider, $httpProvider) {
+    function config($routeProvider) {
         $routeProvider
             .when("/", {
                 templateUrl: "app/Home/home.html",
@@ -38,5 +39,27 @@
                 templateUrl: "app/Home/home.html",
                 controller: "homeController"
             });
+    }
+    function run(localStorageService, $http, $rootScope) {
+        $rootScope.localAddress = '/rentalapi/';
+        var aut = localStorageService.get('authorizationData');
+
+        if (aut !== null) {
+            $http.defaults.headers.common['Authorization'] = 'Bearer ' + aut.token;
+            $http.post($rootScope.localAddress + 'api/account/userInSystem')
+                .then(
+                    function (data) {
+                        $rootScope.userLog = data.data;
+                        $rootScope.userNameLog = aut.userName;
+                    })
+                .catch(function (result) {
+                    console.log('Result: ', result);
+                })
+                .finally(function () {
+                    console.log('Finally');
+                });
+        } else {
+            $rootScope.userLog = null;
+        }
     }
 })();

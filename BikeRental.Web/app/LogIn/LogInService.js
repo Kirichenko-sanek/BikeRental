@@ -17,7 +17,7 @@
                         userName: model.email
                     });
                     $http.defaults.headers.common['Authorization'] = 'Bearer ' + data.data.access_token;
-                    $http.post($rootScope.localAddress + 'api/account/userInSystem?userName=' + model.email)
+                    $http.post($rootScope.localAddress + 'api/account/userInSystem')
                         .then(
                             function(data) {
                                 $rootScope.userLog = data.data;
