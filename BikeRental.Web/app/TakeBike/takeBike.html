@@ -12,11 +12,11 @@
                             <h3 class="sidebox-title">Order time</h3>
                             <div class="span5">
                                 <h4>Start time of the order</h4>
-                                <input class="col-xs-12" id="datetimepicker1" type="text" style="width: 80%" ng-model="model.timeStart" autocomplete="off" required/>
+                                <input class="col-xs-12 datetimepicker"  type="text" style="width: 80%" ng-model="model.timeStart" autocomplete="off" required/>
                             </div>
                             <div class="span5">
                                 <h4>End time of the order</h4>
-                                <input class="col-xs-12" id="datetimepicker2" type="text" style="width: 80%" ng-model="model.timeEnd" autocomplete="off" required/>
+                                <input class="col-xs-12 datetimepicker" type="text" style="width: 80%" ng-model="model.timeEnd" autocomplete="off" required/>
                             </div>
                         </div>
                         <div class="row-fluid">
@@ -54,15 +54,3 @@
         </div>
     </form>
 </div>
-<script>
-    jQuery('#datetimepicker1')
-        .datetimepicker(
-        {
-            minDate: Date.now()
-        });
-    jQuery('#datetimepicker2')
-        .datetimepicker(
-        {
-            minDate: Date.now()          
-        });
-</script>

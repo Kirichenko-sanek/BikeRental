@@ -103,6 +103,7 @@
     <Content Include="app\ListBike\listBike.html" />
     <Content Include="app\ListBike\listBikeController.js" />
     <Content Include="app\ListBike\listBikeService.js" />
+    <Content Include="app\TakeBike\takeBikeDirective.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="scripts\bootstrap\css\bootstrap-responsive.min.css" />
