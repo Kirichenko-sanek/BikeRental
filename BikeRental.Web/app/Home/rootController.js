@@ -9,7 +9,7 @@
 
         function logoff() {
             localStorageService.remove('authorizationData');
-            $rootScope.userLog = 0;
+            $rootScope.userLog = null;
             $rootScope.userNameLog = '';
             $location.path('/home');
         }
@@ -19,7 +19,7 @@
 
             if (aut !== null) {
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + aut.token;
-                $http.post($rootScope.localAddress + 'api/account/userInSystem?userName=' + aut.userName)
+                $http.post($rootScope.localAddress + 'api/account/userInSystem')
                     .then(
                         function(data) {
                             $rootScope.userLog = data.data;
@@ -35,7 +35,7 @@
                         console.log('Finally');
                     });
             } else {
-                $rootScope.userLog = 0;
+                $rootScope.userLog = null;
             }
         }
     }

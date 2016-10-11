@@ -9,7 +9,7 @@
         }
 
         function getOrders(model) {
-            $http.get($rootScope.localAddress + 'api/profile/getOrders/' + $rootScope.userLog)
+            $http.get($rootScope.localAddress + 'api/profile/getOrders')
                 .then(function(data) {
                     if (data.data.length === 0) {
                         model.orders = null;

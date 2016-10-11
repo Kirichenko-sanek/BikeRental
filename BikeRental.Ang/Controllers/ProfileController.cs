@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading;
 using System.Web.Http;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
@@ -24,12 +28,13 @@ namespace BikeRental.Ang.Controllers
             _orderManager = orderManager;
         }
 
-        [Route("takeBike/{userId}")]
+        [Route("takeBike")]
         [HttpPost]
-        public TakeBikeViewModel TakeBike(TakeBikeViewModel model, long userId)
+        public TakeBikeViewModel TakeBike(TakeBikeViewModel model)
         {
-            var takeBike = _bikeManager.TakeBike(model, userId);
-     
+            var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
+            var id = Convert.ToInt64(identity.Claims.Where(c => c.Type == "id").Select(c => c.Value).SingleOrDefault());
+            var takeBike = _bikeManager.TakeBike(model, id);    
             return takeBike;
         }
 
@@ -42,11 +47,13 @@ namespace BikeRental.Ang.Controllers
             return types;
         }
 
-        [Route("getOrders/{userId}")]
+        [Route("getOrders")]
         [HttpGet]
-        public List<OrderViewModel> GetOrders(long userId)
+        public List<OrderViewModel> GetOrders()
         {
-            var userOrders = _orderManager.GetOrdersByUser(userId);
+            var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
+            var id = Convert.ToInt64(identity.Claims.Where(c => c.Type == "id").Select(c => c.Value).SingleOrDefault());
+            var userOrders = _orderManager.GetOrdersByUser(id);
             return userOrders;
         }
 

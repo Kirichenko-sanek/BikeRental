@@ -13,7 +13,7 @@
                 model.error = 'Rental period is entered incorrectly';
                 $location.path('/takeBike');
             } else {
-                $http.post($rootScope.localAddress + 'api/profile/takeBike/' + $rootScope.userLog, model)
+                $http.post($rootScope.localAddress + 'api/profile/takeBike', model)
                     .then(function(data) {
                         if (data.data.Error !== null) {
                             model.error = data.data.Error;

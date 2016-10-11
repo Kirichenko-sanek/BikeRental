@@ -1,4 +1,8 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading;
+using System.Web.Http;
 using BikeRental.Core;
 using BikeRental.Interfases.Manager;
 
@@ -18,14 +22,11 @@ namespace BikeRental.Ang.Controllers
 
         [Route("userInSystem")]
         [HttpPost]
-        public long UserInSystem(string userName)
+        public string UserInSystem()
         {
-            var user = _userManager.GetUserByEmail(userName);
-            if (user == null)
-            {
-                return 0;
-            }
-            return user.Id;
+            var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
+            var role = identity.Claims.Where(c => c.Type == "role").Select(c => c.Value).SingleOrDefault();
+            return role;
         }
     }
 }

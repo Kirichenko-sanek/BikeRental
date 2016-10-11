@@ -38,15 +38,15 @@
                             </button>
                             <div class="nav-collapse collapse">
                                 <ul class="nav nav-pills ddmenu">
-                                    <li ng-if="userLog != 0" class="dropdown">
+                                    <li ng-if="userLog != null" class="dropdown">
                                         <a ng-href="/#/takeBike">Take Bike</a>
                                     </li>
-                                    <li ng-if="userLog != 0" class="dropdown">
+                                    <li ng-if="userLog != null" class="dropdown">
                                         <a ng-href="/#/userOrders" ng-click="getOrders()">
                                             MyOrders
                                         </a>
                                     </li>
-                                    <li ng-if="userLog == 1" class="dropdown">
+                                    <li ng-if="userLog == 'Admin'" class="dropdown">
                                         <a href="" class="dropdown-toggle" data-toggle="dropdown">Admin pages <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>
@@ -61,12 +61,12 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li ng-if="userLog == 0">
+                                    <li ng-if="userLog == null">
                                         <a ng-href="/#/login">
                                             Login
                                         </a>
                                     </li>
-                                    <li ng-if="userLog != 0">
+                                    <li ng-if="userLog != null">
                                         <a href="" ng-click="logoff()">
                                             LogOff
                                         </a>

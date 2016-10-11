@@ -53,6 +53,7 @@ namespace BikeRental.BL.Manager
                 if (!user.IsActivated) throw new Exception();
                 FormsAuthentication.SetAuthCookie(user.Email, false);
                 model.IdUser = user.Id;
+                model.Role = user.Roles.Role;
                 return model;
             }
             catch (Exception e)
