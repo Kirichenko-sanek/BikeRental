@@ -104,11 +104,10 @@
     <Content Include="app\ListBike\listBikeController.js" />
     <Content Include="app\ListBike\listBikeService.js" />
     <Content Include="app\TakeBike\takeBikeDirective.js" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="scripts\bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="scripts\bootstrap\css\bootstrap.min.css" />
     <Content Include="scripts\bootstrap\js\bootstrap.min.js" />
+    <Content Include="scripts\build\jquery.datetimepicker.full.min.js" />
     <Content Include="scripts\fontawesome\css\font-awesome.min.css" />
     <Content Include="scripts\jquery.min.js" />
     <Content Include="styles\bright-lights-big-city.jpg" />
@@ -119,9 +118,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="scripts\default.js" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="scripts\fontawesome\font\fontawesome-webfont.ttf" />
     <Content Include="scripts\fontawesome\font\fontawesome-webfont.woff" />
     <None Include=".bin\bower.cmd" />
@@ -151,13 +147,11 @@
     <Content Include="app\TakeBike\takeBikeService.js" />
     <Content Include="app\Type\typeService.js" />
     <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\jquery.datetimepicker.css" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="scripts\build\jquery.datetimepicker.full.min.js" />
     <None Include=".bin\node.cmd" />
     <Content Include="scripts\carousel\jquery.carouFredSel-6.2.0-packed.js" />
     <Content Include="Web.config" />
