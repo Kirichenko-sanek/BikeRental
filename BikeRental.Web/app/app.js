@@ -1,10 +1,12 @@
 ﻿(function() {
     window.angular.module('BikeRental', ['ngRoute', 'ngCookies', 'oi.file', 'LocalStorageModule', 'ngAria', 'ngAnimate', 'ngMaterial', 'ngProgress'])
         .config(config).run(run);
-    config.$inject = ['$routeProvider'];
+    config.$inject = ['$routeProvider', '$locationProvider'];
     run.$inject = ['localStorageService', '$http', '$rootScope'];
 
-    function config($routeProvider) {
+    function config($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
+        $locationProvider.hashPrefix('!');
         $routeProvider
             .when("/", {
                 templateUrl: "app/Home/home.html",
@@ -39,6 +41,7 @@
                 templateUrl: "app/Home/home.html",
                 controller: "homeController"
             });
+        
     }
     function run(localStorageService, $http, $rootScope) {
         $rootScope.localAddress = '/rentalapi/';
