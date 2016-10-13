@@ -38,7 +38,7 @@ local.properties
 
 */bin
 */obj
-
+node_modules/
 Debug/
 Release/
 bin/

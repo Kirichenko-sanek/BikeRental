@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rigger": "0.5.8",
+    "gulp-sourcemaps": "2.0.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-concat": "^2.0.0"
+  }
+}

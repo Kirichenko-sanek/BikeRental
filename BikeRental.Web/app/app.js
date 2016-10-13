@@ -18,7 +18,7 @@
 
             })
             .when("/takeBike", {
-                templateUrl: "app/TakeBike/takeBike.html",
+                templateUrl: "/app/TakeBike/takeBike.html",
                 controller: "takeBikeController"
             })
             .when("/userOrders", {
