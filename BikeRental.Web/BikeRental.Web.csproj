@@ -113,6 +113,7 @@
     <Content Include="scripts\fontawesome\css\font-awesome.min.css" />
     <Content Include="scripts\jquery.min.js" />
     <Content Include="buildP\css\bright-lights-big-city.jpg" />
+    <Content Include="styles\bright-lights-big-city.jpg" />
     <Content Include="styles\custom.css" />
     <Content Include="scripts\carousel\style.css" />
     <Content Include="packages.config" />
